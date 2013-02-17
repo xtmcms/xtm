@@ -1,0 +1,1 @@
+tinyMCE.addI18n('zh-CN.searchreplace_dlg', {findwhat:"����", replacewith:"�滻Ϊ", direction:"����", up:"����", down:"����", mcase:"��ִ�Сд", findnext:"������һ��", allreplaced:"����ƥ����ַ����滻�ˡ�", "searchnext_desc":"��������", notfound:"�����Ѿ���ɣ��Ҳ����������ʡ�", "search_title":"����", "replace_title":"����/�滻", replaceall:"�滻ȫ��", replace:"�滻"});

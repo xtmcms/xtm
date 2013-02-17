@@ -1,0 +1,135 @@
+<?php
+
+$help_sections['templates'] = <<<HTML
+<table width="100%">
+    <tr>
+        <td bgcolor="#EFEFEF" height="29" style="padding-left:10px;"><div class="navigation">Templates</div></td>
+    </tr>
+</table>
+<div class="unterline"></div>
+Templates can help easily change the news display. You can change different parts of templates used to display different parts of news. For example, part of "Short view" is used to change the view of active news, "Full article" is used to change the view of the whole article, "Comments" can change the view of commentaries, etc.<br><br>
+You can use HTML to edit parts of tepmlate to change different structures and so on. Also you will have to add some special sign to your templates to define the place to show the news title, author's name, date, etc. дата и т.д. Each sign corresponds to a prat of template.<br>
+Values of variables can be viewed on template editing page after clicking on part of template title. For example <b>{title}</b> will show the article title and <b>{author}</b> will show article's author, etc.<br><br>
+You can use several different templates.
+HTML;
+
+$help_sections['xfields'] = <<<HTML
+<table width="100%">
+    <tr>
+        <td bgcolor="#EFEFEF" height="29" style="padding-left:10px;"><div class="navigation">Additional fields</div></td>
+    </tr>
+</table>
+<div class="unterline"></div>
+Additional fields are enabled through Options menu &gt; <a href=?mod=xfields&xfieldsaction=configure>Additional fields</a>. This feature is useful of you want to add a link to source, for example.<br>
+To add new field press the link "<a href=?mod=xfields&xfieldsaction=configure&xfieldssubaction=edit&xfieldsindex=1.5>New field</a>". When the page is opened, you will have to enter unique field title, field description and field default content. Also you are to choose if you want to use optional fields, i.e. if you don't want to use optional field for some articles, you may leave the field empty while adding/editing the news, the module will be disabled.<br><br>
+To use the field on news page you should add variable [xfvalue_X] to the template, where X denotes field value (title you entered in new field adding). You can also use connective [xfgiven_X]...[/xfgiven_X].<br><br>
+Example of how fields work:
+<div class="code">
+<b>1)</b>- Title: stit<br>
+&nbsp;&nbsp;- Decription: source of information<br>
+&nbsp;&nbsp;- Value by default: I<br>
+&nbsp;&nbsp;- Optional: yes<br>
+<b>2)</b>- Title: source<br>
+&nbsp;&nbsp;- Description: source of information link<br>
+&nbsp;&nbsp;- Value by default: http://server.com/<br>
+&nbsp;&nbsp;- Optional: yes<br><br>
+[xfgiven_source]Source - &lt;a href=[xfvalue_source] target=_blank&gt;[xfvalue_stit]&lt;/a&gt;.[/xfgiven_source]</div>
+Result of work will be the following HTML code:
+<div class="code">Source - &lt;a href=http://server.com/ target=_blank&gt;Я&lt;/a&gt;.</div>
+Remember to use only latin letters and numbers for field title. You also shouldn't enter the title in Russian language!
+HTML;
+
+$help_sections['xprofile'] = <<<HTML
+<table width="100%">
+    <tr>
+        <td bgcolor="#EFEFEF" height="29" style="padding-left:10px;"><div class="navigation">Additional fields in user profile</div></td>
+    </tr>
+</table>
+<div class="unterline"></div>
+This function intends for adding new fields in user profiles apart from existing main ones.<br><br>
+Press "New field" to add new field. On the page you will have to enter unique field title and field description. Also you will have to choose if you allow users to add extra information under registration or if this field is purely personal and also if user can further edit field content.<br><br>
+Additional fields are available when viewing commantaries and user profile, then you need to add tag [xfvalue_X] into proper templates, where X denotes field value (title you entered in new field adding). You can also use connective [xfgiven_X]...[/xfgiven_X].<br><br>
+Example of how fields work:
+<div class="code">
+&nbsp;&nbsp;- Title: city<br>
+&nbsp;&nbsp;- Description: City<br>
+&nbsp;&nbsp;- Field Type: One line<br>
+&nbsp;&nbsp;- Add to registration page: yes<br>
+&nbsp;&nbsp;- Field can be changed by user: yes<br>
+&nbsp;&nbsp;- Make this field personal: no<br><br>
+add to templates comments.tpl and userinfo.tpl <br>
+[xfgiven_city] City: [xfvalue_city] [/xfgiven_city]</div>
+If user adds to their field London as City the result will be the following HTML code:
+<div class="code">City: London</div>
+Remember to use only latin letters and numbers for field title. 
+HTML;
+
+$help_sections['banners'] = <<<HTML
+<table width="100%">
+    <tr>
+        <td bgcolor="#EFEFEF" height="29" style="padding-left:10px;"><div class="navigation">Web site Advertisement Management</div></td>
+    </tr>
+</table>
+<div class="unterline"></div>
+This module intends for quick and convenient placement and management of your advertising materialson the web site. To place on the web site your banner you need to add once the banner tag into template, afterwards you can easily change or edit banner code in admin panel not influencing the templates themselves.<br /><br />
+When you added your banner, you can place its tag in templates <b>main.tpl</b> or <b>fullstory.tpl</b>. If you add banner to show between short news, you don't need to add tag into template, banner goes between news by default.
+<br />Example of how it works:
+<div class="code">
+&nbsp;&nbsp;- Titler: header<br>
+&nbsp;&nbsp;- Description: Upper banner<br>
+&nbsp;&nbsp;- Enable banner: Yes<br>
+&nbsp;&nbsp;- Show only on main page: No<br>
+&nbsp;&nbsp;- Fix position: No<br>
+&nbsp;&nbsp;- Place in short news: No<br><br>
+After that you can add to your templates <b>main.tpl</b> or <b>fullstory.tpl</b> the following banner tag: <b>{banner_header}</b><br />
+</div>
+You can use HTML and JavaScript while adding banner code.
+HTML;
+
+
+$help_sections['date'] = <<<HTML
+<table width="100%">
+    <tr>
+        <td bgcolor="#EFEFEF" height="29" style="padding-left:10px;"><div class="navigation">Date function() - Local time and date format</div></td>
+    </tr>
+</table>
+<div class="unterline"></div>
+In format line the following symbols are recognized: 
+<UL>
+<LI><b>a</b> - "am" or "pm"
+<LI><b>A</b> - "AM" or "PM"
+<LI><b>B</b> - Swatch Internet 
+<LI><b>d</b> - day of month (date), 2 numbers with zero in pre-position, if necessary; i.e. from "01" to "31" 
+<LI><b>D</b> - day of week, short, 3 letters; for ex., "Fri"
+<LI><b>F</b> - month, full name; for ex., "January" 
+<LI><b>g</b> - hour, 12-hour format, zeros omitted; i.e. from "1" to "12" 
+<LI><b>G</b> - hour, 24-hour format, zeros omitted; i.e. from "0" to "23" 
+<LI><b>h</b> - hour, 12-hour format; i.e. from "01" to "12"
+<LI><b>H</b> - hour, 24-hour format; i.e. from "00" to "23" 
+<LI><b>i</b> - minutes; i.e. from "00" to "59"
+<LI><b>I</b> (capital i) - "1", if Daylight Savings Time, otherwise - "0".
+<LI><b>j</b> - day of month (date), zeros omitted; i.e. from "1" to "31" 
+<LI><b>l</b> ('L' lower case) - day of week, full name; for ex., "Friday" 
+<LI><b>L</b> - boolean, denoting leap year; i.e. "0" or "1" 
+<LI><b>m</b> - month; i.e. from "01" to "12"
+<LI><b>M</b> - month, letters, short name; for ex., "Jan" 
+<LI><b>n</b> - month, zeros omitted; i.e. from "1" to "12" 
+<LI><b>O</b> - Greenwich time difference, in hours; for ex., "+0200" 
+<LI><b>r</b> - RFC 822 date format; for ex., "Thu, 21 Dec 2000 16:01:07 +0200" (accepted in PHP 4.0.4) 
+<LI><b>s</b> - seconds; i.e. from "00" to "59"
+<LI><b>S</b> - Englich suffix for day of month (date), 2 symbols; i.e. "st", "nd", "rd" or "th"
+<LI><b>t</b> - number of days in month; i.e. from "28" to "31" 
+<LI><b>T</b> - setting Timezone on local machine; for ex., "EST" or 
+"MDT" 
+<LI><b>U</b> - seconds of Unix Epoch (begin from January 1 1970 00:00:00 GMT) 
+<LI><b>w</b> - day of week, number, i.e. from "0" (Sunday) to "6" (Saturday) 
+<LI><b>W</b> - ISO-8601 number of week in year, beginning from Monday 
+(accepted in PHP 4.1.0) 
+<LI><b>Y</b> - year, 4 numbers; for ex., "1999"
+<LI><b>y</b> - year, 2 numbers; for ex., "99" 
+<LI><b>z</b> - day of year; i.e. from "0" to "365"
+<LI><b>Z</b> - ttime shift in seconds (i.e. from "-43200" to "43200"). 
+Time shift to west from UTC is always negative, to east from UTC is always positive.</LI></UL>
+HTML;
+
+?>

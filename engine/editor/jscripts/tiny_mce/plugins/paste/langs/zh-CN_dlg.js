@@ -1,0 +1,1 @@
+tinyMCE.addI18n('zh-CN.paste_dlg', {"word_title":"��ʹ�ü��̿�ݼ�Ctrl+Vճ���ı�.", "text_linebreaks":"�������з�", "text_title":"��ʹ�ü��̿�ݼ�Ctrl+Vճ���ı�."});

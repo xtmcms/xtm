@@ -1,0 +1,139 @@
+<?php
+
+$help_sections['templates'] = <<<HTML
+<table width="100%">
+    <tr>
+        <td bgcolor="#EFEFEF" height="29" style="padding-left:10px;"><div class="navigation">模板</div></td>
+    </tr>
+</table>
+<div class="unterline"></div>
+模板可以用来改变文章的展现形式。模板通过不同的部分来控制文章的展示，这也允许您修改某个部分来使模板更加强大。例如，"short-story.tpl"模板用来改变活跃文章的表现， "full-story.tpl" 模板用来改变完整文章的外观, "comment.tpl" 改变评论的形式，等等。<br><br>
+当编辑一个模板的时候，您可以使用HTML编码来改变不同的结构，等等。同时，您可能需要在您的模板中添加一些特殊符号来定义哪里显示文章标题，作者名称，发布日期等等。 每个模板对应一个符合。<br>
+当编辑模板是，点击模板的名称就可以查看变量的值。例如，<b>{title}</b> 将输出文章的标题, 而<b>{author}</b> 输出文章的作者，等等。<br><br>
+您可以使用多种不同的模式。
+HTML;
+
+$help_sections['xfields'] = <<<HTML
+<table width="100%">
+    <tr>
+        <td bgcolor="#EFEFEF" height="29" style="padding-left:10px;"><div class="navigation">自定义字段</div></td>
+    </tr>
+</table>
+<div class="unterline"></div>
+添加字段是通过设置菜单 &gt; <a href=?mod=xfields&xfieldsaction=configure>自定义文章字段</a>. 当您发布文章时，您想为文章添加上参考文献的链接，这个功能就会非常实用。<br>
+添加一个新的字段，点击链接 "<a href=?mod=xfields&xfieldsaction=configure&xfieldssubaction=edit&xfieldsindex=1.5>新自定义字段</a>"。进入新自定义字段页面后，您需要设置唯一的字段名称,字段描述和字段默认内容。同时，您必须选择是否打算使用这个字段时可选或必选。例如，如果你希望某些文章不使用这个模块，那么在发布或编辑文章时留空此字段，就不会调用此模块。<br><br>
+当在文章中添加您定义的字段时，你首先需要在模板中添加[xfvalue_X], 这里的 X 表示字段的值（也就是您添加新字段时填写的字段名称）。您还需要通过标签  [xfgiven_X]...[/xfgiven_X]把前面的字段[xfvalue_X]包括起来。<br><br>
+一个自定义字段的例子:
+<div class="code">
+<b>1)</b>- 字段名称: stit<br>
+&nbsp;&nbsp;- 字段描述: 描述内容<br>
+&nbsp;&nbsp;- 默认文本: abc<br>
+&nbsp;&nbsp;- 是否选填: 是<br>
+<b>2)</b>- 字段名称: source<br>
+&nbsp;&nbsp;- 字段描述: 参考链接<br>
+&nbsp;&nbsp;- 默认文本: http://server.com/<br>
+&nbsp;&nbsp;- 是否选填: 是<br><br>
+[xfgiven_source]自定义字段示例 - &lt;a href=[xfvalue_source] target=_blank&gt;[xfvalue_stit]&lt;/a&gt;.[/xfgiven_source]<br>
+[xfnotgiven_source]没有填写字段内容时显示的文本[/xfnotgiven_source]</div>
+先按照第一二步骤添加自定义字段，然后将后面的代码添加到模板中。
+如果按照默认文本会出现下面的内容:
+<div class="code">自定义字段示例 - &lt;a href=http://server.com/ target=_blank&gt;abc&lt;/a&gt;.</div>
+如果自定义字段填写了其他内容，比如：xtmcn.com，会出现下面的内容：
+<div class="code">自定义字段示例 - &lt;a href=http://server.com/ target=_blank&gt;xtmcn.com&lt;/a&gt;.</div>
+如果自定义字段没有内容，会出现下面的内容:
+<div class="code">没有填写字段内容时显示的文本</div>
+注意：字段名称只能为字母和数字!
+HTML;
+
+$help_sections['xprofile'] = <<<HTML
+<table width="100%">
+    <tr>
+        <td bgcolor="#EFEFEF" height="29" style="padding-left:10px;"><div class="navigation">自定义用户栏目</div></td>
+    </tr>
+</table>
+<div class="unterline"></div>
+此功能可以在用户账户中添加新的栏目，来丰富默认的用户栏目。<br><br>
+添加新的栏目，点击链接 "添加"。在添加栏目页面中，您必须输入唯一的字段名称和简短描述。同时，您必须选择是否在注册过程中填写附加栏目信息, 是否是仅本人可见的隐私内容，是否允许以后再次编辑输入的信息。<br><br>
+当您查看评论和用户信息时，自定义栏目都会出现。不过您首先需要在模板文件中放置正确的标签[xfvalue_X], 这里的 X 即为栏目的值（您添加栏目时输入的栏目名称）。您还需要通过标签 [xfgiven_X]...[/xfgiven_X]把前面的栏目[xfvalue_X]包括起来。<br><br>
+关于此自定义栏目使用时的一个例子:
+<div class="code">
+&nbsp;&nbsp;- 栏目名称: city<br>
+&nbsp;&nbsp;- 栏目描述: 城市<br>
+&nbsp;&nbsp;- 栏目类型: 单行文字<br>
+&nbsp;&nbsp;- 在注册页面中显示: 是<br>
+&nbsp;&nbsp;- 会员可以编辑此栏目: 是<br>
+&nbsp;&nbsp;- 仅本人可见：否<br><br>
+需要修改的模板： comments.tpl 和 userinfo.tpl 及其他可能用到此栏目的模板<br>
+[xfgiven_city] 城市: [xfvalue_city] [/xfgiven_city]</div>
+如果用户注册时添加的城市栏目信息为 北京, 最后会输出以下 HTML 代码:
+<div class="code">城市: 北京</div>
+注意：自定义账户栏目的名称只能为字母和数字。
+HTML;
+
+$help_sections['banners'] = <<<HTML
+<table width="100%">
+    <tr>
+        <td bgcolor="#EFEFEF" height="29" style="padding-left:10px;"><div class="navigation">管理站点的广告系统/div></td>
+    </tr>
+</table>
+<div class="unterline"></div>
+此模块旨在为您提供一个方便的广告系统，可以快捷简单的放置和管理多个广告内容。如果想在站点上布置广告代码，您只要在相应的模板位置正确放置 广告标签 ，然后您就可以在广告模块管理面板里轻松的调整和编辑广告代码，而不需要再到模板文件中进行修改。<br /><br />
+建立广告代码后，您可以将对应的广告标签放置到 <b>main.tpl</b> 或 <b>fullstory.tpl</b>等模板文件即可。文件摘要列表中嵌入广告为系统自带的功能，如果您想使用这个功能，只需建立广告代码，并勾选相关选项即可，不需要再到模板文件中添加代码。
+<br />例如:
+<div class="code">
+&nbsp;&nbsp;- 广告标题: header<br>
+&nbsp;&nbsp;- 简单描述: Top banner<br>
+&nbsp;&nbsp;- 添加代码: 是<br>
+&nbsp;&nbsp;- 仅主页显示: 否<br>
+&nbsp;&nbsp;- 固定代码位置: 否<br>
+&nbsp;&nbsp;- 文件摘要列表中嵌入广告: 无<br><br>
+然后请编辑<b>main.tpl</b> 或 <b>fullstory.tpl</b> 等模板中您需要放置代码的位置，添加广告标签: <b>{banner_header}</b><br />
+</div>
+您添加的广告代码可以为： HTML 和 JavaScript。
+HTML;
+
+
+$help_sections['date'] = <<<HTML
+<table width="100%">
+    <tr>
+        <td bgcolor="#EFEFEF" height="29" style="padding-left:10px;"><div class="navigation">设置站点的日期格式 date() - 根据下面的字母可以更改不同的时间格式</div></td>
+    </tr>
+</table>
+<div class="unterline"></div>
+可以使用的时间格式缩略符及其代表的时间格式释义: 
+<UL>
+<LI><b>a</b> - "am" 或 "pm" 即小写的英文上下午缩写。
+<LI><b>A</b> - "AM" 或 "PM" 即大写的英文上下午缩写。
+<LI><b>B</b> - 世界共通的网络时制（Swatch Internet Time）。
+<LI><b>d</b> - 日期缩写为2数字格式。例如： "01" "05" "14" "31" 等。 
+<LI><b>D</b> - 周日期缩写, 格式为："周一" "周五" 等。
+<LI><b>F</b> - 月日期全写，格式为："一月" "二月" "十二月" 等。
+<LI><b>g</b> - 小时格式为12小时制，低于10的数字不添加0，例如："1" "5" "10" "12" 等。 
+<LI><b>G</b> - 小时格式为24小时制，低于10的数字不添加0，例如："1" "8" "15" "24" 等。 
+<LI><b>h</b> - 小时格式为12小时制，数字自动补齐为两位数，例如："01" "05" "10" "12" 等。
+<LI><b>H</b> - 小时格式为24小时制，数字自动补齐为两位数，例如："01" "08" "10" "24" 等。
+<LI><b>i</b> - 分钟格式，数字自动补齐为两位数，例如："00" 到 "59"。
+<LI><b>I</b> - (大写字母 i)时令 - "1"表示夏令时, "0" 表示非夏令时。
+<LI><b>j</b> - 日期格式 (数字) 低于10的数字不添加0， 从 "1" 到 "31" 。
+<LI><b>l</b> - (小写字母 L) - 周日期全写，例如："星期五" 。
+<LI><b>L</b> - boolean布尔值, 用于区别闰年，取值为 "0" 或 "1" 。
+<LI><b>m</b> - 月日期缩写，数字自动补齐为两位数，例如：从 "01" 到 "12" 。
+<LI><b>M</b> - 月日期缩写，格式为："1月" 到 "12月" 。 
+<LI><b>n</b> - 月日期缩写，低于10的数字不添加0，例如：从 1 到12 。
+<LI><b>O</b> - 从格林尼治平均时间差，以小时为单位，例如，“0200”。
+<LI><b>r</b> - RFC 822日期格式，例如，“四，2000年12月21日16:01:070200”。（PHP4.0.4新加）
+<LI><b>s</b> - 秒钟格式，数字自动补齐为两位数，例如："00" 到 "59"。
+<LI><b>S</b> - 针对英文第一，第二，第三等单词变化，可以自动添加末尾2字符即："st", "nd", "rd" 和 "th"
+<LI><b>t</b> - 月天数（即一个月有多少天），例如：从 "28" 到 "31" 。
+<LI><b>T</b> - 服务器时区时间，例如： "EST" 或 "MDT" 。 
+<LI><b>U</b> - 第二个时代的Unix纪元（从1970 00:00:00 GMT1月1日起开始）。
+<LI><b>w</b> - 周日期缩写，单数字，例如：从"0"（表示周日）到"6"（表示周六）。
+<LI><b>W</b> - ISO-8601 整年中的第几周，从新年的第一周的周一到本年最后一周的周一。 (PHP 4.1.0新加)
+<LI><b>Y</b> - 年号格式，4个数字，例如："1999"
+<LI><b>y</b> - 年号格式, 2个数字，例如："99" 
+<LI><b>z</b> - 年天数，即一年中的第几天，例如：从 "0" 到 "365"。
+<LI><b>Z</b> - 时区时间偏移量，单位：秒。数值范围："-43200" 到 "43200"。
+关于偏移量的调整：像西半球偏移一般取负值，向东半球偏移一般取正值。</LI></UL>
+HTML;
+
+?>

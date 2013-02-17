@@ -1,0 +1,11 @@
+/.idea
+/.settings
+/tools
+*.tmp
+/engine/cache/**/*.php
+/engine/data/config.php
+/engine/data/dbconfig.php
+/engine/data/videoconfig.php
+/engine/data/wordfilter.db.php
+/engine/data/xfields.txt
+/engine/data/xprofile.txt

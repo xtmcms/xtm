@@ -1,0 +1,1 @@
+tinyMCE.addI18n('zh-CN.advhr_dlg', {size:"�߶�", noshade:"����Ӱ", width:"���", normal:"����", widthunits:"��Ԫ"});
