@@ -234,7 +234,7 @@ function xtm_image_upload(a, c) {
 }
 function tag_typograf() {
     ShowLoading("");
-    $.post(xtm_root + "engine/ajax/typograf.php", {txt:document.getElementById(selField).value}, function (a) {
+    $.post(xtm_root + "lib/ajax/typograf.php", {txt:document.getElementById(selField).value}, function (a) {
         HideLoading("");
         $("#" + selField).val(a)
     })

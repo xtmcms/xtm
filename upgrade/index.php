@@ -9,7 +9,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 @ini_set('error_reporting', E_ALL ^ E_NOTICE);
 define('XTMCMS', true);
 define('ROOT_DIR', "..");
-define('ENGINE_DIR', ROOT_DIR . '/engine');
+define('ENGINE_DIR', ROOT_DIR . '/lib');
 require_once(ENGINE_DIR . '/data/config.php');
 require_once('mysql.php');
 require_once(ENGINE_DIR . '/data/dbconfig.php');
@@ -21,7 +21,7 @@ $theme = ENGINE_DIR;
 $xtm_version = "9.7";
 require_once(dirname (__FILE__) . '/template.php');
 if (strtolower($config['charset']) != "utf-8") {
-    msgbox("info", "Information", "Updating the database cannot be continue, DataLife Engine UTF Edition is designed to upgrade the site using UTF-8 character set. ");
+    msgbox("info", "Information", "Updating the database cannot be continue, XTMCMS UTF Edition is designed to upgrade the site using UTF-8 character set. ");
     die();
 } 
 switch ($version_id) {

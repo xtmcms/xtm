@@ -1,9 +1,9 @@
 <html>
 <head>
     <meta content="text/html; charset={charset}" http-equiv=Content-Type>
-    <script type="text/javascript" src="/engine/classes/js/jquery.js"></script>
-    <script type="text/javascript" src="/engine/classes/js/jqueryui.js"></script>
-    <script type="text/javascript" src="/engine/classes/js/xtm_js.js"></script>
+    <script type="text/javascript" src="/lib/classes/js/jquery.js"></script>
+    <script type="text/javascript" src="/lib/classes/js/jqueryui.js"></script>
+    <script type="text/javascript" src="/lib/classes/js/xtm_js.js"></script>
     <style>
         body, td {
             font-family: verdana, arial, sans-serif;

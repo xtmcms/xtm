@@ -2,14 +2,14 @@
 define ('XTMCMS', true);
 define ('FILE_DIR', '../uploads/files/');
 define ('ROOT_DIR', '..');
-define ('ENGINE_DIR', ROOT_DIR . '/engine');
+define ('ENGINE_DIR', ROOT_DIR . '/lib');
 @error_reporting(E_ALL ^ E_NOTICE);
 @ini_set('display_errors', true);
 @ini_set('html_errors', false);
 @ini_set('error_reporting', E_ALL ^ E_NOTICE);
 require ENGINE_DIR . '/data/config.php';
 if ($config['http_home_url'] == "") {
-    $config['http_home_url'] = explode("engine/download.php", $_SERVER['PHP_SELF']);
+    $config['http_home_url'] = explode("lib/download.php", $_SERVER['PHP_SELF']);
     $config['http_home_url'] = reset($config['http_home_url']);
     $config['http_home_url'] = "http://" . $_SERVER['HTTP_HOST'] . $config['http_home_url'];
 }

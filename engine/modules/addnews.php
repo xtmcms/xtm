@@ -388,7 +388,7 @@ if (!$allow_addnews) {
                 $tpl->set('[sec_code]', "");
                 $tpl->set('[/sec_code]', "");
                 $path = parse_url($config['http_home_url']);
-                $tpl->set('{sec_code}', "<span id=\"xtm-captcha\"><img src=\"" . $path['path'] . "engine/modules/antibot.php\" alt=\"${lang['sec_image']}\" /><br /><a onclick=\"reload(); return false;\" href=\"#\">{$lang['reload_code']}</a></span>");
+                $tpl->set('{sec_code}', "<span id=\"xtm-captcha\"><img src=\"" . $path['path'] . "lib/modules/antibot.php\" alt=\"${lang['sec_image']}\" /><br /><a onclick=\"reload(); return false;\" href=\"#\">{$lang['reload_code']}</a></span>");
                 $tpl->set_block("'\\[recaptcha\\](.*?)\\[/recaptcha\\]'si", "");
                 $tpl->set('{recaptcha}', "");
             }
@@ -409,7 +409,7 @@ function preview(){";
         $script .= "if(document.entryform.title.value == ''){ xtmalert('$lang[add_err_7]', xtm_info); }
     else{
         dd=window.open('','prv','height=400,width=750,resizable=0,scrollbars=1')
-        document.entryform.mod.value='preview';document.entryform.action='{$config['http_home_url']}engine/preview.php';document.entryform.target='prv'
+        document.entryform.mod.value='preview';document.entryform.action='{$config['http_home_url']}lib/preview.php';document.entryform.target='prv'
         document.entryform.submit();dd.focus()
         setTimeout(\"document.entryform.mod.value='addnews';document.entryform.action='';document.entryform.target='_self'\",500)
     }
@@ -420,7 +420,7 @@ function reload () {
 
 	var rndval = new Date().getTime(); 
 
-	document.getElementById('xtm-captcha').innerHTML = '<img src="{$path['path']}engine/modules/antibot.php?rndval=' + rndval + '" width="120" height="50" alt="" /><br /><a onclick="reload(); return false;" href="#">{$lang['reload_code']}</a>';
+	document.getElementById('xtm-captcha').innerHTML = '<img src="{$path['path']}lib/modules/antibot.php?rndval=' + rndval + '" width="120" height="50" alt="" /><br /><a onclick="reload(); return false;" href="#">{$lang['reload_code']}</a>';
 
 };
 
@@ -456,7 +456,7 @@ function reload () {
 </script>
 HTML;
         if ($config['allow_add_tags']) {
-            $js_array[] = "engine/skins/autocomplete.js";
+            $js_array[] = "lib/skins/autocomplete.js";
             $script .= "
 <script language=\"javascript\" type=\"text/javascript\">
 <!--
@@ -470,7 +470,7 @@ HTML;
  
 		$( '#tags' ).autocomplete({
 			source: function( request, response ) {
-				$.getJSON( 'engine/ajax/find_tags.php', {
+				$.getJSON( 'lib/ajax/find_tags.php', {
 					term: extractLast( request.term )
 				}, response );
 			},

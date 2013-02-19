@@ -8,7 +8,7 @@
         @import url({THEME}/css/style.css);
     </style>
     <style type="text/css" media="all">
-        @import url({THEME}/css/engine.css);
+        @import url({THEME}/css/lib.css);
     </style>
 </head>
 <body>

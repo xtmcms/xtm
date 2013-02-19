@@ -141,20 +141,20 @@ if (!is_writable(ROOT_DIR . '/templates/' . $do_template . "/")) {
     $lang['stat_template'] = str_replace("{template}", '/templates/' . $do_template . '/', $lang['stat_template']);
     $fail = "<br /><br /><div class=\"ui-state-error ui-corner-all\" style=\"padding:10px;\">{$lang['stat_template']}</div>";
 } else $fail = "";
-$js_array[] = "engine/skins/filetree.js";
-$js_array[] = "engine/skins/codemirror/js/code.js";
+$js_array[] = "lib/skins/filetree.js";
+$js_array[] = "lib/skins/codemirror/js/code.js";
 echoheader("options", $lang['opt_theads']);
 echo <<<HTML
-<link rel="stylesheet" type="text/css" href="engine/skins/codemirror/css/default.css">
+<link rel="stylesheet" type="text/css" href="lib/skins/codemirror/css/default.css">
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -206,12 +206,12 @@ echo <<<HTML
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div>
@@ -220,12 +220,12 @@ echo <<<HTML
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -248,10 +248,10 @@ echo <<<HTML
 <script type="text/javascript">
 $(document).ready( function() {
 
-	$('#filetree').fileTree({ root: '{$do_template}/', script: 'engine/ajax/templates.php', folderEvent: 'click', expandSpeed: 750, collapseSpeed: 750, multiFolder: false }, function(file) { 
+	$('#filetree').fileTree({ root: '{$do_template}/', script: 'lib/ajax/templates.php', folderEvent: 'click', expandSpeed: 750, collapseSpeed: 750, multiFolder: false }, function(file) { 
 	
 		ShowLoading('');		
-		$.post('engine/ajax/templates.php', { action: "load", file: file, user_hash: "{$xtm_login_hash}" }, function(data){
+		$.post('lib/ajax/templates.php', { action: "load", file: file, user_hash: "{$xtm_login_hash}" }, function(data){
 			
 			HideLoading('');
 			
@@ -265,7 +265,7 @@ function savefile( file ){
 	var content = editor.getValue();
 
 	ShowLoading('');		
-	$.post('engine/ajax/templates.php', { action: "save", file: file, content: content, user_hash: "{$xtm_login_hash}" }, function(data){
+	$.post('lib/ajax/templates.php', { action: "save", file: file, content: content, user_hash: "{$xtm_login_hash}" }, function(data){
 			
 		HideLoading('');
 			
@@ -284,7 +284,7 @@ function createfile( ){
 	xtmprompt("{$lang['template_enter']}", '', "{$lang['p_prompt']}", function (file) {
 
 		ShowLoading('');		
-		$.post('engine/ajax/templates.php', { action: "create", file: file, template: '{$do_template}', user_hash: "{$xtm_login_hash}" }, function(data){
+		$.post('lib/ajax/templates.php', { action: "create", file: file, template: '{$do_template}', user_hash: "{$xtm_login_hash}" }, function(data){
 				
 			HideLoading('');
 				
@@ -301,12 +301,12 @@ function createfile( ){
 };
 </script>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div>

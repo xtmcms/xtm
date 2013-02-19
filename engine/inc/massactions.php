@@ -159,12 +159,12 @@ if ($k_mass) {
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -190,12 +190,12 @@ HTML;
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>
@@ -210,12 +210,12 @@ if ($action == "mass_delete") {
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -240,12 +240,12 @@ HTML;
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>
@@ -297,23 +297,23 @@ HTML;
         msg("error", $lang['mass_notok'], "$deleted_articles $lang[mass_i] " . count($selected_news) . " $lang[mass_notok_1]", $_SESSION['admin_referrer']);
     }
 } elseif ($action == "mass_move_to_cat") {
-    $js_array[] = "engine/skins/chosen/chosen.js";
+    $js_array[] = "lib/skins/chosen/chosen.js";
     echoheader("options", $lang['mass_cat']);
     $count = count($selected_news);
     if ($config['allow_multi_category']) $category_multiple = "class=\"categoryselect\" multiple";
     else $category_multiple = "class=\"categoryselect\"";
     echo <<<HTML
-<link rel="stylesheet" type="text/css" href="engine/skins/chosen/chosen.css"/>
+<link rel="stylesheet" type="text/css" href="lib/skins/chosen/chosen.css"/>
 <form action="{$PHP_SELF}" method="post">
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -337,12 +337,12 @@ HTML;
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>
@@ -362,12 +362,12 @@ HTML;
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -388,12 +388,12 @@ HTML;
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>
@@ -408,12 +408,12 @@ HTML;
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -434,12 +434,12 @@ HTML;
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>
@@ -455,12 +455,12 @@ HTML;
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -481,12 +481,12 @@ HTML;
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>

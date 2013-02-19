@@ -9,7 +9,7 @@ $count_smilies = count($smilies);
 foreach ($smilies as $smile) {
     $i++;
     $smile = trim($smile);
-    $output .= "<td style=\"padding:2px;\" align=\"center\"><a href=\"#\" onClick=\"xtm_smiley(':$smile:'); return false;\"><img style=\"border: none;\" alt=\"$smile\" src=\"" . $config['http_home_url'] . "engine/data/emoticons/$smile.gif\" /></a></td>";
+    $output .= "<td style=\"padding:2px;\" align=\"center\"><a href=\"#\" onClick=\"xtm_smiley(':$smile:'); return false;\"><img style=\"border: none;\" alt=\"$smile\" src=\"" . $config['http_home_url'] . "lib/data/emoticons/$smile.gif\" /></a></td>";
     if ($i % 4 == 0 AND $i < $count_smilies) $output .= "</tr><tr>";
 }
 $output .= "</tr></table>";

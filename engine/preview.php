@@ -6,10 +6,10 @@
 if (!count($_POST)) die("Hacking attempt!");
 define('XTMCMS', true);
 define('ROOT_DIR', substr(dirname(__FILE__), 0, -7));
-define('ENGINE_DIR', ROOT_DIR . '/engine');
+define('ENGINE_DIR', ROOT_DIR . '/lib');
 require ENGINE_DIR . '/data/config.php';
 if ($config['http_home_url'] == "") {
-    $config['http_home_url'] = explode("engine/preview.php", $_SERVER['PHP_SELF']);
+    $config['http_home_url'] = explode("lib/preview.php", $_SERVER['PHP_SELF']);
     $config['http_home_url'] = reset($config['http_home_url']);
     $config['http_home_url'] = "http://" . $_SERVER['HTTP_HOST'] . $config['http_home_url'];
 }
@@ -69,18 +69,18 @@ echo <<<HTML
 <style type="text/css">
 {$tpl->copy_template}
 </style>
-<link media="screen" href="{$config['http_home_url']}engine/editor/css/default.css" type="text/css" rel="stylesheet" />
-<script type="text/javascript" src="{$config['http_home_url']}engine/editor/scripts/common/jquery-1.7.min.js"></script>
+<link media="screen" href="{$config['http_home_url']}lib/editor/css/default.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="{$config['http_home_url']}lib/editor/scripts/common/jquery-1.7.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
-<script type="text/javascript" src="{$config['http_home_url']}engine/editor/scripts/webfont.js"></script>
+<script type="text/javascript" src="{$config['http_home_url']}lib/editor/scripts/webfont.js"></script>
 </head> 
 <body>
-<script type="text/javascript" src="{$config['http_home_url']}engine/classes/highslide/highslide.js"></script>
-<script type="text/javascript" src="{$config['http_home_url']}engine/classes/highlight/highlight.code.js"></script>
+<script type="text/javascript" src="{$config['http_home_url']}lib/classes/highslide/highslide.js"></script>
+<script type="text/javascript" src="{$config['http_home_url']}lib/classes/highlight/highlight.code.js"></script>
 <script type="text/javascript">
 	hljs.initHighlightingOnLoad();
 
-    hs.graphicsDir = '{$config['http_home_url']}engine/classes/highslide/graphics/';
+    hs.graphicsDir = '{$config['http_home_url']}lib/classes/highslide/graphics/';
     hs.outlineType = 'rounded-white';
     hs.numberOfImagesToPreload = 0;
     hs.showCredits = false;

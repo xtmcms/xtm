@@ -478,11 +478,11 @@ function show_attach($story, $id, $static = false)
             $replace_1[] = "<span class=\"attachment\">{$lang['att_denied']}</span>";
             $replace_2[] = "<span class=\"attachment\">{$lang['att_denied']}</span>";
         } elseif ($config['files_count'] == 'yes') {
-            $replace_1[] = "<span class=\"attachment\"><a href=\"{$config['http_home_url']}engine/download.php?id={$row['id']}{$area}\" >{$row['name']}</a> [{$size}] ({$lang['att_dcount']} {$row['dcount']})</span>";
-            $replace_2[] = "<span class=\"attachment\"><a href=\"{$config['http_home_url']}engine/download.php?id={$row['id']}{$area}\" >\\1</a> [{$size}] ({$lang['att_dcount']} {$row['dcount']})</span>";
+            $replace_1[] = "<span class=\"attachment\"><a href=\"{$config['http_home_url']}lib/download.php?id={$row['id']}{$area}\" >{$row['name']}</a> [{$size}] ({$lang['att_dcount']} {$row['dcount']})</span>";
+            $replace_2[] = "<span class=\"attachment\"><a href=\"{$config['http_home_url']}lib/download.php?id={$row['id']}{$area}\" >\\1</a> [{$size}] ({$lang['att_dcount']} {$row['dcount']})</span>";
         } else {
-            $replace_1[] = "<span class=\"attachment\"><a href=\"{$config['http_home_url']}engine/download.php?id={$row['id']}{$area}\" >{$row['name']}</a> [{$size}]</span>";
-            $replace_2[] = "<span class=\"attachment\"><a href=\"{$config['http_home_url']}engine/download.php?id={$row['id']}{$area}\" >\\1</a> [{$size}]</span>";
+            $replace_1[] = "<span class=\"attachment\"><a href=\"{$config['http_home_url']}lib/download.php?id={$row['id']}{$area}\" >{$row['name']}</a> [{$size}]</span>";
+            $replace_2[] = "<span class=\"attachment\"><a href=\"{$config['http_home_url']}lib/download.php?id={$row['id']}{$area}\" >\\1</a> [{$size}]</span>";
         }
     }
     $db->free();
@@ -811,11 +811,11 @@ function build_js($js, $config)
 {
     $js_array = array();
     if ($config['js_min'] AND version_compare(PHP_VERSION, '5.1.0', '>')) {
-        $js_array[] = "<script type=\"text/javascript\" src=\"{$config['http_home_url']}engine/classes/min/index.php?charset={$config['charset']}&amp;g=general&amp;8\"></script>";
-        if (count($js)) $js_array[] = "<script type=\"text/javascript\" src=\"{$config['http_home_url']}engine/classes/min/index.php?charset={$config['charset']}&amp;f=" . implode(",", $js) . "&amp;8\"></script>";
+        $js_array[] = "<script type=\"text/javascript\" src=\"{$config['http_home_url']}lib/classes/min/index.php?charset={$config['charset']}&amp;g=general&amp;8\"></script>";
+        if (count($js)) $js_array[] = "<script type=\"text/javascript\" src=\"{$config['http_home_url']}lib/classes/min/index.php?charset={$config['charset']}&amp;f=" . implode(",", $js) . "&amp;8\"></script>";
         return implode("\n", $js_array);
     } else {
-        $default_array = array('engine/classes/js/jquery.js', 'engine/classes/js/jqueryui.js', 'engine/classes/js/xtm_js.js',);
+        $default_array = array('lib/classes/js/jquery.js', 'lib/classes/js/jqueryui.js', 'lib/classes/js/xtm_js.js',);
         $js = array_merge($default_array, $js);
         foreach ($js as $value) {
             $js_array[] = "<script type=\"text/javascript\" src=\"{$config['http_home_url']}{$value}\"></script>";

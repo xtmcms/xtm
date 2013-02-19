@@ -45,10 +45,10 @@ if (isset($config['general.remote_rpc_url'])) {
 }
 $json = new Moxiecode_JSON();
 $input = $json->decode($raw);
-if (isset($config['general.engine'])) {
-    $spellchecker = new $config['general.engine']($config);
+if (isset($config['general.lib'])) {
+    $spellchecker = new $config['general.lib']($config);
     $result = call_user_func_array(array($spellchecker, $input['method']), $input['params']);
-} else die('{"result":null,"id":null,"error":{"errstr":"You must choose an spellchecker engine in the config.php file.","errfile":"","errline":null,"errcontext":"","level":"FATAL"}}');
+} else die('{"result":null,"id":null,"error":{"errstr":"You must choose an spellchecker lib in the config.php file.","errfile":"","errline":null,"errcontext":"","level":"FATAL"}}');
 $output = array("id" => $input->id, "result" => $result, "error" => null);
 echo $json->encode($output);
 ?>

@@ -14,13 +14,13 @@ function showTab(a, f) {
             var b = document.getElementById("tabTab" + c + activeTabIndex[a]);
             b.className = "tabInactive";
             var d = b.getElementsByTagName("IMG")[0];
-            d.src = "engine/skins/images/tr_inactive.gif";
+            d.src = "lib/skins/images/tr_inactive.gif";
             document.getElementById("tabView" + c + activeTabIndex[a]).style.display = "none"
         }
         b = document.getElementById("tabTab" + c + f);
         b.className = "tabActive";
         d = b.getElementsByTagName("IMG")[0];
-        d.src = "engine/skins/images/tr_active.gif";
+        d.src = "lib/skins/images/tr_active.gif";
         document.getElementById("tabView" + c + f).style.display = "block";
         activeTabIndex[a] = f;
         c = b.parentNode.getElementsByTagName("DIV")[0];
@@ -94,7 +94,7 @@ function initTabs(a, f, c, b, d) {
         e.appendChild(h);
         var g = document.createElement("IMG");
         g.valign = "bottom";
-        g.src = "engine/skins/images/tr_inactive.gif";
+        g.src = "lib/skins/images/tr_inactive.gif";
         if (navigatorVersion && navigatorVersion < 6 || MSIE && !strictDocType) {
             g.style.styleFloat = "none";
             g.style.position = "relative";

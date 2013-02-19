@@ -5,10 +5,10 @@
 @ini_set('error_reporting', E_ALL ^ E_WARNING ^ E_NOTICE);
 define('XTMCMS', true);
 define('ROOT_DIR', substr(dirname(__FILE__), 0, -12));
-define('ENGINE_DIR', ROOT_DIR . '/engine');
+define('ENGINE_DIR', ROOT_DIR . '/lib');
 include ENGINE_DIR . '/data/config.php';
 if ($config['http_home_url'] == "") {
-    $config['http_home_url'] = explode("engine/ajax/editnews.php", $_SERVER['PHP_SELF']);
+    $config['http_home_url'] = explode("lib/ajax/editnews.php", $_SERVER['PHP_SELF']);
     $config['http_home_url'] = reset($config['http_home_url']);
     $config['http_home_url'] = "http://" . $_SERVER['HTTP_HOST'] . $config['http_home_url'];
 }
@@ -137,7 +137,7 @@ var text_upload = "$lang[bb_t_up]";
 setTimeout(function() {
 
 	$('textarea.wysiwygeditor').tinymce({
-		script_url : '{$config['http_home_url']}engine/editor/jscripts/tiny_mce/tiny_mce_gzip.php',
+		script_url : '{$config['http_home_url']}lib/editor/jscripts/tiny_mce/tiny_mce_gzip.php',
 		theme : "advanced",
 		skin : "cirkuit",
 		language : "{$lang['wysiwyg_language']}",
@@ -160,13 +160,13 @@ setTimeout(function() {
 
 
 		// Example content CSS (should be your site CSS)
-		content_css : "{$config['http_home_url']}engine/editor/css/content.css",
+		content_css : "{$config['http_home_url']}lib/editor/css/content.css",
 
 		setup : function(ed) {
 		        // Add a custom button
 			ed.addButton('xtm_quote', {
 			title : '{$lang['bb_t_quote']}',
-			image : '{$config['http_home_url']}engine/editor/jscripts/tiny_mce/themes/advanced/img/xtm_quote.gif',
+			image : '{$config['http_home_url']}lib/editor/jscripts/tiny_mce/themes/advanced/img/xtm_quote.gif',
 			onclick : function() {
 				// Add you own code to execute something on click
 				ed.execCommand('mceReplaceContent',false,'[quote]{\$selection}[/quote]');
@@ -175,7 +175,7 @@ setTimeout(function() {
 
 			ed.addButton('xtm_hide', {
 			title : '{$lang['bb_t_hide']}',
-			image : '{$config['http_home_url']}engine/editor/jscripts/tiny_mce/themes/advanced/img/xtm_hide.gif',
+			image : '{$config['http_home_url']}lib/editor/jscripts/tiny_mce/themes/advanced/img/xtm_hide.gif',
 			onclick : function() {
 				// Add you own code to execute something on click
 				ed.execCommand('mceReplaceContent',false,'[hide]{\$selection}[/hide]');
@@ -184,7 +184,7 @@ setTimeout(function() {
 
 			ed.addButton('xtm_tube', {
 			title : '{$lang['bb_t_yvideo']} (BB Codes)',
-			image : '{$config['http_home_url']}engine/editor/jscripts/tiny_mce/themes/advanced/img/xtm_tube.gif',
+			image : '{$config['http_home_url']}lib/editor/jscripts/tiny_mce/themes/advanced/img/xtm_tube.gif',
 			onclick : function() {
 				ed.execCommand('mceInsertContent',false,"[media=http://]");
 			}
@@ -192,7 +192,7 @@ setTimeout(function() {
 
 			ed.addButton('xtm_code', {
 			title : '{$lang['bb_t_code']}',
-			image : '{$config['http_home_url']}engine/editor/jscripts/tiny_mce/themes/advanced/img/xtm_code.gif',
+			image : '{$config['http_home_url']}lib/editor/jscripts/tiny_mce/themes/advanced/img/xtm_code.gif',
 			onclick : function() {
 				// Add you own code to execute something on click
 				ed.execCommand('mceReplaceContent',false,'[code]{\$selection}[/code]');
@@ -201,7 +201,7 @@ setTimeout(function() {
 
 			ed.addButton('xtm_spoiler', {
 			title : '',
-			image : '{$config['http_home_url']}engine/editor/jscripts/tiny_mce/themes/advanced/img/xtm_spoiler.gif',
+			image : '{$config['http_home_url']}lib/editor/jscripts/tiny_mce/themes/advanced/img/xtm_spoiler.gif',
 			onclick : function() {
 				// Add you own code to execute something on click
 				ed.execCommand('mceReplaceContent',false,'[spoiler]{\$selection}[/spoiler]');
@@ -210,7 +210,7 @@ setTimeout(function() {
 
 			ed.addButton('xtm_break', {
 			title : '{$lang['bb_t_br']}',
-			image : '{$config['http_home_url']}engine/editor/jscripts/tiny_mce/themes/advanced/img/xtm_break.gif',
+			image : '{$config['http_home_url']}lib/editor/jscripts/tiny_mce/themes/advanced/img/xtm_break.gif',
 			onclick : function() {
 				// Add you own code to execute something on click
 				ed.execCommand('mceInsertContent',false,'{PAGEBREAK}');
@@ -219,7 +219,7 @@ setTimeout(function() {
 
 			ed.addButton('xtm_page', {
 			title : '{$lang['bb_t_p']}',
-			image : '{$config['http_home_url']}engine/editor/jscripts/tiny_mce/themes/advanced/img/xtm_page.gif',
+			image : '{$config['http_home_url']}lib/editor/jscripts/tiny_mce/themes/advanced/img/xtm_page.gif',
 			onclick : function() {
 				ed.execCommand('mceReplaceContent',false,"[page=1]{\$selection}[/page]");
 			}
@@ -227,7 +227,7 @@ setTimeout(function() {
 
 			ed.addButton('xtm_leech', {
 			title : '{$lang['bb_t_leech']}',
-			image : '{$config['http_home_url']}engine/editor/jscripts/tiny_mce/themes/advanced/img/xtm_leech.gif',
+			image : '{$config['http_home_url']}lib/editor/jscripts/tiny_mce/themes/advanced/img/xtm_leech.gif',
 			onclick : function() {
 				ed.execCommand('mceReplaceContent',false,"[leech=http://]{\$selection}[/leech]");
 			}
@@ -235,7 +235,7 @@ setTimeout(function() {
 
 			ed.addButton('xtm_upload', {
 			title : '{$lang['bb_t_upload']}',
-			image : '{$config['http_home_url']}engine/editor/jscripts/tiny_mce/themes/advanced/img/xtm_upload.gif',
+			image : '{$config['http_home_url']}lib/editor/jscripts/tiny_mce/themes/advanced/img/xtm_upload.gif',
 			onclick : function() {
 
 				{$image_upload}
@@ -244,7 +244,7 @@ setTimeout(function() {
 
 			ed.addButton('xtm_mp', {
 			title : '{$lang['bb_t_video']} (BB Codes)',
-			image : '{$config['http_home_url']}engine/editor/jscripts/tiny_mce/themes/advanced/img/xtm_mp.gif',
+			image : '{$config['http_home_url']}lib/editor/jscripts/tiny_mce/themes/advanced/img/xtm_mp.gif',
 			onclick : function() {
 				ed.execCommand('mceInsertContent',false,"[video=http://]");
 			}
@@ -252,7 +252,7 @@ setTimeout(function() {
 
 			ed.addButton('xtm_mp3', {
 			title : '',
-			image : '{$config['http_home_url']}engine/editor/jscripts/tiny_mce/themes/advanced/img/xtm_mp3.gif',
+			image : '{$config['http_home_url']}lib/editor/jscripts/tiny_mce/themes/advanced/img/xtm_mp3.gif',
 			onclick : function() {
 				ed.execCommand('mceInsertContent',false,"[audio=http://]");
 			}
@@ -280,7 +280,7 @@ function show_newseditor( root ) {
 	oUtil.initializeEditor("wysiwygeditor",  {
 		width: "99%", 
 		height: "370", 
-		css: root + "engine/editor/scripts/style/default.css",
+		css: root + "lib/editor/scripts/style/default.css",
 		useBR: use_br,
 		useDIV: use_div,
 		groups:[
@@ -292,18 +292,18 @@ function show_newseditor( root ) {
 	    ],
 		arrCustomButtons:[
 			["xtmUpload", "media_upload('short_story', '{$p_name}', '{$row['id']}', '1')", "{$lang['bb_t_up']}", "xtm_upload.gif"],
-			["xtmSmiles", "modalDialog('"+ root +"engine/editor/emotions.php',250,160)", "{$lang['bb_t_emo']}", "btnEmoticons.gif"],
-			["xtmPasteText", "modalDialog('"+ root +"engine/editor/scripts/common/webpastetext.htm',450,380)", "{$lang['paste_text']}", "btnPaste.gif"],
+			["xtmSmiles", "modalDialog('"+ root +"lib/editor/emotions.php',250,160)", "{$lang['bb_t_emo']}", "btnEmoticons.gif"],
+			["xtmPasteText", "modalDialog('"+ root +"lib/editor/scripts/common/webpastetext.htm',450,380)", "{$lang['paste_text']}", "btnPaste.gif"],
 			["xtmTypograf", "ws_typograf('"+ root +"')", "{$lang['bb_t_t']}", "xtm_tt.gif"],
 			["xtmQuote", "xtmcustomTag('[quote]', '[/quote]')", "{$lang['bb_t_quote']}", "xtm_quote.gif"],
 			["xtmCode", "xtmcustomTag('[code]', '[/code]')", "{$lang['bb_t_code']}", "xtm_code.gif"],
 			["xtmHide", "xtmcustomTag('[hide]', '[/hide]')", "{$lang['bb_t_hide']}", "xtm_hide.gif"],
 			["xtmSpoiler", "xtmcustomTag('[spoiler]', '[/spoiler]')", "{$lang['bb_t_spoiler']}", "xtm_spoiler.gif"],
 			["xtmLeech", "xtmcustomTag('[leech=http://]', '[/leech]')", "{$lang['bb_t_leech']}", "xtm_leech.gif"],
-			["HTML5Video", "modalDialog('"+ root +"engine/editor/scripts/common/webvideo.htm',690,330)", "HTML5 Video", "btnMedia.gif"],
-			["xtmVideo", "modalDialog('"+ root +"engine/editor/scripts/common/webbbvideo.htm',400,250)", "{$lang['bb_t_video']} (BB Codes)", "xtm_video.gif"],
-			["xtmAudio", "modalDialog('"+ root +"engine/editor/scripts/common/webbbaudio.htm',400,200)", "{$lang['bb_t_audio']} (BB Codes)", "xtm_mp3.gif"],
-			["xtmMedia", "modalDialog('"+ root +"engine/editor/scripts/common/webbbmedia.htm',400,250)", "{$lang['bb_t_yvideo']} (BB Codes)", "xtm_media.gif"]
+			["HTML5Video", "modalDialog('"+ root +"lib/editor/scripts/common/webvideo.htm',690,330)", "HTML5 Video", "btnMedia.gif"],
+			["xtmVideo", "modalDialog('"+ root +"lib/editor/scripts/common/webbbvideo.htm',400,250)", "{$lang['bb_t_video']} (BB Codes)", "xtm_video.gif"],
+			["xtmAudio", "modalDialog('"+ root +"lib/editor/scripts/common/webbbaudio.htm',400,200)", "{$lang['bb_t_audio']} (BB Codes)", "xtm_mp3.gif"],
+			["xtmMedia", "modalDialog('"+ root +"lib/editor/scripts/common/webbbmedia.htm',400,250)", "{$lang['bb_t_yvideo']} (BB Codes)", "xtm_media.gif"]
 		]
 		}
 	);
@@ -355,7 +355,7 @@ function ws_typograf(root) {
 
 	var txt = obj.getXHTMLBody();
 
-	$.post(root + "engine/ajax/typograf.php", {txt: txt}, function(data){
+	$.post(root + "lib/ajax/typograf.php", {txt: txt}, function(data){
 	
 		HideLoading('');
 	

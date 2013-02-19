@@ -91,11 +91,11 @@ if ($_REQUEST['action'] == "addnews") {
         }
         $i++;
     }
-    $js_array[] = "engine/skins/calendar.js";
+    $js_array[] = "lib/skins/calendar.js";
     echoheader("", "");
     echo <<<HTML
 <!-- calendar stylesheet -->
-<link rel="stylesheet" type="text/css" media="all" href="engine/skins/calendar-blue.css" title="win2k-cold-1" />
+<link rel="stylesheet" type="text/css" media="all" href="lib/skins/calendar-blue.css" title="win2k-cold-1" />
 <script language="javascript" type="text/javascript">
 
 	function doFull( link, news_id, rss_id )
@@ -103,7 +103,7 @@ if ($_REQUEST['action'] == "addnews") {
 
 		ShowLoading('');
 
-		$.post('engine/ajax/rss.php', { link: link, news_id: news_id, rss_id: rss_id, rss_charset: "{$xml->rss_charset}" }, function(data){
+		$.post('lib/ajax/rss.php', { link: link, news_id: news_id, rss_id: rss_id, rss_charset: "{$xml->rss_charset}" }, function(data){
 	
 			HideLoading('');
 	
@@ -138,12 +138,12 @@ if ($_REQUEST['action'] == "addnews") {
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -157,12 +157,12 @@ HTML;
     if (count($xml->content)) {
         foreach ($xml->content as $content) {
             echo '<span id="ContentTable' . $i . '"><table width="100%"><tr><td height="20"  style="padding: 5px;" colspan="2">
-    <b><a onClick="RemoveTable(' . $i . '); return false;" href="#" ><img src="engine/skins/images/delete.png"  style="vertical-align: middle;border: none;" /></a> <a class="main" href="javascript:ShowOrHide(\'cp' . $i . '\',\'cc' . $i . '\')" >' . $content['title'] . '</a></td>
+    <b><a onClick="RemoveTable(' . $i . '); return false;" href="#" ><img src="lib/skins/images/delete.png"  style="vertical-align: middle;border: none;" /></a> <a class="main" href="javascript:ShowOrHide(\'cp' . $i . '\',\'cc' . $i . '\')" >' . $content['title'] . '</a></td>
     </tr>
     <tr id=\'cp' . $i . '\' style=\'display:none\'>
     <td width=200 valign="top" style="padding: 5px"><input class="edit bk" type="text" size="55" id="title_' . $i . '" name="content[' . $i . '][title]" value="' . $content['title'] . '"><br />
 	<br /><input type="text" name="content[' . $i . '][date]" id="f_date_c' . $i . '" size="20"  class="edit bk" value="' . $content['date'] . '">
-<img src="engine/skins/images/img.gif"  align="absmiddle" id="f_trigger_c' . $i . '" style="cursor: pointer; border: 0" title="' . $lang['edit_ecal'] . '"/>
+<img src="lib/skins/images/img.gif"  align="absmiddle" id="f_trigger_c' . $i . '" style="cursor: pointer; border: 0" title="' . $lang['edit_ecal'] . '"/>
 <script type="text/javascript">
     Calendar.setup({
         inputField     :    "f_date_c' . $i . '",     // id of the input field
@@ -183,7 +183,7 @@ HTML;
 	<div id="cfull' . $i . '">' . htmlspecialchars($content['link'], ENT_QUOTES, $config['charset']) . '</div>
 	<input type="checkbox" name="content[' . $i . '][approve]" value="1" checked>' . $lang['addnews_mod'] . '<br />
 	<br /><input onClick="doFull(\'' . urlencode(rtrim($content['link'])) . '\', \'' . $i . '\', \'' . $rss['id'] . '\')" type="button" class="btn btn-success" value="&nbsp;&nbsp;' . $lang['rss_dofull'] . '&nbsp;&nbsp;">&nbsp;&nbsp;<input onClick="preview(' . $i . ')" type="button" class="btn btn-info" value="&nbsp;&nbsp;' . $lang['btn_preview'] . '&nbsp;&nbsp;">&nbsp;&nbsp;<input onClick="RemoveTable(' . $i . '); return false;" type="button" class="btn btn-danger" value="&nbsp;&nbsp;' . $lang['edit_dnews'] . '&nbsp;&nbsp;"><br /><br />
-  </tr><tr><td background="engine/skins/images/mline.gif" height="1" colspan="2"></td></tr></table></span>';
+  </tr><tr><td background="lib/skins/images/mline.gif" height="1" colspan="2"></td></tr></table></span>';
             $i++;
         }
         echo <<<HTML
@@ -202,12 +202,12 @@ HTML;
     }
     echo <<<HTML
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>
@@ -292,12 +292,12 @@ HTML;
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -310,71 +310,71 @@ HTML;
         <td width="240" style="padding:4px;">{$lang['rss_url']}</td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="25" name="rss_url" value="{$rss_url_value}"><a href="#" class="hintanchor" onMouseover="showhint('{$lang[rss_hurl]}', this, event, '220px')">[?]</a></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;">{$lang['rss_descr']}</td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="55" name="rss_descr" value="{$rss_descr_value}"><a href="#" class="hintanchor" onMouseover="showhint('{$lang[rss_hdescr]}', this, event, '220px')">[?]</a></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;">{$lang['rss_maxnews']}</td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="5" name="rss_maxnews" value="{$rss_maxnews_value}"><a href="#" class="hintanchor" onMouseover="showhint('{$lang[rss_hmaxnews]}', this, event, '220px')">[?]</a></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;">{$lang['xfield_xcat']}</td>
         <td style="padding-top:2px;padding-bottom:2px;"><select name="category">
 {$categories_list}
 </select></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;">{$lang['rss_date']}</td>
         <td style="padding-top:2px;padding-bottom:2px;">{$rss_date}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;">{$lang['rss_main']}</td>
         <td style="padding-top:2px;padding-bottom:2px;">{$allow_main}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;">{$lang['rss_rating']}</td>
         <td style="padding-top:2px;padding-bottom:2px;">{$allow_rating}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;">{$lang['rss_comm']}</td>
         <td style="padding-top:2px;padding-bottom:2px;">{$allow_comm}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;">{$lang['rss_text_type']}</td>
         <td style="padding-top:2px;padding-bottom:2px;">{$text_type}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;">{$lang['rss_search']}</td>
         <td style="padding-top:2px;padding-bottom:2px;"><textarea cols="50" rows="5" class="edit" name="rss_search">{$rss_search_value}</textarea><a href="#" class="hintanchor" onMouseover="showhint('{$lang[rss_hsearch]}', this, event, '300px')">[?]</a></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;">{$lang['rss_cookie']}</td>
         <td style="padding-top:2px;padding-bottom:2px;"><textarea cols="50" rows="5" class="edit" name="rss_cookie">{$rss_cookie_value}</textarea><a href="#" class="hintanchor" onMouseover="showhint('{$lang[rss_hcookie]}', this, event, '300px')">[?]</a></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
    <tr>
         <td style="padding:4px;"><input class="btn btn-success" type="submit" value=" $submit_value "></td>
         <td>&nbsp;</td>
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div>
@@ -397,9 +397,9 @@ HTML;
     <td height=22 class=\"list\">&nbsp;&nbsp;<b>{$row['id']}</b></td>
     <td class=\"list\">{$row['url']}</td>
     <td class=\"list\">{$row['description']}</td>
-    <td class=\"list\" align=\"center\"><a onClick=\"return dropdownmenu(this, event, MenuBuild('" . $row['id'] . "'), '150px')\" href=\"#\"><img src=\"engine/skins/images/browser_action.gif\" border=\"0\"></a></td>
+    <td class=\"list\" align=\"center\"><a onClick=\"return dropdownmenu(this, event, MenuBuild('" . $row['id'] . "'), '150px')\" href=\"#\"><img src=\"lib/skins/images/browser_action.gif\" border=\"0\"></a></td>
      </tr>
-	<tr><td background=\"engine/skins/images/mline.gif\" height=1 colspan=4></td></tr>";
+	<tr><td background=\"lib/skins/images/mline.gif\" height=1 colspan=4></td></tr>";
     }
     $db->free();
     echo <<<HTML
@@ -420,12 +420,12 @@ return menu;
 </script>
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -452,12 +452,12 @@ return menu;
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div>

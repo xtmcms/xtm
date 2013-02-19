@@ -131,7 +131,7 @@ if ($_SESSION['step_update'] == 4) {
 if ($_SESSION['step_update'] == 5) {
     $config['version_id'] = "9.6";
     $config['allow_comments_cache'] = "1";
-    $handler = fopen(ENGINE_DIR . '/data/config.php', "w") or die("Sorry, but cannot write the data in the file <b>engine/data/config.php</b>, it is not writable.<br />Please check the file permission (CHMOD)!");
+    $handler = fopen(ENGINE_DIR . '/data/config.php', "w") or die("Sorry, but cannot write the data in the file <b>lib/data/config.php</b>, it is not writable.<br />Please check the file permission (CHMOD)!");
     fwrite($handler, "<?PHP \n\n//System Configurations\n\n\$config = array (\n\n");
     foreach($config as $name => $value) {
         fwrite($handler, "'{$name}' => \"{$value}\",\n\n");

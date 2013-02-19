@@ -110,7 +110,7 @@ function doPoll( event ){
 
 	ShowLoading('');
 
-	$.post(xtm_root + "engine/ajax/poll.php", { news_id: news_id, action: event, answer: vote_check, vote_skin: xtm_skin }, function(data){
+	$.post(xtm_root + "lib/ajax/poll.php", { news_id: news_id, action: event, answer: vote_check, vote_skin: xtm_skin }, function(data){
 
 		HideLoading('');
 

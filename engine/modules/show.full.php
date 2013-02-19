@@ -79,7 +79,7 @@ if ($row['id'] AND $perm) {
                 if ($config['seo_control'] AND (isset($_GET['seourl']) OR strpos($_SERVER['REQUEST_URI'], "?") !== false)) {
                     if ($_GET['seourl'] != $row['alt_name'] OR $_GET['seocat'] != $c_url OR strpos($_SERVER['REQUEST_URI'], "?") !== false OR ($_GET['news_page'] == 1 AND $cstart < 2 AND $view_template != "print") OR ($view_template == "print" AND $news_page > 1)) {
                         if ($view_template == "print") {
-                            $re_url = explode("engine/print.php", strtolower($_SERVER['PHP_SELF']));
+                            $re_url = explode("lib/print.php", strtolower($_SERVER['PHP_SELF']));
                             $re_url = reset($re_url);
                         } else {
                             $re_url = explode("index.php", strtolower($_SERVER['PHP_SELF']));
@@ -100,7 +100,7 @@ if ($row['id'] AND $perm) {
                 if ($config['seo_control'] AND (isset($_GET['seourl']) OR strpos($_SERVER['REQUEST_URI'], "?") !== false)) {
                     if ($_GET['seourl'] != $row['alt_name'] OR $_GET['seocat'] OR $_GET['news_name'] OR strpos($_SERVER['REQUEST_URI'], "?") !== false OR ($_GET['news_page'] == 1 AND $cstart < 2 AND $view_template != "print") OR ($view_template == "print" AND $news_page > 1)) {
                         if ($view_template == "print") {
-                            $re_url = explode("engine/print.php", strtolower($_SERVER['PHP_SELF']));
+                            $re_url = explode("lib/print.php", strtolower($_SERVER['PHP_SELF']));
                             $re_url = reset($re_url);
                         } else {
                             $re_url = explode("index.php", strtolower($_SERVER['PHP_SELF']));
@@ -122,7 +122,7 @@ if ($row['id'] AND $perm) {
             if ($config['seo_control']) {
                 if ($_GET['newsid'] OR strpos($_SERVER['REQUEST_URI'], "?") !== false OR ($_GET['news_page'] == 1 AND $cstart < 2 AND $view_template != "print") OR ($view_template == "print" AND $news_page > 1)) {
                     if ($view_template == "print") {
-                        $re_url = explode("engine/print.php", strtolower($_SERVER['PHP_SELF']));
+                        $re_url = explode("lib/print.php", strtolower($_SERVER['PHP_SELF']));
                         $re_url = reset($re_url);
                     } else {
                         $re_url = explode("index.php", strtolower($_SERVER['PHP_SELF']));
@@ -140,7 +140,7 @@ if ($row['id'] AND $perm) {
         }
     } else {
         $full_link = $config['http_home_url'] . "index.php?newsid=" . $row['id'];
-        $print_link = $config['http_home_url'] . "engine/print.php?newsid=" . $row['id'];
+        $print_link = $config['http_home_url'] . "lib/print.php?newsid=" . $row['id'];
         $short_link = "";
         $link_page = "";
         $news_name = "";
@@ -746,7 +746,7 @@ if ($allow_comments AND $news_found) {
                 $tpl->set('[sec_code]', "");
                 $tpl->set('[/sec_code]', "");
                 $path = parse_url($config['http_home_url']);
-                $tpl->set('{sec_code}', "<span id=\"xtm-captcha\"><img src=\"" . $path['path'] . "engine/modules/antibot.php\" alt=\"${lang['sec_image']}\" /><br /><a onclick=\"reload(); return false;\" href=\"#\">{$lang['reload_code']}</a></span>");
+                $tpl->set('{sec_code}', "<span id=\"xtm-captcha\"><img src=\"" . $path['path'] . "lib/modules/antibot.php\" alt=\"${lang['sec_image']}\" /><br /><a onclick=\"reload(); return false;\" href=\"#\">{$lang['reload_code']}</a></span>");
                 $tpl->set_block("'\\[recaptcha\\](.*?)\\[/recaptcha\\]'si", "");
                 $tpl->set('{recaptcha}', "");
             }
@@ -789,7 +789,7 @@ function reload () {
 
 	var rndval = new Date().getTime(); 
 
-	document.getElementById('xtm-captcha').innerHTML = '<img src="{$path['path']}engine/modules/antibot.php?rndval=' + rndval + '" width="120" height="50" alt="" /><br /><a onclick="reload(); return false;" href="#">{$lang['reload_code']}</a>';
+	document.getElementById('xtm-captcha').innerHTML = '<img src="{$path['path']}lib/modules/antibot.php?rndval=' + rndval + '" width="120" height="50" alt="" /><br /><a onclick="reload(); return false;" href="#">{$lang['reload_code']}</a>';
 
 };
 //-->

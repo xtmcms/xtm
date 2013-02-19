@@ -38,7 +38,7 @@ $tableSchema[] = "UPDATE " . PREFIX . "_usergroups SET `files_max_speed` = '{$fi
 foreach($tableSchema as $table) {
     $db -> query ($table);
 } 
-$handler = fopen(ENGINE_DIR . '/data/config.php', "w") or die("Sorry, but cannot write the data in the file <b>engine/data/config.php</b>, it is not writable.<br />Please check the file permission (CHMOD)!");
+$handler = fopen(ENGINE_DIR . '/data/config.php', "w") or die("Sorry, but cannot write the data in the file <b>lib/data/config.php</b>, it is not writable.<br />Please check the file permission (CHMOD)!");
 fwrite($handler, "<?PHP \n\n//System Configurations\n\n\$config = array (\n\n");
 foreach($config as $name => $value) {
     fwrite($handler, "'{$name}' => \"{$value}\",\n\n");
@@ -47,7 +47,7 @@ fwrite($handler, ");\n\n?>");
 fclose($handler);
 require_once(ENGINE_DIR . '/data/videoconfig.php');
 $video_config['audio_width'] = "300";
-$con_file = fopen(ENGINE_DIR . '/data/videoconfig.php', "w+") or die("Sorry, but cannot write the data in the file <b>.engine/data/videoconfig.php</b>.<br />Please check the file permission (CHMOD)");
+$con_file = fopen(ENGINE_DIR . '/data/videoconfig.php', "w+") or die("Sorry, but cannot write the data in the file <b>.lib/data/videoconfig.php</b>.<br />Please check the file permission (CHMOD)");
 fwrite($con_file, "<?PHP \n\n//Videoplayers Configurations\n\n\$video_config = array (\n\n");
 foreach ($video_config as $name => $value) {
     fwrite($con_file, "'{$name}' => \"{$value}\",\n\n");

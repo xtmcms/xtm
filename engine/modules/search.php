@@ -634,7 +634,7 @@ HTML;
                                 $tpl->copy_template = preg_replace("#\{date=(.+?)\}#ie", "langdate('\\1', '{$row['date']}')", $tpl->copy_template);
                                 $tpl->set('{views}', $row['views']);
                                 if ($config['allow_alt_url'] == "yes") $print_link = $config['http_home_url'] . "print:" . $row['static_name'] . ".html";
-                                else $print_link = $config['http_home_url'] . "engine/print.php?do=static&amp;page=" . $row['static_name'];
+                                else $print_link = $config['http_home_url'] . "lib/print.php?do=static&amp;page=" . $row['static_name'];
                                 $tpl->set('[print-link]', "<a href=\"" . $print_link . "\">");
                                 $tpl->set('[/print-link]', "</a>");
                                 $tpl->compile('content');

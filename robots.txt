@@ -1,6 +1,6 @@
 User-agent: *
-Disallow: /engine/go.php
-Disallow: /engine/download.php
+Disallow: /lib/go.php
+Disallow: /lib/download.php
 Disallow: /user/
 Disallow: /newposts/
 Disallow: /statistics.html

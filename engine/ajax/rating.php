@@ -5,14 +5,14 @@
 @ini_set('error_reporting', E_ALL ^ E_WARNING ^ E_NOTICE);
 define('XTMCMS', true);
 define('ROOT_DIR', substr(dirname(__FILE__), 0, -12));
-define('ENGINE_DIR', ROOT_DIR . '/engine');
+define('ENGINE_DIR', ROOT_DIR . '/lib');
 $go_rate = intval($_REQUEST['go_rate']);
 $news_id = intval($_REQUEST['news_id']);
 if ($go_rate > 5 or $go_rate < 1) $go_rate = 0;
 if (!$go_rate or !$news_id) die("Hacking attempt!");
 include ENGINE_DIR . '/data/config.php';
 if ($config['http_home_url'] == "") {
-    $config['http_home_url'] = explode("engine/ajax/rating.php", $_SERVER['PHP_SELF']);
+    $config['http_home_url'] = explode("lib/ajax/rating.php", $_SERVER['PHP_SELF']);
     $config['http_home_url'] = reset($config['http_home_url']);
     $config['http_home_url'] = "http://" . $_SERVER['HTTP_HOST'] . $config['http_home_url'];
 }

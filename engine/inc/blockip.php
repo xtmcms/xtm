@@ -47,20 +47,20 @@ if ($action == "add") {
     $db->query("INSERT INTO " . USERPREFIX . "_admin_logs (name, date, ip, action, extras) values ('" . $db->safesql($member_id['name']) . "', '{$_TIME}', '{$_IP}', '10', '')");
     @unlink(ENGINE_DIR . '/cache/system/banned.php');
 }
-$js_array[] = "engine/skins/calendar.js";
+$js_array[] = "lib/skins/calendar.js";
 echoheader("", "");
 echo <<<HTML
-<link rel="stylesheet" type="text/css" media="all" href="engine/skins/calendar-blue.css" title="win2k-cold-1" />
+<link rel="stylesheet" type="text/css" media="all" href="lib/skins/calendar-blue.css" title="win2k-cold-1" />
 <form action="" method="post">
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -82,7 +82,7 @@ echo <<<HTML
     <tr>
         <td style="padding:2px;" width="160" nowrap>{$lang['ban_date']}</td> 
 		<td style="padding:2px;"><input type="text" name="date" id="f_date_c" size="20" class="edit bk">
-<img src="engine/skins/images/img.gif"  align="absmiddle" id="f_trigger_c" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/>
+<img src="lib/skins/images/img.gif"  align="absmiddle" id="f_trigger_c" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/>
 <script type="text/javascript">
     Calendar.setup({
         inputField     :    "f_date_c",     // id of the input field
@@ -105,12 +105,12 @@ echo <<<HTML
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div>
@@ -122,12 +122,12 @@ echo <<<HTML
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -164,7 +164,7 @@ while ($row = $db->get_row()) {
         <td>
         [<a href=\"$PHP_SELF?mod=blockip&action=delete&id={$row['id']}&user_hash={$xtm_login_hash}\">{$lang['ip_unblock']}</a>]</td>
         </tr>
-	</tr><tr><td background=\"engine/skins/images/mline.gif\" height=1 colspan=4></td></tr>
+	</tr><tr><td background=\"lib/skins/images/mline.gif\" height=1 colspan=4></td></tr>
         ";
 }
 if ($i == 0) {
@@ -176,12 +176,12 @@ if ($i == 0) {
 echo <<<HTML
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div>

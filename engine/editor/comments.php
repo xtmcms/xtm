@@ -22,7 +22,7 @@ if ($config['allow_comments_wysiwyg'] == 1) {
 
     wscomm.width = 540;
     wscomm.height = 250;
-    wscomm.css = "{$config['http_home_url']}engine/editor/scripts/style/default.css";
+    wscomm.css = "{$config['http_home_url']}lib/editor/scripts/style/default.css";
     wscomm.useBR = use_br;
     wscomm.useDIV = use_div;
     wscomm.groups = [
@@ -30,7 +30,7 @@ if ($config['allow_comments_wysiwyg'] == 1) {
 			["grpEdit2", "", ["JustifyLeft", "JustifyCenter", "JustifyRight", "JustifyFull", "Bullets", "Numbering"]],
 			["grpEdit3", "", [{$link_icon}"xtmSmiles", "xtmQuote", "xtmHide"]]
         ];
-    wscomm.arrCustomButtons.push(["xtmSmiles", "modalDialog('{$config['http_home_url']}engine/editor/emotions.php',250,160)", "{$lang['bb_t_emo']}", "btnEmoticons.gif"]);
+    wscomm.arrCustomButtons.push(["xtmSmiles", "modalDialog('{$config['http_home_url']}lib/editor/emotions.php',250,160)", "{$lang['bb_t_emo']}", "btnEmoticons.gif"]);
     wscomm.arrCustomButtons.push(["xtmQuote", "xtmcustomTag('[quote]', '[/quote]')", "{$lang['bb_t_quote']}", "xtm_quote.gif"]);
     wscomm.arrCustomButtons.push(["xtmHide", "xtmcustomTag('[hide]', '[/hide]')", "{$lang['bb_t_hide']}", "xtm_hide.gif"]);
     wscomm.arrCustomButtons.push(["xtmLeech", "xtmcustomTag('[leech=http://]', '[/leech]')", "{$lang['bb_t_leech']}", "xtm_leech.gif"]);
@@ -47,7 +47,7 @@ HTML;
 <script type="text/javascript">
 $(function(){
 	$('#comments').tinymce({
-		script_url : '{$config['http_home_url']}engine/editor/jscripts/tiny_mce/tiny_mce_gzip.php',
+		script_url : '{$config['http_home_url']}lib/editor/jscripts/tiny_mce/tiny_mce_gzip.php',
 		theme : "advanced",
 		skin : "cirkuit",
 		language : "{$lang['wysiwyg_language']}",
@@ -72,13 +72,13 @@ $(function(){
 
 
 		// Example content CSS (should be your site CSS)
-		content_css : "{$config['http_home_url']}engine/editor/css/content.css",
+		content_css : "{$config['http_home_url']}lib/editor/css/content.css",
 
 		setup : function(ed) {
 		        // Add a custom button
 			ed.addButton('xtm_quote', {
 			title : '{$lang['bb_t_quote']}',
-			image : '{$config['http_home_url']}engine/editor/jscripts/tiny_mce/themes/advanced/img/xtm_quote.gif',
+			image : '{$config['http_home_url']}lib/editor/jscripts/tiny_mce/themes/advanced/img/xtm_quote.gif',
 			onclick : function() {
 				// Add you own code to execute something on click
 				ed.execCommand('mceReplaceContent',false,'[quote]' + ed.selection.getContent() + '[/quote]');
@@ -87,7 +87,7 @@ $(function(){
 
 			ed.addButton('xtm_hide', {
 			title : '{$lang['bb_t_hide']}',
-			image : '{$config['http_home_url']}engine/editor/jscripts/tiny_mce/themes/advanced/img/xtm_hide.gif',
+			image : '{$config['http_home_url']}lib/editor/jscripts/tiny_mce/themes/advanced/img/xtm_hide.gif',
 			onclick : function() {
 				// Add you own code to execute something on click
 				ed.execCommand('mceReplaceContent',false,'[hide]' + ed.selection.getContent() + '[/hide]');
@@ -96,7 +96,7 @@ $(function(){
 
 			ed.addButton('xtm_leech', {
 			title : '{$lang['bb_t_leech']}',
-			image : '{$config['http_home_url']}engine/editor/jscripts/tiny_mce/themes/advanced/img/xtm_leech.gif',
+			image : '{$config['http_home_url']}lib/editor/jscripts/tiny_mce/themes/advanced/img/xtm_leech.gif',
 			onclick : function() {
 
 					ed.execCommand('mceReplaceContent',false,"[leech=http://]{\$selection}[/leech]");

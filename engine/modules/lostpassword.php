@@ -130,7 +130,7 @@ if ($is_logged) {
     } else {
         $tpl->set('[sec_code]', "");
         $tpl->set('[/sec_code]', "");
-        $tpl->set('{code}', "<span id=\"xtm-captcha\"><img src=\"" . $path['path'] . "engine/modules/antibot.php\" alt=\"{$lang['sec_image']}\" border=\"0\" /><br /><a onclick=\"reload(); return false;\" href=\"#\">{$lang['reload_code']}</a></span>");
+        $tpl->set('{code}', "<span id=\"xtm-captcha\"><img src=\"" . $path['path'] . "lib/modules/antibot.php\" alt=\"{$lang['sec_image']}\" border=\"0\" /><br /><a onclick=\"reload(); return false;\" href=\"#\">{$lang['reload_code']}</a></span>");
         $tpl->set_block("'\\[recaptcha\\](.*?)\\[/recaptcha\\]'si", "");
         $tpl->set('{recaptcha}', "");
     }
@@ -144,7 +144,7 @@ function reload () {
 
 	var rndval = new Date().getTime(); 
 
-	document.getElementById('xtm-captcha').innerHTML = '<img src="{$path['path']}engine/modules/antibot.php?rndval=' + rndval + '" border="0" width="120" height="50" alt="" /><br /><a onclick="reload(); return false;" href="#">{$lang['reload_code']}</a>';
+	document.getElementById('xtm-captcha').innerHTML = '<img src="{$path['path']}lib/modules/antibot.php?rndval=' + rndval + '" border="0" width="120" height="50" alt="" /><br /><a onclick="reload(); return false;" href="#">{$lang['reload_code']}</a>';
 
 };
 //-->

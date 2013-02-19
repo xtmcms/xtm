@@ -661,7 +661,7 @@ fieldset {
 	margin-bottom: 10px;
 }
 .unterline {
-	background: url(engine/skins/images/line_bg.gif);
+	background: url(lib/skins/images/line_bg.gif);
 	width: 100%;
 	height: 9px;
 	font-size: 3px;
@@ -669,7 +669,7 @@ fieldset {
 	margin-bottom: 4px;
 }
 .hr_line {
-	background: url(engine/skins/images/line.gif);
+	background: url(lib/skins/images/line.gif);
 	width: 100%;
 	height: 7px;
 	font-size: 3px;
@@ -715,11 +715,11 @@ function tpl_process($title)
 <TR><TD COLSPAN=2 style="padding:2px;"><DIV ID=logarea STYLE="width: 100%; height: 140px; border: 1px solid #7F9DB9; padding: 3px; overflow: auto;"></DIV></TD></TR>
 <TR><TD WIDTH=31% style="padding:2px; width:100px;">{$lang['dumper_29']}</TD><TD><TABLE WIDTH=100% style="border: 1px solid #7F9DB9;" CELLPADDING=0 CELLSPACING=0>
 <TR><TD BGCOLOR=#FFFFFF><TABLE WIDTH=1 BORDER=0 CELLPADDING=0 CELLSPACING=0 BGCOLOR=#5555CC ID=st_tab
-STYLE="background: #5c9ccc url(engine/skins/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png) 50% 50% repeat-x;";
+STYLE="background: #5c9ccc url(lib/skins/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png) 50% 50% repeat-x;";
 border-right: 1px solid #AAAAAA"><TR><TD HEIGHT=12></TD></TR></TABLE></TD></TR></TABLE></TD></TR>
 <TR><TD style="padding:2px; width:100px;">{$lang['dumper_30']}</TD><TD><TABLE WIDTH=100% style="border: 1px solid #7F9DB9;" CELLSPACING=0 CELLPADDING=0>
 <TR><TD BGCOLOR=#FFFFFF><TABLE WIDTH=1 BORDER=0 CELLPADDING=0 CELLSPACING=0 BGCOLOR=#00AA00 ID=so_tab
-STYLE="background: #5c9ccc url(engine/skins/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png) 50% 50% repeat-x;";
+STYLE="background: #5c9ccc url(lib/skins/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png) 50% 50% repeat-x;";
 border-right: 1px solid #AAAAAA"><TR><TD HEIGHT=12></TD></TR></TABLE></TD>
 </TR></TABLE></TD></TR></TABLE>
 <SCRIPT>

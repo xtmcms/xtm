@@ -78,7 +78,7 @@ function doVote( event ){
 
 	ShowLoading('');
 
-	$.get(xtm_root + "engine/ajax/vote.php", { vote_id: "{$rid}", vote_action: event, vote_check: vote_check, vote_skin: xtm_skin }, function(data){
+	$.get(xtm_root + "lib/ajax/vote.php", { vote_id: "{$rid}", vote_action: event, vote_check: vote_check, vote_skin: xtm_skin }, function(data){
 
 		HideLoading('');
 

@@ -7,10 +7,10 @@ if (!$user_group[$member_id['user_group']]['admin_addnews']) {
 }
 if ($action == "addnews") {
     $id = "";
-    $js_array[] = "engine/skins/calendar.js";
-    $js_array[] = "engine/skins/tabs.js";
-    $js_array[] = "engine/skins/autocomplete.js";
-    $js_array[] = "engine/skins/chosen/chosen.js";
+    $js_array[] = "lib/skins/calendar.js";
+    $js_array[] = "lib/skins/tabs.js";
+    $js_array[] = "lib/skins/autocomplete.js";
+    $js_array[] = "lib/skins/chosen/chosen.js";
     echoheader("addnews", $lang['addnews']);
     if (!$user_group[$member_id['user_group']]['allow_html']) $config['allow_admin_wysiwyg'] = 0;
     $xfieldsaction = "categoryfilter";
@@ -54,7 +54,7 @@ if ($action == "addnews") {
 
 		ShowLoading('');
 
-		$.post(\"engine/ajax/keywords.php\", { short_txt: short_txt, full_txt: full_txt, key: key }, function(data){
+		$.post(\"lib/ajax/keywords.php\", { short_txt: short_txt, full_txt: full_txt, key: key }, function(data){
 	
 			HideLoading('');
 	
@@ -72,7 +72,7 @@ if ($action == "addnews") {
 
 		ShowLoading('');
 
-		$.post('engine/ajax/find_relates.php', { title: title }, function(data){
+		$.post('lib/ajax/find_relates.php', { title: title }, function(data){
 	
 			HideLoading('');
 	
@@ -124,7 +124,7 @@ if ($action == "addnews") {
  
 		$( '#tags' ).autocomplete({
 			source: function( request, response ) {
-				$.getJSON( 'engine/ajax/find_tags.php', {
+				$.getJSON( 'lib/ajax/find_tags.php', {
 					term: extractLast( request.term )
 				}, response );
 			},
@@ -164,17 +164,17 @@ if ($action == "addnews") {
     if ($config['allow_multi_category']) $category_multiple = "class=\"categoryselect\" multiple";
     else $category_multiple = "class=\"categoryselect\"";
     echo <<<HTML
-<link rel="stylesheet" type="text/css" href="engine/skins/calendar-blue.css" title="win2k-cold-1" />
-<link rel="stylesheet" type="text/css" href="engine/skins/chosen/chosen.css"/>
+<link rel="stylesheet" type="text/css" href="lib/skins/calendar-blue.css" title="win2k-cold-1" />
+<link rel="stylesheet" type="text/css" href="lib/skins/chosen/chosen.css"/>
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 
 <table width="100%">
@@ -196,7 +196,7 @@ if ($action == "addnews") {
     <tr>
         <td height="29" style="padding-left:5px;">{$lang['addnews_date']}</td>
         <td><input type="text" name="newdate" id="f_date_c" size="20"  class="edit bk" >
-<img src="engine/skins/images/img.gif"  align="absmiddle" id="f_trigger_c" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/>&nbsp;<input type="checkbox" name="allow_date" value="yes" checked>&nbsp;{$lang['edit_jdate']}<a href="#" class="hintanchor" onMouseover="showhint('{$lang[hint_calendar]}', this, event, '320px')">[?]</a>
+<img src="lib/skins/images/img.gif"  align="absmiddle" id="f_trigger_c" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/>&nbsp;<input type="checkbox" name="allow_date" value="yes" checked>&nbsp;{$lang['edit_jdate']}<a href="#" class="hintanchor" onMouseover="showhint('{$lang[hint_calendar]}', this, event, '320px')">[?]</a>
 <script type="text/javascript">
     Calendar.setup({
         inputField     :    "f_date_c",     // id of the input field
@@ -330,7 +330,7 @@ HTML;
     <tr>
         <td height="29" style="padding-left:5px;">{$lang['date_expires']}</td>
         <td><input type="text" name="expires" id="e_date_c" size="20"  class="edit bk">
-<img src="engine/skins/images/img.gif"  align="absmiddle" id="e_trigger_c" style="cursor: pointer; border: 0" /> {$lang['cat_action']} <select name="expires_action"><option value="0">{$lang['edit_dnews']}</option><option value="1" >{$lang['mass_edit_notapp']}</option><option value="2" >{$lang['mass_edit_notmain']}</option><option value="3" >{$lang['mass_edit_notfix']}</option></select><a href="#" class="hintanchor" onMouseover="showhint('{$lang['hint_expires']}', this, event, '320px')">[?]</a>
+<img src="lib/skins/images/img.gif"  align="absmiddle" id="e_trigger_c" style="cursor: pointer; border: 0" /> {$lang['cat_action']} <select name="expires_action"><option value="0">{$lang['edit_dnews']}</option><option value="1" >{$lang['mass_edit_notapp']}</option><option value="2" >{$lang['mass_edit_notmain']}</option><option value="3" >{$lang['mass_edit_notfix']}</option></select><a href="#" class="hintanchor" onMouseover="showhint('{$lang['hint_expires']}', this, event, '320px')">[?]</a>
 <script type="text/javascript">
     Calendar.setup({
         inputField     :    "e_date_c",     // id of the input field
@@ -412,12 +412,12 @@ HTML;
 	<input type="hidden" name="user_hash" value="$xtm_login_hash" />
 </div>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>

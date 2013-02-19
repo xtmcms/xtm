@@ -12,7 +12,7 @@ while ($r = $db->get_array()) {
 }
 $db->free();
 $lang['clean_all'] = str_replace('{datenbank}', '<font color="red">' . formatsize($mysql_size) . '</font>', $lang['clean_all']);
-$js_array[] = "engine/skins/calendar.js";
+$js_array[] = "lib/skins/calendar.js";
 echoheader("", "");
 echo <<<HTML
 <script language="javascript" type="text/javascript">
@@ -32,7 +32,7 @@ function start_clean ( step, size ){
 		document.getElementById( 'skip_button' ).disabled = true;
 	}
 
-	$.get("engine/ajax/clean.php", { step: step, date: date, size: size, user_hash: "{$xtm_login_hash}" }, function(data){
+	$.get("lib/ajax/clean.php", { step: step, date: date, size: size, user_hash: "{$xtm_login_hash}" }, function(data){
 
 		RunAjaxJS('main_box', data);
 
@@ -42,16 +42,16 @@ function start_clean ( step, size ){
 }
 //-->
 </script>
-<link rel="stylesheet" type="text/css" media="all" href="engine/skins/calendar-blue.css" title="win2k-cold-1" />
+<link rel="stylesheet" type="text/css" media="all" href="lib/skins/calendar-blue.css" title="win2k-cold-1" />
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -69,12 +69,12 @@ function start_clean ( step, size ){
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div>

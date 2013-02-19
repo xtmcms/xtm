@@ -437,7 +437,7 @@ a.progressCancel {
     display: block;
     height: 14px;
     width: 14px;
-    background-image: url(../../engine/classes/uploads/swfupload/cancelbutton.gif);
+    background-image: url(../../lib/classes/uploads/swfupload/cancelbutton.gif);
     background-repeat: no-repeat;
     background-position: -14px 0px;
     float: right;

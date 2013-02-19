@@ -5,7 +5,7 @@ require_once(dirname(__FILE__) . "/../classes/utils/Logger.php");
 require_once(dirname(__FILE__) . "/../classes/utils/JSON.php");
 require_once(dirname(__FILE__) . "/../config.php");
 require_once(dirname(__FILE__) . "/../classes/SpellChecker.php");
-if (isset($config['general.engine'])) require_once(dirname(__FILE__) . "/../classes/" . $config["general.engine"] . ".php");
+if (isset($config['general.lib'])) require_once(dirname(__FILE__) . "/../classes/" . $config["general.lib"] . ".php");
 function getRequestParam($name, $default_value = false, $sanitize = false)
 {
     if (!isset($_REQUEST[$name])) return $default_value;

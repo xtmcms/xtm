@@ -7,8 +7,8 @@ echo <<<HTML
 	<td width="140" valign="top">
 	<br />{$lang['nl_message']}</td>
 	<td>
-<script type="text/javascript" src="engine/editor/scripts/language/{$lang['wysiwyg_language']}/editor_lang.js"></script>
-<script type="text/javascript" src="engine/editor/scripts/innovaeditor.js"></script>
+<script type="text/javascript" src="lib/editor/scripts/language/{$lang['wysiwyg_language']}/editor_lang.js"></script>
+<script type="text/javascript" src="lib/editor/scripts/innovaeditor.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function($){
 	create_editor('');
@@ -23,7 +23,7 @@ function create_editor( root ) {
 	oUtil.initializeEditor("wysiwygeditor",  {
 		width: "98%", 
 		height: "400", 
-		css: root + "engine/editor/scripts/style/default.css",
+		css: root + "lib/editor/scripts/style/default.css",
 		useBR: use_br,
 		useDIV: use_div,
 		groups:[
@@ -33,7 +33,7 @@ function create_editor( root ) {
 			["grpEdit4", "", ["Undo", "Redo", "SourceDialog"]]
 	    ],
 		arrCustomButtons:[
-			["xtmSmiles", "modalDialog('"+ root +"engine/editor/emotions.php',250,160)", "{$lang['bb_t_emo']}", "btnEmoticons.gif"],
+			["xtmSmiles", "modalDialog('"+ root +"lib/editor/emotions.php',250,160)", "{$lang['bb_t_emo']}", "btnEmoticons.gif"],
 			["xtmTypograf", "tag_typograf()", "{$lang['bb_t_t']}", "xtm_tt.gif"]
 		]
 		}
@@ -53,7 +53,7 @@ function tag_typograf() {
 
 	var txt = obj.getXHTMLBody();
 
-	$.post("engine/ajax/typograf.php", {txt: txt}, function(data){
+	$.post("lib/ajax/typograf.php", {txt: txt}, function(data){
 	
 		HideLoading('');
 	

@@ -5,10 +5,10 @@
 @ini_set('error_reporting', E_ALL ^ E_WARNING ^ E_NOTICE);
 define('XTMCMS', true);
 define('ROOT_DIR', substr(dirname(__FILE__), 0, -12));
-define('ENGINE_DIR', ROOT_DIR . '/engine');
+define('ENGINE_DIR', ROOT_DIR . '/lib');
 include ENGINE_DIR . '/data/config.php';
 if ($config['http_home_url'] == "") {
-    $config['http_home_url'] = explode("engine/ajax/profile.php", $_SERVER['PHP_SELF']);
+    $config['http_home_url'] = explode("lib/ajax/profile.php", $_SERVER['PHP_SELF']);
     $config['http_home_url'] = reset($config['http_home_url']);
     $config['http_home_url'] = "http://" . $_SERVER['HTTP_HOST'] . $config['http_home_url'];
 }
@@ -159,7 +159,7 @@ if (!$row['user_id']) {
             $tpl->set('[/rss]', "</a>");
         } else {
             $tpl->set('{news}', "<a href=\"" . $PHP_SELF . "?subaction=allnews&amp;user=" . urlencode($row['name']) . "\">" . $lang['all_user_news'] . "</a>");
-            $tpl->set('[rss]', "<a href=\"engine/rss.php?subaction=allnews&amp;user=" . urlencode($row['name']) . "\" title=\"" . $lang['rss_user'] . "\">");
+            $tpl->set('[rss]', "<a href=\"lib/rss.php?subaction=allnews&amp;user=" . urlencode($row['name']) . "\" title=\"" . $lang['rss_user'] . "\">");
             $tpl->set('[/rss]', "</a>");
         }
         $tpl->set('{news-num}', $row['news_num']);

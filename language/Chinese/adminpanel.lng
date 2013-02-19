@@ -3,7 +3,7 @@
 $lang = array (
 
 'charset'				=>	"utf-8",
-'admin_logo'			=>	"engine/skins/images/nav.jpg",
+'admin_logo'			=>	"lib/skins/images/nav.jpg",
 'wysiwyg_language'		=>  "zh_CN",
 
 // 9.8 by reishi
@@ -942,7 +942,7 @@ $lang = array (
 'opt_sys_extram'		=>	"- 安全 -",
 'btn_clearcache'		=>	"清除网站缓存",
 'rss_info'				=>	"资源",
-'stat_cache'			=>	"以下文件夹没有写权限： <b>engine/cache/</b> 和 <b>engine/cache/system/</b>。设置这些文件夹权限为 777 及其内文件权限为 666.",
+'stat_cache'			=>	"以下文件夹没有写权限： <b>lib/cache/</b> 和 <b>lib/cache/system/</b>。设置这些文件夹权限为 777 及其内文件权限为 666.",
 'nl_amail'				=>	"对选择了不接受邮件的用户 <br />不发送邮件。",
 'opt_sys_align'			=>	"图片的默认对齐方式",
 'opt_sys_alignd'			=>	"选择在文章插入图片时，默认使用的对齐方式。",

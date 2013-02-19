@@ -44,12 +44,12 @@ echo <<<HTML
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -70,17 +70,17 @@ echo <<<HTML
 		<option value="news" selected>{$lang['find_rnews']}</option><option value="comments" selected>{$lang['find_rcomms']}</option><option value="pm" selected>{$lang['find_rpm']}</option><option value="static" selected>{$lang['find_rstatic']}</option><option value="tags" selected>{$lang['find_rtags']}</option>
 		</select></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:2px;" width="150" valign="top" nowrap>{$lang['find_ftext']}</td>
         <td style="padding:2px;" width="100%"><textarea class="edit bk" name="find" style="width:550px;height:200px;"></textarea></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:2px;" valign="top">{$lang['find_rtext']}</td>
         <td style="padding:2px;"><textarea class="edit bk" name="replace" style="width:550px;height:200px;"></textarea></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:2px;" colspan="2">&nbsp;</td>
     </tr>
@@ -89,12 +89,12 @@ echo <<<HTML
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>

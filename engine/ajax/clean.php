@@ -5,10 +5,10 @@
 @ini_set('error_reporting', E_ALL ^ E_WARNING ^ E_NOTICE);
 define('XTMCMS', true);
 define('ROOT_DIR', substr(dirname(__FILE__), 0, -12));
-define('ENGINE_DIR', ROOT_DIR . '/engine');
+define('ENGINE_DIR', ROOT_DIR . '/lib');
 include ENGINE_DIR . '/data/config.php';
 if ($config['http_home_url'] == "") {
-    $config['http_home_url'] = explode("engine/ajax/clean.php", $_SERVER['PHP_SELF']);
+    $config['http_home_url'] = explode("lib/ajax/clean.php", $_SERVER['PHP_SELF']);
     $config['http_home_url'] = reset($config['http_home_url']);
     $config['http_home_url'] = "http://" . $_SERVER['HTTP_HOST'] . $config['http_home_url'];
 }
@@ -159,7 +159,7 @@ HTML;
 if ($_REQUEST['step'] == 3) {
     $buffer = <<<HTML
 <br />{$lang['clean_comments']}<br /><br />{$lang['addnews_date']}&nbsp;<input type="text" name="date" id="f_date_c" size="20"  class=edit>
-<img src="engine/skins/images/img.gif"  align="absmiddle" id="f_trigger_c" style="cursor: pointer; border: 0" />
+<img src="lib/skins/images/img.gif"  align="absmiddle" id="f_trigger_c" style="cursor: pointer; border: 0" />
 <script type="text/javascript">
     Calendar.setup({
         inputField     :    "f_date_c",     // id of the input field
@@ -177,7 +177,7 @@ HTML;
 if ($_REQUEST['step'] == 1) {
     $buffer = <<<HTML
 <br />{$lang['clean_news']}<br /><br />{$lang['addnews_date']}&nbsp;<input type="text" name="date" id="f_date_c" size="20"  class=edit>
-<img src="engine/skins/images/img.gif"  align="absmiddle" id="f_trigger_c" style="cursor: pointer; border: 0" />
+<img src="lib/skins/images/img.gif"  align="absmiddle" id="f_trigger_c" style="cursor: pointer; border: 0" />
 <script type="text/javascript">
     Calendar.setup({
         inputField     :    "f_date_c",     // id of the input field

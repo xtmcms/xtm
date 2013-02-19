@@ -5,10 +5,10 @@
 @ini_set('error_reporting', E_ALL ^ E_WARNING ^ E_NOTICE);
 define('XTMCMS', true);
 define('ROOT_DIR', substr(dirname(__FILE__), 0, -12));
-define('ENGINE_DIR', ROOT_DIR . '/engine');
+define('ENGINE_DIR', ROOT_DIR . '/lib');
 include ENGINE_DIR . '/data/config.php';
 if ($config['http_home_url'] == "") {
-    $config['http_home_url'] = explode("engine/ajax/antivirus.php", $_SERVER['PHP_SELF']);
+    $config['http_home_url'] = explode("lib/ajax/antivirus.php", $_SERVER['PHP_SELF']);
     $config['http_home_url'] = reset($config['http_home_url']);
     $config['http_home_url'] = "http://" . $_SERVER['HTTP_HOST'] . $config['http_home_url'];
 }
@@ -35,7 +35,7 @@ require_once ENGINE_DIR . '/classes/antivirus.class.php';
 $antivirus = new antivirus();
 if ($_REQUEST['folder'] == "lokal") {
     $antivirus->scan_files(ROOT_DIR . "/backup", false, true);
-    $antivirus->scan_files(ROOT_DIR . "/engine", false, true);
+    $antivirus->scan_files(ROOT_DIR . "/lib", false, true);
     $antivirus->scan_files(ROOT_DIR . "/language", false, true);
     $antivirus->scan_files(ROOT_DIR . "/templates", false, false);
     $antivirus->scan_files(ROOT_DIR . "/uploads", false, true);
@@ -43,7 +43,7 @@ if ($_REQUEST['folder'] == "lokal") {
     $antivirus->scan_files(ROOT_DIR, false, true);
 } elseif ($_REQUEST['folder'] == "snap") {
     $antivirus->scan_files(ROOT_DIR . "/backup", true);
-    $antivirus->scan_files(ROOT_DIR . "/engine", true);
+    $antivirus->scan_files(ROOT_DIR . "/lib", true);
     $antivirus->scan_files(ROOT_DIR . "/language", true);
     $antivirus->scan_files(ROOT_DIR . "/templates", true);
     $antivirus->scan_files(ROOT_DIR . "/uploads", true);
@@ -60,7 +60,7 @@ if ($_REQUEST['folder'] == "lokal") {
 } else {
     $antivirus->snap = false;
     $antivirus->scan_files(ROOT_DIR . "/backup", false, true);
-    $antivirus->scan_files(ROOT_DIR . "/engine", false, true);
+    $antivirus->scan_files(ROOT_DIR . "/lib", false, true);
     $antivirus->scan_files(ROOT_DIR . "/language", false, true);
     $antivirus->scan_files(ROOT_DIR . "/templates", false, false);
     $antivirus->scan_files(ROOT_DIR . "/uploads", false, true);
@@ -95,7 +95,7 @@ HTML;
         <td>{$color}{$data['file_date']}</font></td>
         <td>{$color}{$type}</font></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=4></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=4></td></tr>
 HTML;
     }
 } elseif ($_REQUEST['folder'] == "snap") {

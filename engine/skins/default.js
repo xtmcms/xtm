@@ -231,7 +231,7 @@ function media_upload(area, author, news_id, wysiwyg) {
         height:600,
         dialogClass:"modalfixed",
         open:function (event, ui) {
-            $("#mediaupload").html("<iframe name='mediauploadframe' id='mediauploadframe' width='100%' height='550' src='engine/ajax/upload.php?area=" + area + "&author=" + author + "&news_id=" + news_id + "&wysiwyg=" + wysiwyg + "&rndval=" + rndval + "' frameborder='0' marginwidth='0' marginheight='0' allowtransparency='true'></iframe>");
+            $("#mediaupload").html("<iframe name='mediauploadframe' id='mediauploadframe' width='100%' height='550' src='lib/ajax/upload.php?area=" + area + "&author=" + author + "&news_id=" + news_id + "&wysiwyg=" + wysiwyg + "&rndval=" + rndval + "' frameborder='0' marginwidth='0' marginheight='0' allowtransparency='true'></iframe>");
             $(".ui-dialog").draggable("option", "containment", "");
         },
         dragStart:function (event, ui) {

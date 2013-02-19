@@ -5,10 +5,10 @@
 @ini_set('error_reporting', E_ALL ^ E_WARNING ^ E_NOTICE);
 define('XTMCMS', true);
 define('ROOT_DIR', substr(dirname(__FILE__), 0, -12));
-define('ENGINE_DIR', ROOT_DIR . '/engine');
+define('ENGINE_DIR', ROOT_DIR . '/lib');
 require_once ENGINE_DIR . '/data/config.php';
 if ($config['http_home_url'] == "") {
-    $config['http_home_url'] = explode("engine/ajax/upload.php", $_SERVER['PHP_SELF']);
+    $config['http_home_url'] = explode("lib/ajax/upload.php", $_SERVER['PHP_SELF']);
     $config['http_home_url'] = reset($config['http_home_url']);
     $config['http_home_url'] = "http://" . $_SERVER['HTTP_HOST'] . $config['http_home_url'];
 }
@@ -196,7 +196,7 @@ $skin = trim(totranslit($_REQUEST['skin'], false, false));
 if ($skin) {
     $css_path = $config['http_home_url'] . "templates/" . $skin . "/frame.css";
 } else {
-    $css_path = $config['http_home_url'] . "engine/skins/frame.css";
+    $css_path = $config['http_home_url'] . "lib/skins/frame.css";
 }
 include (ENGINE_DIR . '/data/videoconfig.php');
 echo <<<HTML
@@ -206,12 +206,12 @@ echo <<<HTML
 <meta content="text/html; charset={$config['charset']}" http-equiv="content-type" />
 <title>{$lang['media_upload']}</title>
 <link rel="stylesheet" type="text/css" href="{$css_path}">
-<script type="text/javascript" src="{$config['http_home_url']}engine/classes/js/jquery.js"></script>
-<script type="text/javascript" src="{$config['http_home_url']}engine/classes/uploads/html5/fileuploader.js"></script>
-<script type="text/javascript" src="{$config['http_home_url']}engine/classes/uploads/swfupload/swfupload.js"></script>
-<script type="text/javascript" src="{$config['http_home_url']}engine/classes/uploads/swfupload/swfupload.queue.js"></script>
-<script type="text/javascript" src="{$config['http_home_url']}engine/classes/uploads/swfupload/fileprogress.js"></script>
-<script type="text/javascript" src="{$config['http_home_url']}engine/classes/uploads/swfupload/handlers.js"></script>
+<script type="text/javascript" src="{$config['http_home_url']}lib/classes/js/jquery.js"></script>
+<script type="text/javascript" src="{$config['http_home_url']}lib/classes/uploads/html5/fileuploader.js"></script>
+<script type="text/javascript" src="{$config['http_home_url']}lib/classes/uploads/swfupload/swfupload.js"></script>
+<script type="text/javascript" src="{$config['http_home_url']}lib/classes/uploads/swfupload/swfupload.queue.js"></script>
+<script type="text/javascript" src="{$config['http_home_url']}lib/classes/uploads/swfupload/fileprogress.js"></script>
+<script type="text/javascript" src="{$config['http_home_url']}lib/classes/uploads/swfupload/handlers.js"></script>
 </head>
 <body>
 HTML;
@@ -255,20 +255,20 @@ if ($area != "template") {
         $file_type = totranslit(end($file_type));
         if (in_array($file_type, $allowed_video)) {
             if ($file_type == "mp3") {
-                $file_link = $config['http_home_url'] . "engine/skins/images/mp3_file.png";
+                $file_link = $config['http_home_url'] . "lib/skins/images/mp3_file.png";
                 $data_url = $config['http_home_url'] . "uploads/files/" . $row['onserver'];
                 $file_play = "audio";
             } elseif ($file_type == "swf") {
-                $file_link = $config['http_home_url'] . "engine/skins/images/file_flash.png";
+                $file_link = $config['http_home_url'] . "lib/skins/images/file_flash.png";
                 $data_url = $config['http_home_url'] . "uploads/files/" . $row['onserver'];
                 $file_play = "flash";
             } else {
-                $file_link = $config['http_home_url'] . "engine/skins/images/video_file.png";
+                $file_link = $config['http_home_url'] . "lib/skins/images/video_file.png";
                 $data_url = $config['http_home_url'] . "uploads/files/" . $row['onserver'];
                 $file_play = "video";
             }
         } else {
-            $file_link = $config['http_home_url'] . "engine/skins/images/all_file.png";
+            $file_link = $config['http_home_url'] . "lib/skins/images/all_file.png";
             $data_url = "#";
             $file_play = "";
         }
@@ -311,20 +311,20 @@ if ($area == "template") {
         $file_type = totranslit(end($file_type));
         if (in_array($file_type, $allowed_video)) {
             if ($file_type == "mp3") {
-                $file_link = $config['http_home_url'] . "engine/skins/images/mp3_file.png";
+                $file_link = $config['http_home_url'] . "lib/skins/images/mp3_file.png";
                 $data_url = $config['http_home_url'] . "uploads/files/" . $row['onserver'];
                 $file_play = "audio";
             } elseif ($file_type == "swf") {
-                $file_link = $config['http_home_url'] . "engine/skins/images/file_flash.png";
+                $file_link = $config['http_home_url'] . "lib/skins/images/file_flash.png";
                 $data_url = $config['http_home_url'] . "uploads/files/" . $row['onserver'];
                 $file_play = "flash";
             } else {
-                $file_link = $config['http_home_url'] . "engine/skins/images/video_file.png";
+                $file_link = $config['http_home_url'] . "lib/skins/images/video_file.png";
                 $data_url = $config['http_home_url'] . "uploads/files/" . $row['onserver'];
                 $file_play = "video";
             }
         } else {
-            $file_link = $config['http_home_url'] . "engine/skins/images/all_file.png";
+            $file_link = $config['http_home_url'] . "lib/skins/images/all_file.png";
             $data_url = "#";
             $file_play = "";
         }
@@ -403,7 +403,7 @@ if ($config['files_allow'] == "yes" and $user_group[$member_id['user_group']]['a
     $simple_ext .= "', '" . implode("', '", $allowed_files);
 }
 $author = urlencode($author);
-$root = explode("engine/ajax/upload.php", $_SERVER['PHP_SELF']);
+$root = explode("lib/ajax/upload.php", $_SERVER['PHP_SELF']);
 $root = reset($root);
 echo <<<HTML
 <div class="tabs">
@@ -520,7 +520,7 @@ jQuery(document).ready(function ($) {
 
 	var uploader = new qq.FileUploader({
 		element: document.getElementById('file-uploader'),
-		action: '{$root}engine/ajax/upload.php',
+		action: '{$root}lib/ajax/upload.php',
 		maxConnections: 1,
 		encoding: 'multipart',
         sizeLimit: {$max_file_size},
@@ -584,8 +584,8 @@ jQuery(document).ready(function ($) {
 
 
 	var settings = {
-		flash_url : "{$root}engine/classes/uploads/swfupload/swfupload.swf",
-		upload_url: "{$root}engine/ajax/upload.php",	// Relative to the SWF file
+		flash_url : "{$root}lib/classes/uploads/swfupload/swfupload.swf",
+		upload_url: "{$root}lib/ajax/upload.php",	// Relative to the SWF file
 		post_params: {"PHPSESSID" : "{$sess_id}", "news_id" : "{$news_id}", "area" : "{$area}", "author" : "{$author}", "flashmode" : "1"},
 		file_size_limit : "{$max_flash_size}",
 		file_types : "{$all_ext}",
@@ -965,7 +965,7 @@ function upload_from_url( url ) {
 
 	$('#'+error_id).html( '<font color="green">{$lang['ajax_info']}</font>' );
 
-	$.post( "{$root}engine/ajax/upload.php", { news_id: "{$news_id}", imageurl: copyurl, ftpurl: ftpurl, t_size: t_size, t_seite: t_seite, make_thumb: make_thumb, make_watermark: make_watermark, area: "{$area}", author: "{$author}", subaction: "upload" }, function(data){
+	$.post( "{$root}lib/ajax/upload.php", { news_id: "{$news_id}", imageurl: copyurl, ftpurl: ftpurl, t_size: t_size, t_seite: t_seite, make_thumb: make_thumb, make_watermark: make_watermark, area: "{$area}", author: "{$author}", subaction: "upload" }, function(data){
 
 		if ( data.success ) {
 

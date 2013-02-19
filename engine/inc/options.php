@@ -32,12 +32,12 @@ if ($action == "options" or $action == '') {
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -57,7 +57,7 @@ HTML;
 <td width="50%">
 <table width="100%">
     <tr>
-        <td width="70" height="70" valign="middle" align="center" style="padding-top:5px;padding-bottom:5px;"><img src="engine/skins/images/{$option['image']}" border="0"></td>
+        <td width="70" height="70" valign="middle" align="center" style="padding-top:5px;padding-bottom:5px;"><img src="lib/skins/images/{$option['image']}" border="0"></td>
         <td valign="middle"><div class="quick"><a href="{$option['url']}"><h3>{$option['name']}</h3>{$option['descr']}</a></div></td>
     </tr>
 </table>
@@ -67,12 +67,12 @@ HTML;
         echo <<<HTML
 </tr></table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div>
@@ -96,13 +96,13 @@ HTML;
         if (!$row['icon'] OR !@file_exists(ENGINE_DIR . "/skins/images/{$row['icon']}")) $row['icon'] = "default_icon.png";
         $row['title'] = strip_tags(stripslashes($row['title']));
         $row['descr'] = strip_tags(stripslashes($row['descr']));
-        if ($member_id['user_group'] == 1) $del_link = "&nbsp;&nbsp;<a href=\"#\" onclick=\"del_mod('{$row['id']}'); return false;\"><img style=\"vertical-align: middle;border:none;\" src=\"engine/skins/images/delete.png\"></a>";
+        if ($member_id['user_group'] == 1) $del_link = "&nbsp;&nbsp;<a href=\"#\" onclick=\"del_mod('{$row['id']}'); return false;\"><img style=\"vertical-align: middle;border:none;\" src=\"lib/skins/images/delete.png\"></a>";
         else $del_link = "";
         $sections .= "
 <td width=\"50%\">
 <table width=\"100%\">
     <tr>
-        <td width=\"70\" height=\"70\" valign=\"middle\" align=\"center\" style=\"padding-top:5px;padding-bottom:5px;\"><img src=\"engine/skins/images/{$row['icon']}\" border=\"0\"></td>
+        <td width=\"70\" height=\"70\" valign=\"middle\" align=\"center\" style=\"padding-top:5px;padding-bottom:5px;\"><img src=\"lib/skins/images/{$row['icon']}\" border=\"0\"></td>
         <td valign=\"middle\"><div class=\"quick\"><a href=\"$PHP_SELF?mod={$row['name']}\"><h3>{$row['title']}</h3>{$row['descr']}</a>{$del_link}</div></td>
     </tr>
 </table>
@@ -113,12 +113,12 @@ HTML;
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -129,12 +129,12 @@ HTML;
 {$sections}
 </tr></table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div>
@@ -147,7 +147,7 @@ function del_mod ( id ){
 
     xtmconfirm( '{$lang['confirm_del_mod']}', '{$lang['p_confirm']}', function () {
 
-		$.get("engine/ajax/adminfunction.php?action=deletemodules", { id: id }, function( data ){
+		$.get("lib/ajax/adminfunction.php?action=deletemodules", { id: id }, function( data ){
 			if (data == 'ok') { document.location.reload(false); }
 		});
 	} );
@@ -173,12 +173,12 @@ HTML;
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 	<table width="100%">
     <tr>
@@ -244,12 +244,12 @@ HTML;
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>
@@ -317,7 +317,7 @@ HTML;
         <b>$title</b><br /><span class=small>$description</span>
         <td width=394 align=middle >
         $field
-        </tr><tr><td background=\"engine/skins/images/mline.gif\" height=1 colspan=2></td></tr>";
+        </tr><tr><td background=\"lib/skins/images/mline.gif\" height=1 colspan=2></td></tr>";
         $bg = "";
         $i++;
     }
@@ -381,12 +381,12 @@ HTML;
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -399,17 +399,17 @@ HTML;
         <td style="padding:2px;">
 <table style="text-align:center;" width="100%" height="35px">
 <tr style="vertical-align:middle;" >
- <td class=tableborder><a href="javascript:ChangeOption('general');"><img title="$lang[opt_allsys]" src="engine/skins/images/general.png" border="0"></a>
- <td class=tableborder><a href="javascript:ChangeOption('security');"><img title="$lang[opt_secrsys]" src="engine/skins/images/sred.png" border="0"></a>
- <td class=tableborder><a href="javascript:ChangeOption('news');"><img title="$lang[opt_newssys]" src="engine/skins/images/news.png" border="0"></a>
- <td class=tableborder><a href="javascript:ChangeOption('comments');"><img title="$lang[opt_commsys]" src="engine/skins/images/comments.png" border="0"></a>
- <td class=tableborder><a href="javascript:ChangeOption('optimisation');"><img title="$lang[opt_dbsys]" src="engine/skins/images/db_opt.png" border="0"></a>
- <td class=tableborder><a href="javascript:ChangeOption('files');"><img title="$lang[opt_filesys]" src="engine/skins/images/folder.png" border="0"></a>
- <td class=tableborder><a href="javascript:ChangeOption('mail');"><img title="$lang[opt_sys_mail]" src="engine/skins/images/email.png" border="0"></a>
- <td class=tableborder><a href="javascript:ChangeOption('users');"><img title="$lang[opt_usersys]" src="engine/skins/images/users.png" border="0"></a>
- <td class=tableborder><a href="javascript:ChangeOption('imagesconf');"><img title="$lang[opt_imagesys]" src="engine/skins/images/conf_images.png" border="0"></a>
- <td class=tableborder><a href="javascript:ChangeOption('smartphone');"><img title="$lang[opt_smartphone]" src="engine/skins/images/smartphone.jpg" border="0"></a>
- <td class=tableborder><a href="javascript:ChangeOption('rss');"><img title="$lang[opt_rsssys]" src="engine/skins/images/rss.gif" border="0"></a>
+ <td class=tableborder><a href="javascript:ChangeOption('general');"><img title="$lang[opt_allsys]" src="lib/skins/images/general.png" border="0"></a>
+ <td class=tableborder><a href="javascript:ChangeOption('security');"><img title="$lang[opt_secrsys]" src="lib/skins/images/sred.png" border="0"></a>
+ <td class=tableborder><a href="javascript:ChangeOption('news');"><img title="$lang[opt_newssys]" src="lib/skins/images/news.png" border="0"></a>
+ <td class=tableborder><a href="javascript:ChangeOption('comments');"><img title="$lang[opt_commsys]" src="lib/skins/images/comments.png" border="0"></a>
+ <td class=tableborder><a href="javascript:ChangeOption('optimisation');"><img title="$lang[opt_dbsys]" src="lib/skins/images/db_opt.png" border="0"></a>
+ <td class=tableborder><a href="javascript:ChangeOption('files');"><img title="$lang[opt_filesys]" src="lib/skins/images/folder.png" border="0"></a>
+ <td class=tableborder><a href="javascript:ChangeOption('mail');"><img title="$lang[opt_sys_mail]" src="lib/skins/images/email.png" border="0"></a>
+ <td class=tableborder><a href="javascript:ChangeOption('users');"><img title="$lang[opt_usersys]" src="lib/skins/images/users.png" border="0"></a>
+ <td class=tableborder><a href="javascript:ChangeOption('imagesconf');"><img title="$lang[opt_imagesys]" src="lib/skins/images/conf_images.png" border="0"></a>
+ <td class=tableborder><a href="javascript:ChangeOption('smartphone');"><img title="$lang[opt_smartphone]" src="lib/skins/images/smartphone.jpg" border="0"></a>
+ <td class=tableborder><a href="javascript:ChangeOption('rss');"><img title="$lang[opt_rsssys]" src="lib/skins/images/rss.gif" border="0"></a>
 
  </tr>
 </table>
@@ -417,12 +417,12 @@ HTML;
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div>
@@ -432,12 +432,12 @@ HTML;
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
 HTML;
@@ -697,7 +697,7 @@ HTML;
     showRow($lang['opt_sys_frss'], $lang['opt_sys_frssd'], makeDropDown(array("0" => $lang['opt_sys_rss_type_2'], "1" => $lang['opt_sys_rss_type_3'], "2" => $lang['opt_sys_rss_type_4']), "save_con[rss_format]", "{$config['rss_format']}"));
     echo "</table></td></tr>";
     if (!is_writable(ENGINE_DIR . '/data/config.php')) {
-        $lang['stat_system'] = str_replace("{file}", "engine/data/config.php", $lang['stat_system']);
+        $lang['stat_system'] = str_replace("{file}", "lib/data/config.php", $lang['stat_system']);
         $fail = "<br /><br /><div class=\"ui-state-error ui-corner-all\" style=\"padding:10px;\">{$lang['stat_system']}</div>";
     } else $fail = "";
     echo <<<HTML
@@ -707,12 +707,12 @@ HTML;
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>

@@ -147,7 +147,7 @@ if ($action == "del") {
     }
     clear_cache();
 } elseif ($action == "add" or $action == "edit") {
-    $js_array[] = "engine/skins/tabset.js";
+    $js_array[] = "lib/skins/tabset.js";
     echoheader("", "");
     if (!$config['allow_cmod']) $warning = "<br /><font color=\"red\">" . $lang['modul_offline'] . "</font>";
     else $warning = "";
@@ -407,12 +407,12 @@ if ($action == "del") {
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -431,97 +431,97 @@ if ($action == "del") {
         <td style="padding:4px;" class="option"><b>{$lang['group_name']}</b><br /><span class="small">{$lang[hint_gtitle]}</span></td>
         <td width="480" style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="25" name="group_name" value="{$group_name_value}"></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_icon']}</b><br /><span class="small">{$lang['hint_gicon']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="35" name="group_icon" value="{$group_icon_value}"></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_pref']}</b><br /><span class="small">{$lang['hint_gpref']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="40" name="group_prefix" value="{$group_prefix_value}"></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_suf']}</b><br /><span class="small">{$lang['hint_gsuf']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="40" name="group_suffix" value="{$group_suffix_value}"></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_offline']}</b><br /><span class="small">{$lang['hint_goffline']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_offline" {$allow_offline_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="allow_offline" {$allow_offline_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_hic']}</b><br /><span class="small">{$lang['hint_gvhide']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_hide" {$allow_hide_yes} value="1" > {$lang['opt_sys_yes']} <input type="radio" name="allow_hide" {$allow_hide_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
- 	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+ 	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
 
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_force_leech']}</b><br /><span class="small">{$lang['hint_force_leech']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="force_leech" {$force_leech_yes} value="1" > {$lang['opt_sys_yes']} <input type="radio" name="force_leech" {$force_leech_no} value="0"> {$lang['opt_sys_no']}</td>
     </tr>
- 	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+ 	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
    <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_svote']}</b><br /><span class="small">{$lang['group_svoted']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_vote" {$allow_vote_yes} value="1"> {$lang['opt_sys_yes']} <input type="radio" name="allow_vote" {$allow_vote_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
 
    <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_apm']}</b><br /><span class="small">{$lang['hint_gapm']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_pm" {$allow_pm_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="allow_pm" {$allow_pm_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_afil']}</b><br /><span class="small">{$lang['hint_gafile']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_files" {$allow_files_yes} value="1" > {$lang['opt_sys_yes']} <input type="radio" name="allow_files" {$allow_files_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
- 	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+ 	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['a_feed']}</b><br /><span class="small">{$lang['hint_gafeed']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_feed" {$allow_feed_yes} value="1" > {$lang['opt_sys_yes']} <input type="radio" name="allow_feed" {$allow_feed_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
- 	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+ 	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['a_search']}</b><br /><span class="small">{$lang['hint_gasearch']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_search" {$allow_search_yes} value="1" > {$lang['opt_sys_yes']} <input type="radio" name="allow_search" {$allow_search_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_tlim']}</b><br /><span class="small">{$lang['hint_glimit']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="time_limit" {$time_limit_yes} value="1" {$admingroup}{$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="time_limit" {$time_limit_no} value="0"> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_rlim']}</b><br /><span class="small">{$lang['hint_grid']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><select name="rid">
            {$group_list}
             </select></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_mpmd']}</b><br /><span class="small">{$lang['hint_gmpmd']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="10" name="max_pm_day" value="{$max_pm_day_value}"></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_mpm']}</b><br /><span class="small">{$lang['hint_gmpm']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="10" name="max_pm" value="{$max_pm_value}"></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_memd']}</b><br /><span class="small">{$lang['hint_memd']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="10" name="max_mail_day" value="{$max_mail_day_value}"></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
 
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_mfot']}</b><br /><span class="small">{$lang['hint_gmphoto']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="10" name="max_foto" value="{$max_foto_value}"></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_max_info']}</b><br /><span class="small">{$lang['hint_max_info']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="10" name="max_info" value="{$max_info_value}"></td>
@@ -540,7 +540,7 @@ if ($action == "del") {
 </select></td>
     </tr>
 
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_aladdnews']}</b><br /><span class="small">{$lang['hint_galaddnews']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><select name="cat_allow_addnews[]" class="cat_select" multiple >
@@ -549,7 +549,7 @@ if ($action == "del") {
 </select></td>
     </tr>
 
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_alct']}</b><br /><span class="small">{$lang['hint_gadc']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><select name="cat_add[]" class="cat_select" multiple >
@@ -557,93 +557,93 @@ if ($action == "del") {
 {$cat_add_list}
 </select></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_shid']}</b><br /><span class="small">{$lang['hint_gasr']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_short" {$allow_short_yes} value="1"> {$lang['opt_sys_yes']} <input type="radio" name="allow_short" {$allow_short_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
      <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_poll']}</b><br /><span class="small">{$lang['group_poll_hint']}</span></td>
         <td width="480" style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_poll" {$allow_poll_yes} value="1"> {$lang['opt_sys_yes']} <input type="radio" name="allow_poll" {$allow_poll_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['a_rating']}</b><br /><span class="small">{$lang['hint_garating']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_rating" {$allow_rating_yes} value="1" > {$lang['opt_sys_yes']} <input type="radio" name="allow_rating" {$allow_rating_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
      <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_adds']}</b><br /><span class="small">{$lang['hint_gaad']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_adds" {$allow_adds_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="allow_adds" {$allow_adds_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
      <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_adds_html']}</b><br /><span class="small">{$lang['hint_gaadhtml']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_html" {$allow_html_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="allow_html" {$allow_html_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_moder']}</b><br /><span class="small">{$lang['hint_gmod']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="moderation" {$moderation_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="moderation" {$moderation_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_main']}</b><br /><span class="small">{$lang['group_main_hint']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_main" {$allow_main_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="allow_main" {$allow_main_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_fixed']}</b><br /><span class="small">{$lang['hint_gfixed']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_fixed" {$allow_fixed_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="allow_fixed" {$allow_fixed_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['opt_sys_aiu']}</b><br /><span class="small">{$lang['opt_sys_aiud']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_image_upload" {$allow_image_upload_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="allow_image_upload" {$allow_image_upload_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_image_size']}</b><br /><span class="small">{$lang['hint_image_size']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_image_size" {$allow_image_size_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="allow_image_size" {$allow_image_size_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
 
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['opt_sys_file']}</b><br /><span class="small">{$lang['opt_sys_filed']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_file_upload" {$allow_file_upload_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="allow_file_upload" {$allow_file_upload_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_max_images']}</b><br /><span class="small">{$lang['hint_max_images']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="10" name="max_images" value="{$max_images_value}"></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_max_files']}</b><br /><span class="small">{$lang['hint_max_files']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="10" name="max_files" value="{$max_files_value}"></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['opt_sys_file1']}</b><br /><span class="small">{$lang['opt_sys_file1d']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="60" name="files_type" value="{$files_type_value}"></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['opt_sys_maxfile']}</b><br /><span class="small">{$lang['opt_sys_maxfiled']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="10" name="max_file_size" value="{$max_file_size_value}"></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['opt_sys_file5']}</b><br /><span class="small">{$lang['opt_sys_file5d']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="10" name="files_max_speed" value="{$files_max_speed_value}"></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_flood_news']}</b><br /><span class="small">{$lang['hint_flood_news']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="10" name="flood_news" value="{$flood_news_value}"></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_day_news']}</b><br /><span class="small">{$lang['hint_day_news']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="10" name="max_day_news" value="{$max_day_news_value}"></td>
@@ -658,66 +658,66 @@ if ($action == "del") {
         <td style="padding:4px;" class="option"><b>{$lang['group_addc']}</b><br /><span class="small">{$lang['hint_gac']}</span></td>
         <td width="480" style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_addc" {$allow_addc_yes} value="1" > {$lang['opt_sys_yes']} <input type="radio" name="allow_addc" {$allow_addc_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['opt_sys_subs']}</b><br /><span class="small">{$lang['opt_sys_subsd']}</span>{$warning_1}</td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_subscribe" {$allow_subscribe_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="allow_subscribe" {$allow_subscribe_no} value="0"> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
 
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_signature']}</b><br /><span class="small">{$lang['hint_signature']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_signature" {$allow_signature_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="allow_signature" {$allow_signature_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_max_signature']}</b><br /><span class="small">{$lang['hint_max_signature']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="10" name="max_signature" value="{$max_signature_value}"></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_url']}</b><br /><span class="small">{$lang['hint_group_url']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_url" {$allow_url_yes} value="1" > {$lang['opt_sys_yes']} <input type="radio" name="allow_url" {$allow_url_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
 
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_image']}</b><br /><span class="small">{$lang['hint_group_image']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_image" {$allow_image_yes} value="1"> {$lang['opt_sys_yes']} <input type="radio" name="allow_image" {$allow_image_no} value="0"> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
 
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_modc']}</b><br /><span class="small">{$lang['hint_modc']}</span>{$warning}</td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_modc" {$allow_modc_yes} value="1" {$admingroup}> {$lang['opt_sys_yes']} <input type="radio" name="allow_modc" {$allow_modc_no} value="0"> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_editc']}</b><br /><span class="small">{$lang['hint_gec']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_editc" {$allow_editc_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="allow_editc" {$allow_editc_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_delc']}</b><br /><span class="small">{$lang['hint_gdc']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_delc" {$allow_delc_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="allow_delc" {$allow_delc_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_edit_limit']}</b><br /><span class="small">{$lang['hint_edit_limit']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="10" name="edit_limit" value="{$edit_limit_value}"></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_mcmd']}</b><br /><span class="small">{$lang['hint_gmcmd']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="10" name="max_comment_day" value="{$max_comment_day_value}"></td>
     </tr>
 
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_allc']}</b><br /><span class="small">{$lang['hint_gaec']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="edit_allc" {$edit_allc_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="edit_allc" {$edit_allc_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_dllc']}</b><br /><span class="small">{$lang['hint_gadcom']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="del_allc" {$del_allc_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="del_allc" {$del_allc_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
@@ -731,47 +731,47 @@ if ($action == "del") {
         <td style="padding:4px;" class="option"><b>{$lang['opt_sys_news_c']}</b><br /><span class="small">{$lang['hint_scode']}</span></td>
         <td width="480" style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="news_sec_code" {$news_sec_code_yes} value="1" {$admingroup}> {$lang['opt_sys_yes']} <input type="radio" name="news_sec_code" {$news_sec_code_no} value="0" {$gastgroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['opt_sys_qsn']}</b><br /><span class="small">{$lang['hint_qcode']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="news_question" {$news_question_yes} value="1" {$admingroup}> {$lang['opt_sys_yes']} <input type="radio" name="news_question" {$news_question_no} value="0" {$gastgroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_d_nc']}</b><br /><span class="small">{$lang['hint_d_nc']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="10" name="disable_news_captcha" value="{$disable_news_captcha_value}"></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['opt_sys_code_com']}</b><br /><span class="small">{$lang['opt_sys_codecd']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="captcha" {$allow_captcha_yes} value="1"> {$lang['opt_sys_yes']} <input type="radio" name="captcha" {$allow_captcha_no} value="0"> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['opt_sys_qsc']}</b><br /><span class="small">{$lang['hint_qcode_1']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="comments_question" {$comments_question_yes} value="1"> {$lang['opt_sys_yes']} <input type="radio" name="comments_question" {$comments_question_no} value="0"> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_d_cc']}</b><br /><span class="small">{$lang['hint_d_cc']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input class="edit bk" type="text" size="10" name="disable_comments_captcha" value="{$disable_comments_captcha_value}"></td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['opt_sys_code_pm']}</b><br /><span class="small">{$lang['opt_sys_code_pmd']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="captcha_pm" {$allow_captcha_pm_yes} value="1"> {$lang['opt_sys_yes']} <input type="radio" name="captcha_pm" {$allow_captcha_pm_no} value="0"> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['opt_sys_qspm']}</b><br /><span class="small">{$lang['hint_qcode_2']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="pm_question" {$pm_question_yes} value="1"> {$lang['opt_sys_yes']} <input type="radio" name="pm_question" {$pm_question_no} value="0"> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['opt_sys_code_feed']}</b><br /><span class="small">{$lang['opt_sys_code_feedd']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="captcha_feedback" {$captcha_feedback_yes} value="1"> {$lang['opt_sys_yes']} <input type="radio" name="captcha_feedback" {$captcha_feedback_no} value="0"> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['opt_sys_qsfeed']}</b><br /><span class="small">{$lang['hint_qcode_3']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="feedback_question" {$feedback_question_yes} value="1"> {$lang['opt_sys_yes']} <input type="radio" name="feedback_question" {$feedback_question_no} value="0"> {$lang['opt_sys_no']}</td>
@@ -787,107 +787,107 @@ if ($action == "del") {
         <td style="padding:4px;" class="option"><b>{$lang['group_aadm']}</b><br /><span class="small">{$lang['hint_gadmin']}</span></td>
         <td width="480" style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_admin" {$allow_admin_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="allow_admin" {$allow_admin_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_a_addnews']}</b><br /><span class="small">{$lang['group_h_addnews']}</span></td>
         <td width="480" style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="admin_addnews" {$admin_addnews_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="admin_addnews" {$admin_addnews_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_a_editnews']}</b><br /><span class="small">{$lang['group_h_editnews']}</span></td>
         <td width="480" style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="admin_editnews" {$admin_editnews_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="admin_editnews" {$admin_editnews_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_edit2']}</b><br /><span class="small">{$lang['hint_gned']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_edit" {$allow_edit_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="allow_edit" {$allow_edit_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_edit3']}</b><br /><span class="small">{$lang['hint_gnaed']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="allow_all_edit" {$allow_all_edit_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="allow_all_edit" {$allow_all_edit_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_a_comments']}</b><br /><span class="small">{$lang['group_h_comments']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="admin_comments" {$admin_comments_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="admin_comments" {$admin_comments_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_a_categories']}</b><br /><span class="small">{$lang['group_h_categories']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="admin_categories" {$admin_categories_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="admin_categories" {$admin_categories_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_a_editusers']}</b><br /><span class="small">{$lang['group_h_editusers']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="admin_editusers" {$admin_editusers_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="admin_editusers" {$admin_editusers_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_a_wordfilter']}</b><br /><span class="small">{$lang['group_h_wordfilter']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="admin_wordfilter" {$admin_wordfilter_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="admin_wordfilter" {$admin_wordfilter_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_a_xfields']}</b><br /><span class="small">{$lang['group_h_xfields']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="admin_xfields" {$admin_xfields_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="admin_xfields" {$admin_xfields_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_a_userfields']}</b><br /><span class="small">{$lang['group_h_userfields']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="admin_userfields" {$admin_userfields_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="admin_userfields" {$admin_userfields_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_a_static']}</b><br /><span class="small">{$lang['group_h_static']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="admin_static" {$admin_static_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="admin_static" {$admin_static_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_a_editvote']}</b><br /><span class="small">{$lang['group_h_editvote']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="admin_editvote" {$admin_editvote_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="admin_editvote" {$admin_editvote_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_a_newsletter']}</b><br /><span class="small">{$lang['group_h_newsletter']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="admin_newsletter" {$admin_newsletter_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="admin_newsletter" {$admin_newsletter_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_a_blockip']}</b><br /><span class="small">{$lang['group_h_blockip']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="admin_blockip" {$admin_blockip_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="admin_blockip" {$admin_blockip_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_a_banners']}</b><br /><span class="small">{$lang['group_h_banners']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="admin_banners" {$admin_banners_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="admin_banners" {$admin_banners_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_a_rss']}</b><br /><span class="small">{$lang['group_h_rss']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="admin_rss" {$admin_rss_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="admin_rss" {$admin_rss_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_a_iptools']}</b><br /><span class="small">{$lang['group_h_iptools']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="admin_iptools" {$admin_iptools_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="admin_iptools" {$admin_iptools_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_a_rssinform']}</b><br /><span class="small">{$lang['group_h_rssinform']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="admin_rssinform" {$admin_rssinform_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="admin_rssinform" {$admin_rssinform_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_a_googlemap']}</b><br /><span class="small">{$lang['group_h_googlemap']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="admin_googlemap" {$admin_googlemap_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="admin_googlemap" {$admin_googlemap_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_a_tagscloud']}</b><br /><span class="small">{$lang['group_h_tagscloud']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="admin_tagscloud" {$admin_tagscloud_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="admin_tagscloud" {$admin_tagscloud_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
     </tr>
-	<tr><td background="engine/skins/images/mline.gif" height=1 colspan=2></td></tr>
+	<tr><td background="lib/skins/images/mline.gif" height=1 colspan=2></td></tr>
     <tr>
         <td style="padding:4px;" class="option"><b>{$lang['group_a_complaint']}</b><br /><span class="small">{$lang['group_h_complaint']}</span></td>
         <td style="padding-top:2px;padding-bottom:2px;"><input type="radio" name="admin_complaint" {$admin_complaint_yes} value="1" {$gastgroup}> {$lang['opt_sys_yes']} <input type="radio" name="admin_complaint" {$admin_complaint_no} value="0" {$admingroup}> {$lang['opt_sys_no']}</td>
@@ -904,12 +904,12 @@ if ($action == "del") {
 </table>
 
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div>
@@ -936,9 +936,9 @@ HTML;
     <td height=22 class=\"list\">&nbsp;&nbsp;<b>{$group['id']}</b></td>
     <td class=\"list\">{$group['group_name']}</td>
     <td class=\"list\" align=\"center\">$count</td>
-    <td class=\"list\" align=\"center\"><a onClick=\"return dropdownmenu(this, event, MenuBuild('" . $group['id'] . "'), '150px')\" href=\"#\"><img src=\"engine/skins/images/browser_action.gif\" border=\"0\"></a></td>
+    <td class=\"list\" align=\"center\"><a onClick=\"return dropdownmenu(this, event, MenuBuild('" . $group['id'] . "'), '150px')\" href=\"#\"><img src=\"lib/skins/images/browser_action.gif\" border=\"0\"></a></td>
      </tr>
-	<tr><td background=\"engine/skins/images/mline.gif\" height=1 colspan=4></td></tr>";
+	<tr><td background=\"lib/skins/images/mline.gif\" height=1 colspan=4></td></tr>";
     }
     echo <<<HTML
 <div style="padding-top:5px;padding-bottom:2px;">
@@ -962,12 +962,12 @@ return menu;
 </script>
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -994,12 +994,12 @@ return menu;
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div>

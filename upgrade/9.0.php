@@ -16,7 +16,7 @@ $tableSchema[] = "ALTER TABLE `" . PREFIX . "_comments` ADD INDEX `post_id` ( `p
 foreach($tableSchema as $table) {
     $db -> query ($table);
 } 
-$handler = fopen(ENGINE_DIR . '/data/config.php', "w") or die("Извините, но невозможно записать информацию в файл <b>.engine/data/config.php</b>.<br />Проверьте правильность проставленного CHMOD!");
+$handler = fopen(ENGINE_DIR . '/data/config.php', "w") or die("Извините, но невозможно записать информацию в файл <b>.lib/data/config.php</b>.<br />Проверьте правильность проставленного CHMOD!");
 fwrite($handler, "<?PHP \n\n//System Configurations\n\n\$config = array (\n\n");
 foreach($config as $name => $value) {
     fwrite($handler, "'{$name}' => \"{$value}\",\n\n");

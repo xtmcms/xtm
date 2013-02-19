@@ -43,12 +43,12 @@ echo <<<HTML
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -63,10 +63,10 @@ while ($row = $db->get_row()) {
     $row['question'] = htmlspecialchars(stripslashes($row['question']), ENT_QUOTES, $config['charset']);
     $row['answer'] = htmlspecialchars(stripslashes($row['answer']), ENT_QUOTES, $config['charset']);
     $entries .= "<tr>
-        <td align=\"center\" style=\"width:100px;\"><a uid=\"{$row['id']}\" class=\"editlink\" href=\"?mod=question\"><img style=\"vertical-align: middle;border:none;\" alt=\"{$lang['word_ledit']}\" title=\"{$lang['word_ledit']}\" src=\"engine/skins/images/notepad.png\" /></a>&nbsp;&nbsp;<a uid=\"{$row['id']}\" class=\"dellink\" href=\"?mod=question\"><img style=\"vertical-align: middle;border:none;\" alt=\"{$lang['word_ldel']}\" title=\"{$lang['word_ldel']}\" src=\"engine/skins/images/delete.png\" /></a></td>
+        <td align=\"center\" style=\"width:100px;\"><a uid=\"{$row['id']}\" class=\"editlink\" href=\"?mod=question\"><img style=\"vertical-align: middle;border:none;\" alt=\"{$lang['word_ledit']}\" title=\"{$lang['word_ledit']}\" src=\"lib/skins/images/notepad.png\" /></a>&nbsp;&nbsp;<a uid=\"{$row['id']}\" class=\"dellink\" href=\"?mod=question\"><img style=\"vertical-align: middle;border:none;\" alt=\"{$lang['word_ldel']}\" title=\"{$lang['word_ldel']}\" src=\"lib/skins/images/delete.png\" /></a></td>
         <td style=\"padding:4px;\" nowrap><div id=\"question_{$row['id']}\">{$row['question']}</div><div id=\"answer_{$row['id']}\" style=\"display:none\">{$row['answer']}</div></td>
         </tr>
-        <tr><td background=\"engine/skins/images/mline.gif\" height=1 colspan=4></td></tr>";
+        <tr><td background=\"lib/skins/images/mline.gif\" height=1 colspan=4></td></tr>";
 }
 $result_count = $db->super_query("SELECT FOUND_ROWS() as count");
 if ($result_count['count']) {
@@ -146,12 +146,12 @@ echo <<<HTML
 <div class="unterline"></div>
 <input type="button" class="btn btn-primary" value="{$lang['btn_question']}" name="btn-new" id="btn-new" style="width:180px;">
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div>

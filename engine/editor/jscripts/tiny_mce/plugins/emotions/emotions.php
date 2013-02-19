@@ -7,7 +7,7 @@ ini_set('display_errors', true);
 ini_set('html_errors', false);
 include ENGINE_DIR . '/data/config.php';
 if ($config['http_home_url'] == "") {
-    $config['http_home_url'] = explode("engine/editor/jscripts/tiny_mce/plugins/emotions/emotions.php", $_SERVER['PHP_SELF']);
+    $config['http_home_url'] = explode("lib/editor/jscripts/tiny_mce/plugins/emotions/emotions.php", $_SERVER['PHP_SELF']);
     $config['http_home_url'] = reset($config['http_home_url']);
     $config['http_home_url'] = "http://" . $_SERVER['HTTP_HOST'] . $config['http_home_url'];
 }
@@ -17,7 +17,7 @@ $smilies = explode(",", $config['smilies']);
 foreach ($smilies as $smile) {
     $i++;
     $smile = trim($smile);
-    $output .= "<td style=\"padding:5px;\" align=\"center\"><a href=\"#\" onClick=\"xtm_smiley(' :$smile: '); return false;\"><img style=\"border: none;\" alt=\"$smile\" src=\"" . $config['http_home_url'] . "engine/data/emoticons/$smile.gif\" /></a></td>";
+    $output .= "<td style=\"padding:5px;\" align=\"center\"><a href=\"#\" onClick=\"xtm_smiley(' :$smile: '); return false;\"><img style=\"border: none;\" alt=\"$smile\" src=\"" . $config['http_home_url'] . "lib/data/emoticons/$smile.gif\" /></a></td>";
     if ($i % 5 == 0) $output .= "</tr><tr>";
 }
 $output .= "</tr></table>";

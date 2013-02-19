@@ -9,8 +9,8 @@ define ('XTMCMS', true);
 $member_id = false;
 $is_logged = false;
 define ('ROOT_DIR', dirname (__FILE__));
-define ('ENGINE_DIR', ROOT_DIR . '/engine');
-require_once ROOT_DIR . '/engine/init.php';
+define ('ENGINE_DIR', ROOT_DIR . '/lib');
+require_once ROOT_DIR . '/lib/init.php';
 if (clean_url ($_SERVER['HTTP_HOST']) != clean_url ($config['http_home_url'])) {
     $replace_url = array ();
     $replace_url[0] = clean_url ($config['http_home_url']);
@@ -120,7 +120,7 @@ $(function(){
 HTML;
     } 
 if (strpos ($tpl -> result['content'], "<pre><code>") !== false) {
-    $js_array[] = "engine/classes/highlight/highlight.code.js";
+    $js_array[] = "lib/classes/highlight/highlight.code.js";
     $ajax .= <<<HTML
 
 $(function(){
@@ -153,7 +153,7 @@ if (strpos ($tpl -> result['content'], "hs.expand") !== false or strpos ($tpl ->
     } else {
         $gallery = "";
     } 
-    $js_array[] = "engine/classes/highslide/highslide.js";
+    $js_array[] = "lib/classes/highslide/highslide.js";
     switch ($config['outlinetype']) {
     case 1 : $type = "hs.wrapperClassName = 'wide-border';";
         break;
@@ -167,7 +167,7 @@ if (strpos ($tpl -> result['content'], "hs.expand") !== false or strpos ($tpl ->
     $ajax .= <<<HTML
 <script type="text/javascript">  
 <!--  
-	hs.graphicsDir = '{$config['http_home_url']}engine/classes/highslide/graphics/';
+	hs.graphicsDir = '{$config['http_home_url']}lib/classes/highslide/graphics/';
 	{$type}
 	hs.numberOfImagesToPreload = 0;
 	hs.showCredits = false;
@@ -194,21 +194,21 @@ $js_array = build_js($js_array, $config);
 if ($allow_comments_ajax AND ($config['allow_comments_wysiwyg'] OR $config['allow_quick_wysiwyg'])) {
     $lang['wysiwyg_language'] = totranslit($lang['wysiwyg_language'], false, false);
     if ($config['allow_quick_wysiwyg'] == "2" OR $config['allow_comments_wysiwyg'] == "2") {
-        $js_array .= "\n<script type=\"text/javascript\" src=\"{$config['http_home_url']}engine/editor/jscripts/tiny_mce/jquery.tinymce.js\"></script>";
+        $js_array .= "\n<script type=\"text/javascript\" src=\"{$config['http_home_url']}lib/editor/jscripts/tiny_mce/jquery.tinymce.js\"></script>";
     } 
     if ($config['allow_quick_wysiwyg'] == "1" OR $config['allow_comments_wysiwyg'] == "1") {
-        $js_array .= "\n<script type=\"text/javascript\" src=\"{$config['http_home_url']}engine/editor/scripts/language/{$lang['wysiwyg_language']}/editor_lang.js\"></script>";
-        $js_array .= "\n<script type=\"text/javascript\" src=\"{$config['http_home_url']}engine/editor/scripts/innovaeditor.js\"></script>";
+        $js_array .= "\n<script type=\"text/javascript\" src=\"{$config['http_home_url']}lib/editor/scripts/language/{$lang['wysiwyg_language']}/editor_lang.js\"></script>";
+        $js_array .= "\n<script type=\"text/javascript\" src=\"{$config['http_home_url']}lib/editor/scripts/innovaeditor.js\"></script>";
     } 
 } 
 if ($config['allow_admin_wysiwyg'] == "1" OR $config['allow_site_wysiwyg'] == "1" OR $config['allow_static_wysiwyg'] == "1") {
     $js_array .= "\n<script type=\"text/javascript\" src=\"http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js\"></script>";
-    $js_array .= "\n<script type=\"text/javascript\" src=\"{$config['http_home_url']}engine/editor/scripts/webfont.js\"></script>";
-    $js_array .= "\n<link media=\"screen\" href=\"{$config['http_home_url']}engine/editor/css/default.css\" type=\"text/css\" rel=\"stylesheet\" />";
+    $js_array .= "\n<script type=\"text/javascript\" src=\"{$config['http_home_url']}lib/editor/scripts/webfont.js\"></script>";
+    $js_array .= "\n<link media=\"screen\" href=\"{$config['http_home_url']}lib/editor/css/default.css\" type=\"text/css\" rel=\"stylesheet\" />";
 } 
 if (strpos ($tpl -> result['content'], "<video") !== false) {
-    $js_array .= "\n<link media=\"screen\" href=\"{$config['http_home_url']}engine/editor/scripts/common/mediaelement/mediaelementplayer.min.css\" type=\"text/css\" rel=\"stylesheet\" />";
-    $js_array .= "\n<script type=\"text/javascript\" src=\"{$config['http_home_url']}engine/editor/scripts/common/mediaelement/mediaelement-and-player.min.js\"></script>";
+    $js_array .= "\n<link media=\"screen\" href=\"{$config['http_home_url']}lib/editor/scripts/common/mediaelement/mediaelementplayer.min.css\" type=\"text/css\" rel=\"stylesheet\" />";
+    $js_array .= "\n<script type=\"text/javascript\" src=\"{$config['http_home_url']}lib/editor/scripts/common/mediaelement/mediaelement-and-player.min.js\"></script>";
 } 
 $tpl -> set ('{AJAX}', $ajax);
 $tpl -> set ('{headers}', $metatags . "\n" . $js_array);

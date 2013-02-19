@@ -316,7 +316,7 @@ while ($row = $db->get_row($sql_result)) {
             $tpl->set('[/rss]', "</a>");
         } else {
             $tpl->set('{news}', "<a href=\"" . $PHP_SELF . "?subaction=allnews&amp;user=" . urlencode($row['name']) . "\">" . $lang['all_user_news'] . "</a>");
-            $tpl->set('[rss]', "<a href=\"engine/rss.php?subaction=allnews&amp;user=" . urlencode($row['name']) . "\" title=\"" . $lang['rss_user'] . "\">");
+            $tpl->set('[rss]', "<a href=\"lib/rss.php?subaction=allnews&amp;user=" . urlencode($row['name']) . "\" title=\"" . $lang['rss_user'] . "\">");
             $tpl->set('[/rss]', "</a>");
         }
         $tpl->set('{news-num}', $row['news_num']);

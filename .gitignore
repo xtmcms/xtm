@@ -2,10 +2,10 @@
 /.settings
 /tools
 *.tmp
-/engine/cache/**/*.php
-/engine/data/config.php
-/engine/data/dbconfig.php
-/engine/data/videoconfig.php
-/engine/data/wordfilter.db.php
-/engine/data/xfields.txt
-/engine/data/xprofile.txt
+/lib/cache/**/*.php
+/lib/data/config.php
+/lib/data/dbconfig.php
+/lib/data/videoconfig.php
+/lib/data/wordfilter.db.php
+/lib/data/xfields.txt
+/lib/data/xprofile.txt

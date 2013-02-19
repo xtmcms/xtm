@@ -1,5 +1,5 @@
-<link rel="stylesheet" type="text/css" href="engine/skins/chosen/chosen.css"/>
-<script type="text/javascript" src="engine/skins/chosen/chosen.js"></script>
+<link rel="stylesheet" type="text/css" href="lib/skins/chosen/chosen.css"/>
+<script type="text/javascript" src="lib/skins/chosen/chosen.js"></script>
 <script type="text/javascript">
     $(function () {
         $('#category').chosen({allow_single_deselect:true, no_results_text: 'Nothing is found'});

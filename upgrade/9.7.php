@@ -15,7 +15,7 @@ $tableSchema[] = "ALTER TABLE `" . PREFIX . "_vote` ADD `grouplevel` VARCHAR(250
 foreach($tableSchema as $table) {
 	$db->query ($table);
 }
-$handler = fopen(ENGINE_DIR . '/data/config.php', "w") or die("Sorry, but cannot write the data in the file <b>engine/data/config.php</b>, it is not writable.<br />Please check the file permission (CHMOD)!");
+$handler = fopen(ENGINE_DIR . '/data/config.php', "w") or die("Sorry, but cannot write the data in the file <b>lib/data/config.php</b>, it is not writable.<br />Please check the file permission (CHMOD)!");
 
 fwrite($handler, "<?PHP \n\n//System Configurations\n\n\$config = array (\n\n");
 foreach($config as $name => $value)

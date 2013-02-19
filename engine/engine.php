@@ -422,28 +422,28 @@ if ($do == "cat" and $category != '' and $subaction == '') {
     if ($config['allow_alt_url'] == "yes") {
         $rss_url = $url_page . "/" . "rss.xml";
     } else {
-        $rss_url = $config['http_home_url'] . "engine/rss.php?do=cat&category=" . $cat_info[$category_id]['alt_name'];
+        $rss_url = $config['http_home_url'] . "lib/rss.php?do=cat&category=" . $cat_info[$category_id]['alt_name'];
     }
 } elseif ($subaction == 'userinfo') {
     $nam_e = $user;
     if ($config['allow_alt_url'] == "yes") {
         $rss_url = $url_page . "/" . "rss.xml";
     } else {
-        $rss_url = $config['http_home_url'] . "engine/rss.php?subaction=allnews&user=" . urlencode($user);
+        $rss_url = $config['http_home_url'] . "lib/rss.php?subaction=allnews&user=" . urlencode($user);
     }
 } elseif ($subaction == 'allnews') {
     $nam_e = $lang['show_user_news'] . ' ' . $user;
     if ($config['allow_alt_url'] == "yes") {
         $rss_url = $config['http_home_url'] . "user/" . urlencode($user) . "/" . "rss.xml";
     } else {
-        $rss_url = $config['http_home_url'] . "engine/rss.php?subaction=allnews&user=" . urlencode($user);
+        $rss_url = $config['http_home_url'] . "lib/rss.php?subaction=allnews&user=" . urlencode($user);
     }
 } elseif ($subaction == 'newposts') $nam_e = $lang['title_new']; elseif ($do == 'stats') $nam_e = $lang['title_stats']; elseif ($do == 'addnews') $nam_e = $lang['title_addnews']; elseif ($do == 'register') $nam_e = $lang['title_register']; elseif ($do == 'favorites') $nam_e = $lang['title_fav']; elseif ($do == 'pm') $nam_e = $lang['title_pm']; elseif ($do == 'feedback') $nam_e = $lang['title_feed']; elseif ($do == 'lastcomments') $nam_e = $lang['title_last']; elseif ($do == 'lostpassword') $nam_e = $lang['title_lost']; elseif ($do == 'search') $nam_e = $lang['title_search']; elseif ($do == 'static') $titl_e = $static_descr; elseif ($do == 'lastnews') $nam_e = $lang['last_news']; elseif ($do == 'alltags') $nam_e = $lang['tag_cloud']; elseif ($do == 'tags') $nam_e = stripslashes($tag); elseif ($do == 'xfsearch') $nam_e = $xf; elseif ($catalog != "") {
     $nam_e = $lang['title_catalog'] . ' &raquo; ' . $catalog;
     if ($config['allow_alt_url'] == "yes") {
         $rss_url = $config['http_home_url'] . "catalog/" . urlencode($catalog) . "/" . "rss.xml";
     } else {
-        $rss_url = $config['http_home_url'] . "engine/rss.php?catalog=" . urlencode($catalog);
+        $rss_url = $config['http_home_url'] . "lib/rss.php?catalog=" . urlencode($catalog);
     }
 } else {
     if ($year != '' and $month == '' and $day == '') $nam_e = $lang['title_date'] . ' ' . $year . ' ' . $lang['title_year'];
@@ -467,7 +467,7 @@ if (!$rss_url) {
     if ($config['allow_alt_url'] == "yes") {
         $rss_url = $config['http_home_url'] . "rss.xml";
     } else {
-        $rss_url = $config['http_home_url'] . "engine/rss.php";
+        $rss_url = $config['http_home_url'] . "lib/rss.php";
     }
     $rss_title = $config['home_title'];
 }
@@ -476,8 +476,8 @@ $metatags = <<<HTML
 <title>{$metatags['title']} - Powered by xtmseo.com</title>
 <meta name="description" content="{$metatags['description']}" />
 <meta name="keywords" content="{$metatags['keywords']}" />{$disable_index}
-<meta name="generator" content="DataLife Engine (http://bbs.xtmseo.com)" />
-<link rel="search" type="application/opensearchdescription+xml" href="{$config['http_home_url']}engine/opensearch.php" title="{$config['home_title']}" />
+<meta name="generator" content="XTMCMS" />
+<link rel="search" type="application/opensearchdescription+xml" href="{$config['http_home_url']}lib/opensearch.php" title="{$config['home_title']}" />
 HTML;
 if ($config['allow_rss']) $metatags .= <<<HTML
 

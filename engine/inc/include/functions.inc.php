@@ -176,12 +176,12 @@ function msg($type, $title, $text, $back = false)
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -195,12 +195,12 @@ function msg($type, $title, $text, $back = false)
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div>
@@ -363,7 +363,7 @@ function xfieldsload()
     global $lang;
     $path = ENGINE_DIR . '/data/xfields.txt';
     $filecontents = file($path);
-    if (!is_array($filecontents)) msg("error", $lang['xfield_error'], "$lang[xfield_err_3] \"engine/data/xfields.txt\". $lang[xfield_err_4]");
+    if (!is_array($filecontents)) msg("error", $lang['xfield_error'], "$lang[xfield_err_3] \"lib/data/xfields.txt\". $lang[xfield_err_4]");
     foreach ($filecontents as $name => $value) {
         $filecontents[$name] = explode("|", trim($value));
         foreach ($filecontents[$name] as $name2 => $value2) {
@@ -573,11 +573,11 @@ function build_js($js)
     global $config;
     $js_array = array();
     if ($config['js_min'] AND version_compare(PHP_VERSION, '5.1.0', '>')) {
-        $js_array[] = "<script type=\"text/javascript\" src=\"{$config['http_home_url']}engine/classes/min/index.php?charset={$config['charset']}&amp;g=admin&amp;8\"></script>";
-        if (count($js)) $js_array[] = "<script type=\"text/javascript\" src=\"{$config['http_home_url']}engine/classes/min/index.php?charset={$config['charset']}&amp;f=" . implode(",", $js) . "&amp;8\"></script>";
+        $js_array[] = "<script type=\"text/javascript\" src=\"{$config['http_home_url']}lib/classes/min/index.php?charset={$config['charset']}&amp;g=admin&amp;8\"></script>";
+        if (count($js)) $js_array[] = "<script type=\"text/javascript\" src=\"{$config['http_home_url']}lib/classes/min/index.php?charset={$config['charset']}&amp;f=" . implode(",", $js) . "&amp;8\"></script>";
         return implode("\n", $js_array);
     } else {
-        $default_array = array('engine/classes/js/jquery.js', 'engine/classes/js/jqueryui.js', 'engine/skins/default.js',);
+        $default_array = array('lib/classes/js/jquery.js', 'lib/classes/js/jqueryui.js', 'lib/skins/default.js',);
         if (count($js)) $js = array_merge($default_array, $js);
         else $js = $default_array;
         foreach ($js as $value) {

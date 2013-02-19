@@ -2,7 +2,7 @@
 if (!defined('XTMCMS')) {
     die("Hacking attempt!");
 }
-require_once ROOT_DIR . '/engine/classes/templates.class.php';
+require_once ROOT_DIR . '/lib/classes/templates.class.php';
 $tpl = new xtm_template;
 $tpl->allow_php_include = false;
 $xtm_module = "main";
@@ -21,18 +21,18 @@ echo <<<HTML
 <style type="text/css">
 {$tpl->copy_template}
 </style>
-<link media="screen" href="{$config['http_home_url']}engine/editor/css/default.css" type="text/css" rel="stylesheet" />
-<script type="text/javascript" src="{$config['http_home_url']}engine/editor/scripts/common/jquery-1.7.min.js"></script>
+<link media="screen" href="{$config['http_home_url']}lib/editor/css/default.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="{$config['http_home_url']}lib/editor/scripts/common/jquery-1.7.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
-<script type="text/javascript" src="{$config['http_home_url']}engine/editor/scripts/webfont.js"></script>
+<script type="text/javascript" src="{$config['http_home_url']}lib/editor/scripts/webfont.js"></script>
 </head>
 <body>
-<script type="text/javascript" src="{$config['http_home_url']}engine/classes/highslide/highslide.js"></script>
-<script type="text/javascript" src="{$config['http_home_url']}engine/classes/highlight/highlight.code.js"></script>
+<script type="text/javascript" src="{$config['http_home_url']}lib/classes/highslide/highslide.js"></script>
+<script type="text/javascript" src="{$config['http_home_url']}lib/classes/highlight/highlight.code.js"></script>
 <script type="text/javascript">
 	hljs.initHighlightingOnLoad();
 
-    hs.graphicsDir = '{$config['http_home_url']}engine/classes/highslide/graphics/';
+    hs.graphicsDir = '{$config['http_home_url']}lib/classes/highslide/graphics/';
     hs.outlineType = 'rounded-white';
     hs.numberOfImagesToPreload = 0;
     hs.showCredits = false;

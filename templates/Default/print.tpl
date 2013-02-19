@@ -20,9 +20,9 @@
         img {border:0}
     </style>
     <title>DataLife Engine > 打印页面 > {title}</title>
-    <script type="text/javascript" src="/engine/classes/js/jquery.js"></script>
-    <script type="text/javascript" src="/engine/classes/js/jqueryui.js"></script>
-    <script type="text/javascript" src="/engine/classes/js/xtm_js.js"></script>
+    <script type="text/javascript" src="/lib/classes/js/jquery.js"></script>
+    <script type="text/javascript" src="/lib/classes/js/jqueryui.js"></script>
+    <script type="text/javascript" src="/lib/classes/js/xtm_js.js"></script>
 </head>
 <body bgcolor="#ffffff" text="#000000">
 <table border="0" width="100%" cellspacing="1" cellpadding="3">

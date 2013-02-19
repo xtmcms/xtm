@@ -11,9 +11,9 @@ if ($config['http_home_url'] == "") {
 if (!$config['version_id']) {
     if (file_exists(ROOT_DIR . '/install.php') AND !file_exists(ENGINE_DIR . '/data/config.php')) {
         header("Location: " . str_replace("index.php", "install.php", $_SERVER['PHP_SELF']));
-        die("Datalife Engine not installed. Please run install.php");
+        die("XTMCMS not installed. Please run install.php");
     } else {
-        die("Datalife Engine not installed. Please run install.php");
+        die("XTMCMS not installed. Please run install.php");
     }
 }
 require_once ENGINE_DIR . '/classes/mysql.php';
@@ -279,7 +279,7 @@ if ($config['site_offline'] == "yes") include_once ENGINE_DIR . '/modules/offlin
 require_once ENGINE_DIR . '/modules/calendar.php';
 if ($config['allow_topnews'] == "yes") include_once ENGINE_DIR . '/modules/topnews.php';
 if ($config['rss_informer']) include_once ENGINE_DIR . '/modules/rssinform.php';
-require_once ROOT_DIR . '/engine/engine.php';
+require_once ROOT_DIR . '/lib/lib.php';
 if ($config['allow_votes'] == "yes") include_once ENGINE_DIR . '/modules/vote.php';
 if (!defined('BANNERS')) {
     if ($config['allow_banner']) include_once ENGINE_DIR . '/modules/banners.php';

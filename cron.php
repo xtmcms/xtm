@@ -15,7 +15,7 @@ if ($allow_cron) {
     define('AUTOMODE', true);
     define('LOGGED_IN', true);
     define('ROOT_DIR', dirname (__FILE__));
-    define('ENGINE_DIR', ROOT_DIR . '/engine');
+    define('ENGINE_DIR', ROOT_DIR . '/lib');
     require_once ENGINE_DIR . '/classes/mysql.php';
     require_once ENGINE_DIR . '/data/dbconfig.php';
     require_once ENGINE_DIR . '/data/config.php';
@@ -55,7 +55,7 @@ if ($allow_cron) {
                 $cat_parentid[$key['id']] = $key['parentid'];
             } 
         } 
-        include_once ROOT_DIR . '/engine/inc/googlemap.php';
+        include_once ROOT_DIR . '/lib/inc/googlemap.php';
         die ("done");
     } elseif ($cronmode == "optimize") {
         $arr = array();
@@ -81,7 +81,7 @@ if ($allow_cron) {
         require_once ENGINE_DIR . '/classes/antivirus.class.php';
         $antivirus = new antivirus();
         $antivirus -> scan_files(ROOT_DIR . "/backup");
-        $antivirus -> scan_files(ROOT_DIR . "/engine");
+        $antivirus -> scan_files(ROOT_DIR . "/lib");
         $antivirus -> scan_files(ROOT_DIR . "/language");
         $antivirus -> scan_files(ROOT_DIR . "/templates");
         $antivirus -> scan_files(ROOT_DIR . "/uploads");
@@ -123,7 +123,7 @@ if ($allow_cron) {
         $member_id['user_group'] = 1;
         $_REQUEST['action'] = "backup";
         $_POST['comp_method'] = 1;
-        include_once ROOT_DIR . '/engine/inc/dumper.php';
+        include_once ROOT_DIR . '/lib/inc/dumper.php';
         die ("done");
     } 
 } 

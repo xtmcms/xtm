@@ -5,10 +5,10 @@
 @ini_set('error_reporting', E_ALL ^ E_WARNING ^ E_NOTICE);
 define('XTMCMS', true);
 define('ROOT_DIR', substr(dirname(__FILE__), 0, -12));
-define('ENGINE_DIR', ROOT_DIR . '/engine');
+define('ENGINE_DIR', ROOT_DIR . '/lib');
 include ENGINE_DIR . '/data/config.php';
 if ($config['http_home_url'] == "") {
-    $config['http_home_url'] = explode("engine/ajax/find_relates.php", $_SERVER['PHP_SELF']);
+    $config['http_home_url'] = explode("lib/ajax/find_relates.php", $_SERVER['PHP_SELF']);
     $config['http_home_url'] = reset($config['http_home_url']);
     $config['http_home_url'] = "http://" . $_SERVER['HTTP_HOST'] . $config['http_home_url'];
 }
@@ -72,7 +72,7 @@ while ($related = $db->get_row()) {
     }
     if (xtm_strlen($related['title'], $config['charset']) > 65) $related['title'] = xtm_substr($related['title'], 0, 65, $config['charset']) . " ...";
     if ($user_group[$member_id['user_group']]['allow_all_edit']) {
-        $d_link = "<a href=\"?mod=editnews&action=editnews&id={$related['id']}\" target=\"_blank\"><img style=\"vertical-align: middle;border:none;\" alt=\"{$lang['edit_rel']}\" src=\"engine/skins/images/notepad.png\" /></a>&nbsp;&nbsp;<a href=\"?mod=editnews&action=doeditnews&ifdelete=yes&id={$related['id']}&user_hash={$xtm_login_hash}\" target=\"_blank\"><img style=\"vertical-align: middle;border:none;\" alt=\"{$lang['edit_seldel']}\" src=\"engine/skins/images/delete.png\" /></a>&nbsp;&nbsp;";
+        $d_link = "<a href=\"?mod=editnews&action=editnews&id={$related['id']}\" target=\"_blank\"><img style=\"vertical-align: middle;border:none;\" alt=\"{$lang['edit_rel']}\" src=\"lib/skins/images/notepad.png\" /></a>&nbsp;&nbsp;<a href=\"?mod=editnews&action=doeditnews&ifdelete=yes&id={$related['id']}&user_hash={$xtm_login_hash}\" target=\"_blank\"><img style=\"vertical-align: middle;border:none;\" alt=\"{$lang['edit_seldel']}\" src=\"lib/skins/images/delete.png\" /></a>&nbsp;&nbsp;";
     } else $d_link = "";
     $buffer .= "<div style=\"padding:2px;\">{$d_link}{$news_date} - <a href=\"" . $full_link . "\" target=\"_blank\">" . stripslashes($related['title']) . "</a></div>";
 }

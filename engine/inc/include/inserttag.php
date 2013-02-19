@@ -8,18 +8,18 @@ $smilies = explode(",", $config['smilies']);
 foreach ($smilies as $smile) {
     $i++;
     $smile = trim($smile);
-    $smiles .= "<td style=\"padding:2px;\" align=\"center\"><a href=\"#\" onClick=\"xtm_smiley(':$smile:'); return false;\"><img style=\"border: none;\" alt=\"$smile\" src=\"" . $config['http_home_url'] . "engine/data/emoticons/$smile.gif\" /></a></td>";
+    $smiles .= "<td style=\"padding:2px;\" align=\"center\"><a href=\"#\" onClick=\"xtm_smiley(':$smile:'); return false;\"><img style=\"border: none;\" alt=\"$smile\" src=\"" . $config['http_home_url'] . "lib/data/emoticons/$smile.gif\" /></a></td>";
     if ($i % 4 == 0) $smiles .= "</tr><tr>";
 }
 $smiles .= "</tr></table>";
 if ($user_group[$member_id['user_group']]['allow_image_upload']) {
-    $image_upload = "<div class=\"editor_button\" onclick=\"image_upload()\"><img title=\"$lang[bb_t_up]\" src=\"engine/skins/bbcodes/images/upload.gif\" width=\"23\" height=\"25\" border=\"0\"></div>";
+    $image_upload = "<div class=\"editor_button\" onclick=\"image_upload()\"><img title=\"$lang[bb_t_up]\" src=\"lib/skins/bbcodes/images/upload.gif\" width=\"23\" height=\"25\" border=\"0\"></div>";
 } else $image_upload = "";
 if ($mod != "editnews") {
     $row['autor'] = $member_id['name'];
 }
 $p_name = urlencode($row['autor']);
-$typograf = "<div id=\"b_typograf\" class=\"editor_button\" onclick=\"tag_typograf(); return false;\"><img title=\"$lang[bb_t_t]\" src=\"engine/skins/bbcodes/images/typograf.gif\" width=\"23\" height=\"25\" border=\"0\"></div>";
+$typograf = "<div id=\"b_typograf\" class=\"editor_button\" onclick=\"tag_typograf(); return false;\"><img title=\"$lang[bb_t_t]\" src=\"lib/skins/bbcodes/images/typograf.gif\" width=\"23\" height=\"25\" border=\"0\"></div>";
 $image_align = array();
 $image_align[$config['image_align']] = "selected";
 $bb_js = <<<HTML
@@ -460,7 +460,7 @@ function ins_color( buttonElement )
 
 	$("#cp").remove();
 
-	$("body").append("<div id='cp' title='" + bb_t_col + "' style='display:none'><br /><iframe width=\"154\" height=\"104\" src=\"engine/skins/bbcodes/color.html\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\"></iframe></div>");
+	$("body").append("<div id='cp' title='" + bb_t_col + "' style='display:none'><br /><iframe width=\"154\" height=\"104\" src=\"lib/skins/bbcodes/color.html\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\"></iframe></div>");
 
 	$('#cp').dialog({
 		autoOpen: true,
@@ -534,7 +534,7 @@ function tag_typograf()
 
 		ShowLoading('');
 
-		$.post("engine/ajax/typograf.php", { txt: document.getElementById( selField ).value}, function(data){
+		$.post("lib/ajax/typograf.php", { txt: document.getElementById( selField ).value}, function(data){
 	
 			HideLoading('');
 	
@@ -579,48 +579,48 @@ function get_sel(obj)
 </SCRIPT>
 HTML;
 $bb_panel = <<<HTML
-<div style="width:98%; height:50px; border:1px solid #BBB; background-image:url('engine/skins/bbcodes/images/bg.gif');">
-<div id="b_b" class="editor_button" onclick="simpletag('b')"><img title="$lang[bb_t_b]" src="engine/skins/bbcodes/images/b.gif" width="23" height="25" border="0"></div>
-<div id="b_i" class="editor_button" onclick="simpletag('i')"><img title="$lang[bb_t_i]" src="engine/skins/bbcodes/images/i.gif" width="23" height="25" border="0"></div>
-<div id="b_u" class="editor_button" onclick="simpletag('u')"><img title="$lang[bb_t_u]" src="engine/skins/bbcodes/images/u.gif" width="23" height="25" border="0"></div>
-<div id="b_s" class="editor_button" onclick="simpletag('s')"><img title="$lang[bb_t_s]" src="engine/skins/bbcodes/images/s.gif" width="23" height="25" border="0"></div>
-<div class="editor_button"><img src="engine/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
-<div class="editor_button" onclick=tag_image()><img title="$lang[bb_b_img]" src="engine/skins/bbcodes/images/image.gif" width="23" height="25" border="0"></div>
+<div style="width:98%; height:50px; border:1px solid #BBB; background-image:url('lib/skins/bbcodes/images/bg.gif');">
+<div id="b_b" class="editor_button" onclick="simpletag('b')"><img title="$lang[bb_t_b]" src="lib/skins/bbcodes/images/b.gif" width="23" height="25" border="0"></div>
+<div id="b_i" class="editor_button" onclick="simpletag('i')"><img title="$lang[bb_t_i]" src="lib/skins/bbcodes/images/i.gif" width="23" height="25" border="0"></div>
+<div id="b_u" class="editor_button" onclick="simpletag('u')"><img title="$lang[bb_t_u]" src="lib/skins/bbcodes/images/u.gif" width="23" height="25" border="0"></div>
+<div id="b_s" class="editor_button" onclick="simpletag('s')"><img title="$lang[bb_t_s]" src="lib/skins/bbcodes/images/s.gif" width="23" height="25" border="0"></div>
+<div class="editor_button"><img src="lib/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
+<div class="editor_button" onclick=tag_image()><img title="$lang[bb_b_img]" src="lib/skins/bbcodes/images/image.gif" width="23" height="25" border="0"></div>
 {$image_upload}
-<div class="editor_button"><img src="engine/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
-<div id="b_emo" class="editor_button"  onclick="ins_emo(this);" style="width:33px;" align="center"><img title="$lang[bb_t_emo]" src="engine/skins/bbcodes/images/emo.gif" width="23" height="25" border="0"></div>
-<div class="editor_button"><img src="engine/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
-<div class="editor_button"  onclick="tag_url()"><img title="$lang[bb_t_url]" src="engine/skins/bbcodes/images/link.gif" width="23" height="25" border="0"></div>
-<div class="editor_button"  onclick="tag_leech()"><img title="$lang[bb_t_leech]" src="engine/skins/bbcodes/images/leech.gif" width="23" height="25" border="0"></div>
-<div class="editor_button"  onclick="tag_email()"><img title="$lang[bb_t_m]" src="engine/skins/bbcodes/images/email.gif" width="23" height="25" border="0"></div>
-<div class="editor_button"><img src="engine/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
-<div class="editor_button" onclick="tag_video()"><img title="$lang[bb_t_video]" src="engine/skins/bbcodes/images/mp.gif" width="23" height="25" border="0"></div>
-<div class="editor_button" onclick="tag_audio()"><img title="$lang[bb_t_audio]" src="engine/skins/bbcodes/images/mp3.gif" width="23" height="25" border="0"></div>
-<div class="editor_button"><img src="engine/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
-<div id="b_hide" class="editor_button" onclick="simpletag('hide')"><img title="$lang[bb_t_hide]" src="engine/skins/bbcodes/images/hide.gif" width="23" height="25" border="0"></div>
-<div id="b_quote" class="editor_button" onclick="simpletag('quote')"><img title="$lang[bb_t_quote]" src="engine/skins/bbcodes/images/quote.gif" width="23" height="25" border="0"></div>
-<div id="b_code" class="editor_button" onclick="simpletag('code')"><img title="$lang[bb_t_code]" src="engine/skins/bbcodes/images/code.gif" width="23" height="25" border="0"></div>
-<div class="editor_button"><img src="engine/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
-<div class="editor_button" onclick="pagebreak()"><img title="$lang[bb_t_br]" src="engine/skins/bbcodes/images/pbreak.gif" width="23" height="25" border="0"></div>
-<div class="editor_button" onclick="pagelink()"><img title="$lang[bb_t_p]" src="engine/skins/bbcodes/images/page.gif" width="23" height="25" border="0"></div>
-<div><img src="engine/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
+<div class="editor_button"><img src="lib/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
+<div id="b_emo" class="editor_button"  onclick="ins_emo(this);" style="width:33px;" align="center"><img title="$lang[bb_t_emo]" src="lib/skins/bbcodes/images/emo.gif" width="23" height="25" border="0"></div>
+<div class="editor_button"><img src="lib/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
+<div class="editor_button"  onclick="tag_url()"><img title="$lang[bb_t_url]" src="lib/skins/bbcodes/images/link.gif" width="23" height="25" border="0"></div>
+<div class="editor_button"  onclick="tag_leech()"><img title="$lang[bb_t_leech]" src="lib/skins/bbcodes/images/leech.gif" width="23" height="25" border="0"></div>
+<div class="editor_button"  onclick="tag_email()"><img title="$lang[bb_t_m]" src="lib/skins/bbcodes/images/email.gif" width="23" height="25" border="0"></div>
+<div class="editor_button"><img src="lib/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
+<div class="editor_button" onclick="tag_video()"><img title="$lang[bb_t_video]" src="lib/skins/bbcodes/images/mp.gif" width="23" height="25" border="0"></div>
+<div class="editor_button" onclick="tag_audio()"><img title="$lang[bb_t_audio]" src="lib/skins/bbcodes/images/mp3.gif" width="23" height="25" border="0"></div>
+<div class="editor_button"><img src="lib/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
+<div id="b_hide" class="editor_button" onclick="simpletag('hide')"><img title="$lang[bb_t_hide]" src="lib/skins/bbcodes/images/hide.gif" width="23" height="25" border="0"></div>
+<div id="b_quote" class="editor_button" onclick="simpletag('quote')"><img title="$lang[bb_t_quote]" src="lib/skins/bbcodes/images/quote.gif" width="23" height="25" border="0"></div>
+<div id="b_code" class="editor_button" onclick="simpletag('code')"><img title="$lang[bb_t_code]" src="lib/skins/bbcodes/images/code.gif" width="23" height="25" border="0"></div>
+<div class="editor_button"><img src="lib/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
+<div class="editor_button" onclick="pagebreak()"><img title="$lang[bb_t_br]" src="lib/skins/bbcodes/images/pbreak.gif" width="23" height="25" border="0"></div>
+<div class="editor_button" onclick="pagelink()"><img title="$lang[bb_t_p]" src="lib/skins/bbcodes/images/page.gif" width="23" height="25" border="0"></div>
+<div><img src="lib/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
 <div class="editor_button" style="padding-top:3px;width:140px;"><select name="bbfont" onchange="insert_font(this.options[this.selectedIndex].value, 'font')"><option value='0'>{$lang['bb_t_font']}</option><option value='Arial'>Arial</option><option value='Arial Black'>Arial Black</option><option value='Century Gothic'>Century Gothic</option><option value='Courier New'>Courier New</option><option value='Georgia'>Georgia</option><option value='Impact'>Impact</option><option value='System'>System</option><option value='Tahoma'>Tahoma</option><option value='Times New Roman'>Times New Roman</option><option value='Verdana'>Verdana</option></select></div>
 <div class="editor_button" style="padding-top:3px;width:70px;"><select name="bbsize" onchange="insert_font(this.options[this.selectedIndex].value, 'size')"><option value='0'>{$lang['bb_t_size']}</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='7'>7</option></select></div>
-<div class="editor_button"><img src="engine/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
-<div id="b_left" class="editor_button" onclick="simpletag('left')"><img title="$lang[bb_t_l]" src="engine/skins/bbcodes/images/l.gif" width="23" height="25" border="0"></div>
-<div id="b_center" class="editor_button" onclick="simpletag('center')"><img title="$lang[bb_t_c]" src="engine/skins/bbcodes/images/c.gif" width="23" height="25" border="0"></div>
-<div id="b_right"class="editor_button" onclick="simpletag('right')"><img title="$lang[bb_t_r]" src="engine/skins/bbcodes/images/r.gif" width="23" height="25" border="0"></div>
-<div class="editor_button"><img src="engine/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
-<div id="b_color" class="editor_button" onclick="ins_color(this);"><img title="$lang[bb_t_color]" src="engine/skins/bbcodes/images/color.gif" width="23" height="25" border="0"></div>
-<div id="b_spoiler" class="editor_button" onclick="simpletag('spoiler')"><img title="$lang[bb_t_spoiler]" src="engine/skins/bbcodes/images/spoiler.gif" width="23" height="25" border="0"></div>
-<div class="editor_button"><img src="engine/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
-<div id="b_flash" class="editor_button" onclick="tag_flash()"><img title="$lang[bb_t_flash]" src="engine/skins/bbcodes/images/flash.gif" width="23" height="25" border="0"></div>
-<div id="b_youtube" class="editor_button" onclick="tag_youtube()"><img title="$lang[bb_t_youtube]" src="engine/skins/bbcodes/images/youtube.gif" width="23" height="25" border="0"></div>
+<div class="editor_button"><img src="lib/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
+<div id="b_left" class="editor_button" onclick="simpletag('left')"><img title="$lang[bb_t_l]" src="lib/skins/bbcodes/images/l.gif" width="23" height="25" border="0"></div>
+<div id="b_center" class="editor_button" onclick="simpletag('center')"><img title="$lang[bb_t_c]" src="lib/skins/bbcodes/images/c.gif" width="23" height="25" border="0"></div>
+<div id="b_right"class="editor_button" onclick="simpletag('right')"><img title="$lang[bb_t_r]" src="lib/skins/bbcodes/images/r.gif" width="23" height="25" border="0"></div>
+<div class="editor_button"><img src="lib/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
+<div id="b_color" class="editor_button" onclick="ins_color(this);"><img title="$lang[bb_t_color]" src="lib/skins/bbcodes/images/color.gif" width="23" height="25" border="0"></div>
+<div id="b_spoiler" class="editor_button" onclick="simpletag('spoiler')"><img title="$lang[bb_t_spoiler]" src="lib/skins/bbcodes/images/spoiler.gif" width="23" height="25" border="0"></div>
+<div class="editor_button"><img src="lib/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
+<div id="b_flash" class="editor_button" onclick="tag_flash()"><img title="$lang[bb_t_flash]" src="lib/skins/bbcodes/images/flash.gif" width="23" height="25" border="0"></div>
+<div id="b_youtube" class="editor_button" onclick="tag_youtube()"><img title="$lang[bb_t_youtube]" src="lib/skins/bbcodes/images/youtube.gif" width="23" height="25" border="0"></div>
 {$typograf}
-<div class="editor_button"><img src="engine/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
-<div id="b_list" class="editor_button" onclick="tag_list('list')"><img title="$lang[bb_t_list1]" src="engine/skins/bbcodes/images/list.gif" width="23" height="25" border="0"></div>
-<div id="b_ol" class="editor_button" onclick="tag_list('ol')"><img title="$lang[bb_t_list2]" src="engine/skins/bbcodes/images/ol.gif" width="23" height="25" border="0"></div>
-<div class="editor_button"><img src="engine/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
+<div class="editor_button"><img src="lib/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
+<div id="b_list" class="editor_button" onclick="tag_list('list')"><img title="$lang[bb_t_list1]" src="lib/skins/bbcodes/images/list.gif" width="23" height="25" border="0"></div>
+<div id="b_ol" class="editor_button" onclick="tag_list('ol')"><img title="$lang[bb_t_list2]" src="lib/skins/bbcodes/images/ol.gif" width="23" height="25" border="0"></div>
+<div class="editor_button"><img src="lib/skins/bbcodes/images/brkspace.gif" width="5" height="25" border="0"></div>
 </div>
 <div id="xtm_emos" style="display: none;" title="{$lang['bb_t_emo']}"><div style="overflow: auto;">{$smiles}</div></div>
 HTML;

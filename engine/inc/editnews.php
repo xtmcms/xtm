@@ -17,7 +17,7 @@ include_once ENGINE_DIR . '/classes/parse.class.php';
 $parse = new ParseFilter(Array(), Array(), 1, 1);
 if ($action == "list") {
     $_SESSION['admin_referrer'] = $_SERVER['REQUEST_URI'];
-    $js_array[] = "engine/skins/calendar.js";
+    $js_array[] = "lib/skins/calendar.js";
     echoheader("editnews", $lang['edit_head']);
     $search_field = $db->safesql(trim(htmlspecialchars(stripslashes(urldecode($_REQUEST['search_field'])), ENT_QUOTES, $config['charset'])));
     $search_author = $db->safesql(trim(htmlspecialchars(stripslashes(urldecode($_REQUEST['search_author'])), ENT_QUOTES, $config['charset'])));
@@ -127,7 +127,7 @@ if ($action == "list") {
         <td class=\"list\" style=\"padding:4px;\">
         $itemdate - ";
         if ($row['fixed']) $entries .= "<font color=\"red\">$lang[edit_fix] </font> ";
-        if ($row['votes']) $entries .= "<img src=\"engine/skins/images/poll.gif\" style=\"vertical-align: middle;border: none;\" />&nbsp;&nbsp;";
+        if ($row['votes']) $entries .= "<img src=\"lib/skins/images/poll.gif\" style=\"vertical-align: middle;border: none;\" />&nbsp;&nbsp;";
         if ($config['allow_alt_url'] == "yes") {
             if ($config['seo_type'] == 1 OR $config['seo_type'] == 2) {
                 if (intval($row['category']) and $config['seo_type'] == 2) {
@@ -149,8 +149,8 @@ if ($action == "list") {
         $entries .= "<a title='$lang[edit_act]' class=\"list\" href=\"$PHP_SELF?mod=editnews&action=editnews&id=$row[0]\">$title</a>
         <td align=center><a title=\"{$lang['comm_view']}\" class=\"list\" href=\"{$full_link}\" target=\"_blank\">{$row['news_read']}</a></td><td align=center>" . $comm_link;
         $entries .= "</td><td style=\"text-align: center\">";
-        if ($row['approve']) $erlaub = "<img src=\"engine/skins/images/led_on.png\" title=\"{$lang['news_on']}\" alt=\"{$lang['news_on']}\" width=\"16\" height=\"16\" border=\"0\">";
-        else $erlaub = "<img src=\"engine/skins/images/led_off.png\" title=\"{$lang['news_off']}\" alt=\"{$lang['news_off']}\" width=\"16\" height=\"16\" border=\"0\">";
+        if ($row['approve']) $erlaub = "<img src=\"lib/skins/images/led_on.png\" title=\"{$lang['news_on']}\" alt=\"{$lang['news_on']}\" width=\"16\" height=\"16\" border=\"0\">";
+        else $erlaub = "<img src=\"lib/skins/images/led_off.png\" title=\"{$lang['news_off']}\" alt=\"{$lang['news_off']}\" width=\"16\" height=\"16\" border=\"0\">";
         $entries .= $erlaub;
         $entries .= "<td align=\"center\">";
         if (!$row['category']) $my_cat = "---";
@@ -167,7 +167,7 @@ if ($action == "list") {
                <td align=center><input name=\"selected_news[]\" value=\"{$row['id']}\" type='checkbox'>
 
              </tr>
-			<tr><td background=\"engine/skins/images/mline.gif\" height=1 colspan=7></td></tr>
+			<tr><td background=\"lib/skins/images/mline.gif\" height=1 colspan=7></td></tr>
             ";
         $entries_showed++;
         if ($i >= $news_per_page + $start_from) {
@@ -179,7 +179,7 @@ if ($action == "list") {
     $category_list = CategoryNewsSelection($search_cat, 0, false);
     echo <<<HTML
 <!-- calendar stylesheet -->
-<link rel="stylesheet" type="text/css" media="all" href="engine/skins/calendar-blue.css" title="win2k-cold-1" />
+<link rel="stylesheet" type="text/css" media="all" href="lib/skins/calendar-blue.css" title="win2k-cold-1" />
 <script language="javascript">
     function search_submit(prm){
       document.optionsbar.start_from.value=prm;
@@ -198,12 +198,12 @@ if ($action == "list") {
 <div style="padding-top:5px;padding-bottom:2px;display:none" name="advancedsearch" id="advancedsearch">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -224,7 +224,7 @@ if ($action == "list") {
 		<td style="padding-left:5px;"><select name="search_cat" ><option selected value="">$lang[edit_all]</option><option value="-1">$lang[cat_in_none]</option>{$category_list}</select></td>
 		<td style="padding-left:5px;">{$lang['search_by_date']}</td>
 		<td style="padding-left:5px;">{$lang['edit_fdate']} <input type="text" name="fromnewsdate" id="fromnewsdate" size="11" maxlength="16" class="edit bk" value="{$fromnewsdate}">
-<img src="engine/skins/images/img.gif"  align="absmiddle" id="f_trigger_dnews" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/>
+<img src="lib/skins/images/img.gif"  align="absmiddle" id="f_trigger_dnews" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/>
 <script type="text/javascript">
     Calendar.setup({
       inputField     :    "fromnewsdate",     // id of the input field
@@ -236,7 +236,7 @@ if ($action == "list") {
       singleClick    :    true
     });
 </script> {$lang['edit_tdate']} <input type="text" name="tonewsdate" id="tonewsdate" size="11" maxlength="16" class="edit bk" value="{$tonewsdate}">
-<img src="engine/skins/images/img.gif"  align="absmiddle" id="f_trigger_tnews" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/>
+<img src="lib/skins/images/img.gif"  align="absmiddle" id="f_trigger_tnews" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/>
 <script type="text/javascript">
     Calendar.setup({
       inputField     :    "tonewsdate",     // id of the input field
@@ -311,12 +311,12 @@ if ($action == "list") {
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div>
@@ -345,12 +345,12 @@ JSCRIPT;
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -365,12 +365,12 @@ JSCRIPT;
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div>
@@ -401,12 +401,12 @@ return menu;
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -534,12 +534,12 @@ HTML;
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>
@@ -604,10 +604,10 @@ HTML;
     }
     $expires = $db->super_query("SELECT * FROM " . PREFIX . "_post_log where news_id = '{$row['id']}'");
     if ($expires['expires']) $expires['expires'] = date("Y-m-d", $expires['expires']);
-    $js_array[] = "engine/skins/calendar.js";
-    $js_array[] = "engine/skins/tabs.js";
-    $js_array[] = "engine/skins/autocomplete.js";
-    $js_array[] = "engine/skins/chosen/chosen.js";
+    $js_array[] = "lib/skins/calendar.js";
+    $js_array[] = "lib/skins/tabs.js";
+    $js_array[] = "lib/skins/autocomplete.js";
+    $js_array[] = "lib/skins/chosen/chosen.js";
     echoheader("editnews", $lang['edit_head']);
     if (!$user_group[$member_id['user_group']]['allow_html']) $config['allow_admin_wysiwyg'] = 0;
     $xfieldsaction = "categoryfilter";
@@ -696,7 +696,7 @@ HTML;
 				var response = $('#xtm-promt-text').val()
 				$(this).dialog('close');
 				$('#xtmpopup').remove();
-				$.post('engine/ajax/message.php', { id: id,  text: response, allowdelete: \"no\" },
+				$.post('lib/ajax/message.php', { id: id,  text: response, allowdelete: \"no\" },
 					function(data){
 						if (data == 'ok') { xtmalert('{$lang['p_send_ok']}', '{$lang['p_info']}'); }
 					});
@@ -740,7 +740,7 @@ HTML;
 											var response = $('#xtm-promt-text').val()
 											$(this).dialog('close');
 											$('#xtmpopup').remove();
-											$.post('engine/ajax/message.php', { id: id,  text: response },
+											$.post('lib/ajax/message.php', { id: id,  text: response },
 											  function(data){
 											    if (data == 'ok') { document.location=url; } else { xtmalert('{$lang['p_not_send']}', '{$lang['p_info']}'); }
 										  });
@@ -805,7 +805,7 @@ HTML;
 
 		ShowLoading('');
 
-		$.post(\"engine/ajax/keywords.php\", { short_txt: short_txt, full_txt: full_txt, key: key }, function(data){
+		$.post(\"lib/ajax/keywords.php\", { short_txt: short_txt, full_txt: full_txt, key: key }, function(data){
 
 			HideLoading('');
 
@@ -823,7 +823,7 @@ HTML;
 
 		ShowLoading('');
 
-		$.post('engine/ajax/find_relates.php', { title: title, id: '{$row['id']}' }, function(data){
+		$.post('lib/ajax/find_relates.php', { title: title, id: '{$row['id']}' }, function(data){
 	
 			HideLoading('');
 	
@@ -874,7 +874,7 @@ HTML;
  
 		$( '#tags' ).autocomplete({
 			source: function( request, response ) {
-				$.getJSON( 'engine/ajax/find_tags.php', {
+				$.getJSON( 'lib/ajax/find_tags.php', {
 					term: extractLast( request.term )
 				}, response );
 			},
@@ -918,20 +918,20 @@ HTML;
         $author_info = "<b>{$row['autor']}</b>";
     }
     if ($user_group[$member_id['user_group']]['admin_editusers']) {
-        $author_info .= "&nbsp;<a onclick=\"javascript:popupedit('" . urlencode($row['autor']) . "'); return(false)\" href=\"#\"><img src=\"engine/skins/images/user_edit.png\" style=\"vertical-align: middle;border: none;\" /></a>";
+        $author_info .= "&nbsp;<a onclick=\"javascript:popupedit('" . urlencode($row['autor']) . "'); return(false)\" href=\"#\"><img src=\"lib/skins/images/user_edit.png\" style=\"vertical-align: middle;border: none;\" /></a>";
     }
     echo <<<HTML
-<link rel="stylesheet" type="text/css" media="all" href="engine/skins/calendar-blue.css" title="win2k-cold-1" />
-<link rel="stylesheet" type="text/css" href="engine/skins/chosen/chosen.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="lib/skins/calendar-blue.css" title="win2k-cold-1" />
+<link rel="stylesheet" type="text/css" href="lib/skins/chosen/chosen.css"/>
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -953,7 +953,7 @@ HTML;
     <tr>
         <td height="29" style="padding-left:5px;">{$lang['edit_edate']}</td>
         <td><input type="text" name="newdate" id="f_date_c" size="20"  class="edit bk" value="{$row['date']}">
-<img src="engine/skins/images/img.gif"  align="absmiddle" id="f_trigger_c" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/>&nbsp;<input type="checkbox" name="allow_date" id="allow_date" value="yes" onclick="CheckStatus(addnews)" checked>&nbsp;{$lang['edit_ndate']}&nbsp;<input type="checkbox" name="allow_now" id="allow_now" value="yes" disabled>&nbsp;{$lang['edit_jdate']}
+<img src="lib/skins/images/img.gif"  align="absmiddle" id="f_trigger_c" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/>&nbsp;<input type="checkbox" name="allow_date" id="allow_date" value="yes" onclick="CheckStatus(addnews)" checked>&nbsp;{$lang['edit_ndate']}&nbsp;<input type="checkbox" name="allow_now" id="allow_now" value="yes" disabled>&nbsp;{$lang['edit_jdate']}
 <script type="text/javascript">
     Calendar.setup({
         inputField     :    "f_date_c",     // id of the input field
@@ -1116,7 +1116,7 @@ HTML;
     <tr>
         <td height="29" style="padding-left:5px;">{$lang['date_expires']}</td>
         <td><input type="text" name="expires" id="e_date_c" size="20"  class="edit bk" value="{$expires['expires']}">
-<img src="engine/skins/images/img.gif"  align="absmiddle" id="e_trigger_c" style="cursor: pointer; border: 0" /> {$lang['cat_action']} <select name="expires_action"><option value="0" {$exp_action[0]}>{$lang['edit_dnews']}</option><option value="1" {$exp_action[1]}>{$lang['mass_edit_notapp']}</option><option value="2" {$exp_action[2]}>{$lang['mass_edit_notmain']}</option><option value="3" {$exp_action[3]}>{$lang['mass_edit_notfix']}</option></select><a href="#" class="hintanchor" onMouseover="showhint('{$lang['hint_expires']}', this, event, '320px')">[?]</a>
+<img src="lib/skins/images/img.gif"  align="absmiddle" id="e_trigger_c" style="cursor: pointer; border: 0" /> {$lang['cat_action']} <select name="expires_action"><option value="0" {$exp_action[0]}>{$lang['edit_dnews']}</option><option value="1" {$exp_action[1]}>{$lang['mass_edit_notapp']}</option><option value="2" {$exp_action[2]}>{$lang['mass_edit_notmain']}</option><option value="3" {$exp_action[3]}>{$lang['mass_edit_notfix']}</option></select><a href="#" class="hintanchor" onMouseover="showhint('{$lang['hint_expires']}', this, event, '320px')">[?]</a>
 <script type="text/javascript">
     Calendar.setup({
         inputField     :    "e_date_c",     // id of the input field
@@ -1210,12 +1210,12 @@ jQuery(document).ready(function($){
 HTML;
     echo <<<HTML
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>

@@ -12,7 +12,7 @@ if (!defined('E_DEPRECATED')) {
 @ini_set ('html_errors', false);
 define ('XTMCMS', true);
 define ('ROOT_DIR', dirname (__FILE__));
-define ('ENGINE_DIR', ROOT_DIR . '/engine');
+define ('ENGINE_DIR', ROOT_DIR . '/lib');
 $check_referer = true;
 require_once (ENGINE_DIR . '/inc/include/init.php');
 if ($is_loged_in == false) {

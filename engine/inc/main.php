@@ -2,14 +2,14 @@
 if (!defined('XTMCMS') OR !defined('LOGGED_IN')) {
     die("Hacking attempt!");
 }
-$js_array[] = "engine/skins/tabset.js";
+$js_array[] = "lib/skins/tabset.js";
 echoheader("home", "");
 $config['max_users_day'] = intval($config['max_users_day']);
 $maxmemory = (@ini_get('memory_limit') != '') ? @ini_get('memory_limit') : $lang['undefined'];
 $disabledfunctions = (strlen(ini_get('disable_functions')) > 1) ? @ini_get('disable_functions') : $lang['undefined'];
 $disabledfunctions = str_replace(",", ", ", $disabledfunctions);
 $safemode = (@ini_get('safe_mode') == 1) ? $lang['safe_mode_on'] : $lang['safe_mode_off'];
-$licence = "DataLife Engine 9.7 Licensed to <a href=\"{$config['http_home_url']}\" target=\"_blank\"><b>{$config['http_home_url']}</b></a>";
+$licence = "<a href=\"{$config['http_home_url']}\" target=\"_blank\"><b>{$config['http_home_url']}</b></a>";
 $offline = ($config['site_offline'] == "no") ? $lang['safe_mode_on'] : "<font color=\"red\">" . $lang['safe_mode_off'] . "</font>";
 if (function_exists('apache_get_modules')) {
     if (array_search('mod_rewrite', apache_get_modules())) {
@@ -117,7 +117,7 @@ function dirsize($directory)
     return $size;
 }
 
-$cache_size = formatsize(dirsize("engine/cache"));
+$cache_size = formatsize(dirsize("lib/cache"));
 $dfs = @disk_free_space(".");
 $freespace = formatsize($dfs);
 if ($member_id['user_group'] == 1) {
@@ -125,12 +125,12 @@ if ($member_id['user_group'] == 1) {
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -143,7 +143,7 @@ if ($member_id['user_group'] == 1) {
         <td width="50%">
 <table width="100%">
     <tr>
-        <td width="70" height="70" valign="middle" align="center" style="padding-top:5px;padding-bottom:5px;"><img src="engine/skins/images/uset.png" border="0"></td>
+        <td width="70" height="70" valign="middle" align="center" style="padding-top:5px;padding-bottom:5px;"><img src="lib/skins/images/uset.png" border="0"></td>
         <td valign="middle"><div class="quick"><a href="$PHP_SELF?mod=editusers&action=list"><h3>{$lang['opt_user']}</h3>{$lang['opt_userc']}</a></div></td>
     </tr>
 </table>
@@ -151,7 +151,7 @@ if ($member_id['user_group'] == 1) {
         <td>
 <table width="100%">
     <tr>
-        <td width="70" height="70" valign="middle" align="center" style="padding-top:5px;padding-bottom:5px;"><img src="engine/skins/images/ads.png" border="0"></td>
+        <td width="70" height="70" valign="middle" align="center" style="padding-top:5px;padding-bottom:5px;"><img src="lib/skins/images/ads.png" border="0"></td>
         <td valign="middle"><div class="quick"><a href="$PHP_SELF?mod=banners"><h3>{$lang['opt_banner']}</h3>{$lang['opt_bannerc']}</a></div></td>
     </tr>
 </table>
@@ -161,7 +161,7 @@ if ($member_id['user_group'] == 1) {
         <td>
 <table width="100%">
     <tr>
-        <td width="70" height="70" valign="middle" align="center" style="padding-top:5px;padding-bottom:5px;"><img src="engine/skins/images/tools.png" border="0"></td>
+        <td width="70" height="70" valign="middle" align="center" style="padding-top:5px;padding-bottom:5px;"><img src="lib/skins/images/tools.png" border="0"></td>
         <td valign="middle"><div class="quick"><a href="$PHP_SELF?mod=options&action=syscon"><h3>{$lang['opt_all']}</h3>{$lang['opt_allc']}</a></div></td>
     </tr>
 </table>
@@ -169,7 +169,7 @@ if ($member_id['user_group'] == 1) {
         <td>
 <table width="100%">
     <tr>
-        <td width="70" height="70" valign="middle" align="center" style="padding-top:5px;padding-bottom:5px;"><img src="engine/skins/images/nset.png" border="0"></td>
+        <td width="70" height="70" valign="middle" align="center" style="padding-top:5px;padding-bottom:5px;"><img src="lib/skins/images/nset.png" border="0"></td>
         <td valign="middle"><div class="quick"><a href="$PHP_SELF?mod=newsletter"><h3>{$lang['main_newsl']}</h3>{$lang['main_newslc']}</a></div></td>
     </tr>
 </table>
@@ -179,7 +179,7 @@ if ($member_id['user_group'] == 1) {
         <td>
 <table width="100%">
     <tr>
-        <td width="70" height="70" valign="middle" align="center" style="padding-top:5px;padding-bottom:5px;"><img src="engine/skins/images/spset.png" border="0"></td>
+        <td width="70" height="70" valign="middle" align="center" style="padding-top:5px;padding-bottom:5px;"><img src="lib/skins/images/spset.png" border="0"></td>
         <td valign="middle"><div class="quick"><a href="$PHP_SELF?mod=static"><h3>{$lang['opt_static']}</h3>{$lang['opt_staticd']}</a></div></td>
     </tr>
 </table>
@@ -187,7 +187,7 @@ if ($member_id['user_group'] == 1) {
         <td>
 <table width="100%">
     <tr>
-        <td width="70" height="70" valign="middle" align="center" style="padding-top:5px;padding-bottom:5px;"><img src="engine/skins/images/clean.png" border="0"></td>
+        <td width="70" height="70" valign="middle" align="center" style="padding-top:5px;padding-bottom:5px;"><img src="lib/skins/images/clean.png" border="0"></td>
         <td valign="middle"><div class="quick"><a href="$PHP_SELF?mod=clean"><h3>{$lang['opt_clean']}</h3>{$lang['opt_cleanc']}</a></div></td>
     </tr>
 </table>
@@ -197,7 +197,7 @@ if ($member_id['user_group'] == 1) {
         <td>
 <table width="100%">
     <tr>
-        <td width="70" height="70" valign="middle" align="center" style="padding-top:5px;padding-bottom:5px;"><img src="engine/skins/images/shield.png" border="0"></td>
+        <td width="70" height="70" valign="middle" align="center" style="padding-top:5px;padding-bottom:5px;"><img src="lib/skins/images/shield.png" border="0"></td>
         <td valign="middle"><div class="quick"><a onclick="check_files('lokal'); return false;" href="#"><h3>{$lang['mod_anti']}</h3>{$lang['anti_descr']}</a></div></td>
     </tr>
 </table>
@@ -205,7 +205,7 @@ if ($member_id['user_group'] == 1) {
 
 <table width="100%">
     <tr>
-        <td width="70" height="70" valign="middle" align="center" style="padding-top:5px;padding-bottom:5px;"><img src="engine/skins/images/next.png" border="0"></td>
+        <td width="70" height="70" valign="middle" align="center" style="padding-top:5px;padding-bottom:5px;"><img src="lib/skins/images/next.png" border="0"></td>
         <td valign="middle"><div class="quick"><a href="$PHP_SELF?mod=options&action=options"><h3>{$lang['opt_all_rublik']}</h3>{$lang['opt_all_rublikc']}</a></div></td>
     </tr>
 </table>
@@ -215,12 +215,12 @@ if ($member_id['user_group'] == 1) {
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div>
@@ -230,12 +230,12 @@ HTML;
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -245,17 +245,17 @@ HTML;
 <div class="unterline"></div>
 <table width="100%">
     <tr>
-        <td width="50%"><div class="quick"><a href="$PHP_SELF?mod=options&action=personal"><img src="engine/skins/images/pset.png" border="0" align="left"><br><h3>{$lang['opt_priv']}</h3>{$lang['opt_privc']}</a></div></td>
-        <td><div class="quick"><a href="$PHP_SELF?mod=options&action=options"><img src="engine/skins/images/next.png" border="0" align="left"><br><h3>{$lang['opt_all_rublik']}</h3>{$lang['opt_all_rublikc']}</a></div></td>
+        <td width="50%"><div class="quick"><a href="$PHP_SELF?mod=options&action=personal"><img src="lib/skins/images/pset.png" border="0" align="left"><br><h3>{$lang['opt_priv']}</h3>{$lang['opt_privc']}</a></div></td>
+        <td><div class="quick"><a href="$PHP_SELF?mod=options&action=options"><img src="lib/skins/images/next.png" border="0" align="left"><br><h3>{$lang['opt_all_rublik']}</h3>{$lang['opt_all_rublikc']}</a></div></td>
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div>
@@ -278,7 +278,7 @@ function check_files ( folder ){
 			document.getElementById( 'antivirus' ).innerHTML = '{$lang['anti_box']}';
 
 			ShowLoading('');		
-			$.post('engine/ajax/antivirus.php', { folder: folder, key: "{$config['key']}" }, function(data){
+			$.post('lib/ajax/antivirus.php', { folder: folder, key: "{$config['key']}" }, function(data){
 		
 				HideLoading('');
 		
@@ -294,7 +294,7 @@ function check_files ( folder ){
 		document.getElementById( 'antivirus' ).innerHTML = '{$lang['anti_box']}';
 	
 		ShowLoading('');		
-		$.post('engine/ajax/antivirus.php', { folder: folder, key: "{$config['key']}" }, function(data){
+		$.post('lib/ajax/antivirus.php', { folder: folder, key: "{$config['key']}" }, function(data){
 		
 			HideLoading('');
 		
@@ -316,12 +316,12 @@ HTML;
 
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -346,7 +346,7 @@ HTML;
 
 				$('#main_box').html('{$lang['xtm_updatebox']}');
 
-				$.get("engine/ajax/adminfunction.php?action=clearcache", function( data ){
+				$.get("lib/ajax/adminfunction.php?action=clearcache", function( data ){
 
 					$('#cachesize').html('0 b');
 					$('#main_box').html(data);
@@ -360,7 +360,7 @@ HTML;
 			    xtmconfirm( '{$lang['confirm_action']}', '{$lang['p_confirm']}', function () {
 
 					$('#main_box').html('{$lang['xtm_updatebox']}');
-					$.get("engine/ajax/adminfunction.php?action=clearsubscribe", function( data ){
+					$.get("lib/ajax/adminfunction.php?action=clearsubscribe", function( data ){
 						$('#main_box').html(data);
 					});
 				} );
@@ -370,7 +370,7 @@ HTML;
 			$('#check_updates').click(function() {
 
 				$('#main_box').html('{$lang['xtm_updatebox']}');
-				$.get("engine/ajax/updates.php?versionid={$config['version_id']}", function( data ){
+				$.get("lib/ajax/updates.php?versionid={$config['version_id']}", function( data ){
 					$('#main_box').html(data);
 				});
 				return false;
@@ -380,7 +380,7 @@ HTML;
 
 				$('#send_result').html('{$lang['xtm_updatebox']}');
 				var notice = $('#notice').val();
-				$.post("engine/ajax/adminfunction.php?action=sendnotice", { notice: notice } , function( data ){
+				$.post("lib/ajax/adminfunction.php?action=sendnotice", { notice: notice } , function( data ){
 					$('#send_result').append('&nbsp;' + data);
 				});
 				return false;
@@ -612,7 +612,7 @@ HTML;
        <div class=\"ui-state-error ui-corner-all\" style=\"padding:10px;\">{$lang['stat_magic']}</div>
           </td></tr><tr><td>&nbsp;</td></tr></table>";
     }
-    $check_files = array("/templates/.htaccess", "/uploads/.htaccess", "/uploads/files/.htaccess", "/engine/data/.htaccess", "/engine/cache/.htaccess", "/engine/cache/system/.htaccess",);
+    $check_files = array("/templates/.htaccess", "/uploads/.htaccess", "/uploads/files/.htaccess", "/lib/data/.htaccess", "/lib/cache/.htaccess", "/lib/cache/system/.htaccess",);
     foreach ($check_files as $file) {
         if (is_writable(ROOT_DIR . $file)) {
             echo "<br><table width=\"100%\" align=center><tr><td>
@@ -628,12 +628,12 @@ HTML;
     echo <<<HTML
 </div>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 HTML;
@@ -647,12 +647,12 @@ HTML;
     echo <<<HTML
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -672,7 +672,7 @@ HTML;
 
 				$('#send_result').html('{$lang['xtm_updatebox']}');
 				var notice = $('#notice').val();
-				$.post("engine/ajax/adminfunction.php?action=sendnotice", { notice: notice } , function( data ){
+				$.post("lib/ajax/adminfunction.php?action=sendnotice", { notice: notice } , function( data ){
 					$('#send_result').append('&nbsp;' + data);
 				});
 				return false;
@@ -734,12 +734,12 @@ HTML;
 		</div>
 
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 HTML;

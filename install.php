@@ -6,7 +6,7 @@
 @ini_set ('error_reporting', E_ALL ^ E_WARNING ^ E_NOTICE);
 define('XTMCMS', true);
 define('ROOT_DIR', dirname (__FILE__));
-define('ENGINE_DIR', ROOT_DIR . '/engine');
+define('ENGINE_DIR', ROOT_DIR . '/lib');
 $config['charset'] = "utf-8";
 require_once(ROOT_DIR . '/language/Chinese/adminpanel.lng');
 require_once(ENGINE_DIR . '/inc/include/functions.inc.php');
@@ -35,12 +35,12 @@ document.getElementById( 'check-eula' ).onsubmit = check_eula;
 <div style="padding-top:5px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -50,7 +50,7 @@ document.getElementById( 'check-eula' ).onsubmit = check_eula;
 <div class="unterline"></div>
 <table width="100%">
     <tr>
-        <td style="padding:2px;">请仔细阅读并接受Datalife Engine系统的使用条款。<br /><br /><div style="height: 300px; border: 1px solid #76774C; background-color: #FDFDD3; padding: 5px; overflow: auto;"><b>最终用户许可协议</b><br /><br /><b>许可协议标的</b><br /><br />本协议的标的即为一则有权使用<b>Datalife Engine</b>的许可副本的条款及条件载于本协议。<br /><br /><b>内容达成协议</b><br /><br />标准权限的用户，您的程序许可副本的有效期为建立程序后的 <b>一年</b> 时间。一旦过期且您不打算更新许可副本，您仍具有本版本的所有操作权限，但是将不再享有我们的技术支持、版本更新（关键及安全性更新除外）等服务。<br /><br />对于标准权限的用户，在许可副本有效期间，我们仅提供标准服务：提供软件的更新信息发布，持续研发新版本并允许您免费更新，不断修复程序bug并提供关键及安全更新。除此之外，我们不提供更多的技术支持。如果您需要更多的技术支持，可以购买我们的高级服务或者对系统的更新和研发提供一定的支持。<br /><br />我们保留公布系统选择的用户名单的权利。 我们保留在任何时间更改本合同的条款的权利，但这并不具有追溯效力。本合同的更改将被发送给用户注册时指定的电子邮件地址。<br /><br /><b>使用限制</b><br /><br />购买 <b>Datalife Engine</b> 系统,您并不具有本系统的版权，而是<b>使用权</b>。系统只能运用到一个站点（一级域名及子域名或二级域名），且这个站点完全属于您或者您的客户端。当您打算使用本系统建立新的站点时，您必须重新购买许可副本。系统不能用于二次销售给第三方，并且如果您已经在客户端建立了本系统，您必须遵循本协议并告知您的用户。如果您购买了本系统的许可副本，但不是自用，而是为您的客户安装，我们不对您的客户提供任何技术支持。<br /><br /><b>权利和义务的当事人</b><br /><br /><b>购买者权利::</b><ul><li>根据您的网站的设计和代码的结构的需要更改代码。</li><li>制作和分发有关教程说明如何设置您的模板和语言文件的修改，这将为您修改源代码提供方向。 基于您自己对系统代码做出的修改，且不属于本系统的部分，归您所有。</li><li>基于本系统的自建模块归原创作者所有。</li><li>如果希望将站点转移到其他站点，请事先通知我们，并在原站点清除程序，否则许可副本将暂时失效。</li></ul><br /><b>购买不具备的权利:</b><ul><li>向第三方二次销售本程序</li><li>基于本系代码或统架构开发相关产品</li><li>基于我们的系统代码开发自己的独立产品</li><li>将一个许可副本运用到多个站点(包括二级目录或子域名)</li><li>刊登广告，出售或在其网站上发布我们的盗版系统</li><li>发布或促销Datalife Engine的未授权版本或盗版</li><li>破解系统并使其可以通过许可验证</li></ul><b>担保限制</b><br /><br />我们声明，<b>Datalife Engine</b>已经内置了安全验证机制，并且我们也在尽最大可能的完善其安全体制，所以除非您对站点结构非常熟悉，建议您不要擅自更改系统。我们的保证和技术支持不负责对系统代码，风格，语言包等部分的擅自更改或添加第三方代码造成的后果。如果您在系统内加入了第三方代码，我们甚至有可能拒绝对您提供技术支持。您应该注意到，<b>Datalife Engine</b>系统是基于许可副本授权的，所有不能退换许可副本。<br /><br /><b>知识产权</b><br /><br /><b>Datalife Engine</b>, 包括其中的任何代码版权归 <b>Datalife Engine</b>所有, 除非组件系统使用了不同类型的许可证。同时本系统受版权法律保护。任何基于本程序开发的原创内容及相关权利归原作者所有并受法律保护。Datalife Engine并不对系统用户站点的内容负责。<br /><br /><b>合同义务提前终止</b><br /><br />如果您不同意合同的内容，本合同将自动终止。如果违反了EULA相关内容，本许可协议可以由我们单方面终止。对于提前终止服务的情况，您将同意在3周内删除站点的所有内容。</div>
+        <td style="padding:2px;">请仔细阅读并接受XTMCMS系统的使用条款。<br /><br /><div style="height: 300px; border: 1px solid #76774C; background-color: #FDFDD3; padding: 5px; overflow: auto;"><b>最终用户许可协议</b><br /><br /><b>许可协议标的</b><br /><br />本协议的标的即为一则有权使用<b>XTMCMS</b>的许可副本的条款及条件载于本协议。<br /><br /><b>内容达成协议</b><br /><br />标准权限的用户，您的程序许可副本的有效期为建立程序后的 <b>一年</b> 时间。一旦过期且您不打算更新许可副本，您仍具有本版本的所有操作权限，但是将不再享有我们的技术支持、版本更新（关键及安全性更新除外）等服务。<br /><br />对于标准权限的用户，在许可副本有效期间，我们仅提供标准服务：提供软件的更新信息发布，持续研发新版本并允许您免费更新，不断修复程序bug并提供关键及安全更新。除此之外，我们不提供更多的技术支持。如果您需要更多的技术支持，可以购买我们的高级服务或者对系统的更新和研发提供一定的支持。<br /><br />我们保留公布系统选择的用户名单的权利。 我们保留在任何时间更改本合同的条款的权利，但这并不具有追溯效力。本合同的更改将被发送给用户注册时指定的电子邮件地址。<br /><br /><b>使用限制</b><br /><br />购买 <b>XTMCMS</b> 系统,您并不具有本系统的版权，而是<b>使用权</b>。系统只能运用到一个站点（一级域名及子域名或二级域名），且这个站点完全属于您或者您的客户端。当您打算使用本系统建立新的站点时，您必须重新购买许可副本。系统不能用于二次销售给第三方，并且如果您已经在客户端建立了本系统，您必须遵循本协议并告知您的用户。如果您购买了本系统的许可副本，但不是自用，而是为您的客户安装，我们不对您的客户提供任何技术支持。<br /><br /><b>权利和义务的当事人</b><br /><br /><b>购买者权利::</b><ul><li>根据您的网站的设计和代码的结构的需要更改代码。</li><li>制作和分发有关教程说明如何设置您的模板和语言文件的修改，这将为您修改源代码提供方向。 基于您自己对系统代码做出的修改，且不属于本系统的部分，归您所有。</li><li>基于本系统的自建模块归原创作者所有。</li><li>如果希望将站点转移到其他站点，请事先通知我们，并在原站点清除程序，否则许可副本将暂时失效。</li></ul><br /><b>购买不具备的权利:</b><ul><li>向第三方二次销售本程序</li><li>基于本系代码或统架构开发相关产品</li><li>基于我们的系统代码开发自己的独立产品</li><li>将一个许可副本运用到多个站点(包括二级目录或子域名)</li><li>刊登广告，出售或在其网站上发布我们的盗版系统</li><li>发布或促销XTMCMS的未授权版本或盗版</li><li>破解系统并使其可以通过许可验证</li></ul><b>担保限制</b><br /><br />我们声明，<b>XTMCMS</b>已经内置了安全验证机制，并且我们也在尽最大可能的完善其安全体制，所以除非您对站点结构非常熟悉，建议您不要擅自更改系统。我们的保证和技术支持不负责对系统代码，风格，语言包等部分的擅自更改或添加第三方代码造成的后果。如果您在系统内加入了第三方代码，我们甚至有可能拒绝对您提供技术支持。您应该注意到，<b>XTMCMS</b>系统是基于许可副本授权的，所有不能退换许可副本。<br /><br /><b>知识产权</b><br /><br /><b>XTMCMS</b>, 包括其中的任何代码版权归 <b>XTMCMS</b>所有, 除非组件系统使用了不同类型的许可证。同时本系统受版权法律保护。任何基于本程序开发的原创内容及相关权利归原作者所有并受法律保护。XTMCMS并不对系统用户站点的内容负责。<br /><br /><b>合同义务提前终止</b><br /><br />如果您不同意合同的内容，本合同将自动终止。如果违反了EULA相关内容，本许可协议可以由我们单方面终止。对于提前终止服务的情况，您将同意在3周内删除站点的所有内容。</div>
 		<input type='checkbox' name='eula' id='eula'><b>我同意</b>
 		<br />
 </td>
@@ -60,12 +60,12 @@ document.getElementById( 'check-eula' ).onsubmit = check_eula;
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>
@@ -78,12 +78,12 @@ HTML;
 <div style="padding-top:5px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -101,27 +101,27 @@ HTML;
     echo"<tr>
          <td height=\"22\" class=\"tableborder main\">&nbsp;PHP版本 5.1及以上</td>
          <td>&nbsp;$status</td>
-         </tr><tr><td background=\"engine/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
+         </tr><tr><td background=\"lib/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
     $status = function_exists('mysql_connect') ? '<font color=green><b>是</b></font>' : '<font color=red><b>否</b></font>';;
     echo"<tr>
          <td height=\"22\" class=\"tableborder main\">&nbsp;MySQL 支持</td>
          <td colspan=2>&nbsp;$status</td>
-         </tr><tr><td background=\"engine/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
+         </tr><tr><td background=\"lib/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
     $status = extension_loaded('zlib') ? '<font color=green><b>是</b></font>' : '<font color=red><b>否</b></font>';
     echo"<tr>
          <td height=\"22\" class=\"tableborder main\">&nbsp;ZLib 压缩支持</td>
          <td colspan=2>&nbsp;$status</td>
-         </tr><tr><td background=\"engine/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
+         </tr><tr><td background=\"lib/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
     $status = extension_loaded('xml') ? '<font color=green><b>是</b></font>' : '<font color=red><b>否</b></font>';
     echo"<tr>
          <td height=\"22\" class=\"tableborder main\">&nbsp;XML 支持</td>
          <td colspan=2>&nbsp;$status</td>
-         </tr><tr><td background=\"engine/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
+         </tr><tr><td background=\"lib/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
     $status = function_exists('iconv') ? '<font color=green><b>是</b></font>' : '<font color=red><b>否</b></font>';;
     echo"<tr>
          <td height=\"22\" class=\"tableborder main\">&nbsp;Iconv 支持</td>
          <td colspan=2>&nbsp;$status</td>
-         </tr><tr><td background=\"engine/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
+         </tr><tr><td background=\"lib/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
     echo"<tr>
          <td colspan=3 class=\"navigation\"><br />如果以上任何条目出现红色标记，请按以下步骤来纠正其状态。因为有可能存在因系统操作原因出现低于脚本最低配置的情况。<br /><br /></td>
          </tr>";
@@ -135,43 +135,43 @@ HTML;
          <td height=\"22\" class=\"tableborder main\">&nbsp;安全模式（Safe Mode）</td>
          <td>&nbsp;关闭</td>
          <td>&nbsp;$status</td>
-         </tr><tr><td background=\"engine/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
+         </tr><tr><td background=\"lib/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
     $status = function_exists('mysqli_connect') ? '<font color=green><b>是</b></font>' : '<font color=red><b>否</b></font>';;
     echo"<tr>
          <td height=\"22\" class=\"tableborder main\">&nbsp;MySQLi 支持</td>
          <td>&nbsp;是</td>
          <td>&nbsp;$status</td>
-         </tr><tr><td background=\"engine/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
+         </tr><tr><td background=\"lib/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
     $status = ini_get('file_uploads') ? '<font color=green><b>开启</b></font>' : '<font color=red><b>关闭</b></font>';;
     echo"<tr>
          <td height=\"22\" class=\"tableborder main\">&nbsp;文件上传</td>
          <td>&nbsp;开启</td>
          <td>&nbsp;$status</td>
-         </tr><tr><td background=\"engine/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
+         </tr><tr><td background=\"lib/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
     $status = ini_get('output_buffering') ? '<font color=red><b>开启</b></font>' : '<font color=green><b>关闭</b></font>';;
     echo"<tr>
          <td height=\"22\" class=\"tableborder main\">&nbsp;输出缓冲(Output Buffering)</td>
          <td>&nbsp;关闭</td>
          <td>&nbsp;$status</td>
-         </tr><tr><td background=\"engine/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
+         </tr><tr><td background=\"lib/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
     $status = ini_get('magic_quotes_runtime') ? '<font color=red><b>开启</b></font>' : '<font color=green><b>关闭</b></font>';;
     echo"<tr>
          <td height=\"22\" class=\"tableborder main\">&nbsp;Magic Quotes Runtime</td>
          <td>&nbsp;关闭</td>
          <td>&nbsp;$status</td>
-         </tr><tr><td background=\"engine/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
+         </tr><tr><td background=\"lib/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
     $status = ini_get('register_globals') ? '<font color=red><b>开启</b></font>' : '<font color=green><b>关闭</b></font>';;
     echo"<tr>
          <td height=\"22\" class=\"tableborder main\">&nbsp;全局注册(Register Globals)</td>
          <td>&nbsp;关闭</td>
          <td>&nbsp;$status</td>
-         </tr><tr><td background=\"engine/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
+         </tr><tr><td background=\"lib/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
     $status = ini_get('session.auto_start') ? '<font color=red><b>开启</b></font>' : '<font color=green><b>关闭</b></font>';;
     echo"<tr>
          <td height=\"22\" class=\"tableborder main\">&nbsp;模块自动启动(Session auto start)</td>
          <td>&nbsp;关闭</td>
          <td>&nbsp;$status</td>
-         </tr><tr><td background=\"engine/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
+         </tr><tr><td background=\"lib/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
     echo"<tr>
          <td colspan=3 class=\"navigation\"><br />建议尽量使服务器完全兼容以上建议的配置，不过出现不兼容时，程序仍然可以运行(部分功能可能会失效)。<br /><br /></td>
          </tr>";
@@ -182,12 +182,12 @@ HTML;
      </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>
@@ -200,12 +200,12 @@ HTML;
 <div style="padding-top:5px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -219,7 +219,7 @@ HTML;
 <td height=\"25\">&nbsp;文件夹/文件
 <td width=\"100\" height=\"25\">&nbsp;当前读写权限CHMOD
 <td width=\"100\" height=\"25\">&nbsp;状态</tr><tr><td colspan=3><div class=\"hr_line\"></div></td></tr>";
-    $important_files = array('./backup/', './engine/data/', './engine/cache/', './engine/cache/system/', './uploads/', './uploads/files/', './uploads/fotos/', './uploads/posts/', './uploads/posts/thumbs/', './uploads/thumbs/', './templates/', './templates/Default/',);
+    $important_files = array('./backup/', './lib/data/', './lib/cache/', './lib/cache/system/', './uploads/', './uploads/files/', './uploads/fotos/', './uploads/posts/', './uploads/posts/thumbs/', './uploads/thumbs/', './templates/', './templates/Default/',);
     $chmod_errors = 0;
     $not_found_errors = 0;
     foreach($important_files as $file) {
@@ -247,7 +247,7 @@ HTML;
          <td height=\"22\" class=\"tableborder main\">&nbsp;$file</td>
          <td>&nbsp; $chmod_value</td>
          <td>&nbsp; $file_status</td>
-         </tr><tr><td background=\"engine/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
+         </tr><tr><td background=\"lib/skins/images/mline.gif\" height=1 colspan=3></td></tr>";
     } 
     if ($chmod_errors == 0 and $not_found_errors == 0) {
         $status_report = '成功完成读写权限检测!您可以继续安装!';
@@ -267,12 +267,12 @@ HTML;
      </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>
@@ -290,12 +290,12 @@ HTML;
 <div style="padding-top:5px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -332,12 +332,12 @@ HTML;
      </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>
@@ -366,7 +366,7 @@ HTML;
 
 'version_id' => "9.7",
 
-'home_title' => "DataLife Engine 9.7 汉化版",
+'home_title' => "XTMCMS 9.7 汉化版",
 
 'http_home_url' => "$url",
 
@@ -374,9 +374,9 @@ HTML;
 
 'admin_mail' => "$reg_email",
 
-'description' => "DataLife Engine 9.7 版，优秀的SEO优化、稳定、低负载的CMS内容管理系统。",
+'description' => "XTMCMS 9.7 版，优秀的SEO优化、稳定、低负载的CMS内容管理系统。",
 
-'keywords' => "DataLife, Engine, 内容管理系统,PHP CMS 建站程序,SEO最好的CMS, CMS, PHP engine",
+'keywords' => "DataLife, Engine, 内容管理系统,PHP CMS 建站程序,SEO最好的CMS, CMS, PHP lib",
 
 'date_adjust' => "0",
 
@@ -522,7 +522,7 @@ HTML;
 
 'allow_multi_category' => "1",
 
-'short_title' => "DataLife Engine 9.8 汉化版",
+'short_title' => "XTMCMS 9.8 汉化版",
 
 'allow_rss' => "1",
 
@@ -734,30 +734,30 @@ HTML;
 
 ?>
 HTML;
-    $con_file = fopen("engine/data/config.php", "w+") or die("抱歉，您不能创建文件 <b>.engine/data/config.php</b>。<br />请检查此文件的权限（CHMOD）!");
+    $con_file = fopen("lib/data/config.php", "w+") or die("抱歉，您不能创建文件 <b>.lib/data/config.php</b>。<br />请检查此文件的权限（CHMOD）!");
     fwrite($con_file, $config);
     fclose($con_file);
-    @chmod("engine/data/config.php", 0666);
-    $con_file = fopen("engine/data/dbconfig.php", "w+") or die("抱歉，您不能创建文件 <b>.engine/data/dbconfig.php</b>.<br />请检查此文件的权限（CHMOD）!");
+    @chmod("lib/data/config.php", 0666);
+    $con_file = fopen("lib/data/dbconfig.php", "w+") or die("抱歉，您不能创建文件 <b>.lib/data/dbconfig.php</b>.<br />请检查此文件的权限（CHMOD）!");
     fwrite($con_file, $dbconfig);
     fclose($con_file);
-    @chmod("engine/data/dbconfig.php", 0666);
-    $con_file = fopen("engine/data/videoconfig.php", "w+") or die("抱歉，您不能创建文件 <b>.engine/data/videoconfig.php</b>.<br />请检查此文件的权限（CHMOD）!");
+    @chmod("lib/data/dbconfig.php", 0666);
+    $con_file = fopen("lib/data/videoconfig.php", "w+") or die("抱歉，您不能创建文件 <b>.lib/data/videoconfig.php</b>.<br />请检查此文件的权限（CHMOD）!");
     fwrite($con_file, $video_config);
     fclose($con_file);
-    @chmod("engine/data/videoconfig.php", 0666);
-    $con_file = fopen("engine/data/wordfilter.db.php", "w+") or die("抱歉，您不能创建文件 <b>.engine/data/wordfilter.db.php</b>.<br />请检查此文件的权限（CHMOD）!");
+    @chmod("lib/data/videoconfig.php", 0666);
+    $con_file = fopen("lib/data/wordfilter.db.php", "w+") or die("抱歉，您不能创建文件 <b>.lib/data/wordfilter.db.php</b>.<br />请检查此文件的权限（CHMOD）!");
     fwrite($con_file, '');
     fclose($con_file);
-    @chmod("engine/data/wordfilter.db.php", 0666);
-    $con_file = fopen("engine/data/xfields.txt", "w+") or die("抱歉，您不能创建文件 <b>.engine/data/xfields.txt</b>.<br />请检查此文件的权限（CHMOD）!");
+    @chmod("lib/data/wordfilter.db.php", 0666);
+    $con_file = fopen("lib/data/xfields.txt", "w+") or die("抱歉，您不能创建文件 <b>.lib/data/xfields.txt</b>.<br />请检查此文件的权限（CHMOD）!");
     fwrite($con_file, '');
     fclose($con_file);
-    @chmod("engine/data/xfields.txt", 0666);
-    $con_file = fopen("engine/data/xprofile.txt", "w+") or die("抱歉，您不能创建文件 <b>.engine/data/xprofile.txt</b>.<br />请检查此文件的权限（CHMOD）!");
+    @chmod("lib/data/xfields.txt", 0666);
+    $con_file = fopen("lib/data/xprofile.txt", "w+") or die("抱歉，您不能创建文件 <b>.lib/data/xprofile.txt</b>.<br />请检查此文件的权限（CHMOD）!");
     fwrite($con_file, '');
     fclose($con_file);
-    @chmod("engine/data/xprofile.txt", 0666);
+    @chmod("lib/data/xprofile.txt", 0666);
     @unlink(ENGINE_DIR . '/cache/system/usergroup.php');
     @unlink(ENGINE_DIR . '/cache/system/vote.php');
     @unlink(ENGINE_DIR . '/cache/system/banners.php');
@@ -1337,13 +1337,13 @@ HTML;
   `answer` text NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM /*!40101 DEFAULT CHARACTER SET " . COLLATE . " COLLATE " . COLLATE . "_general_ci */";
-    $tableSchema[] = "INSERT INTO " . PREFIX . "_rssinform VALUES (1, 'xtm', 'DataLife Engine 汉化版最新动态', '0', 'http://www.xtmseo.com/rss.xml', 'informer', 3, 0, 200, 1, 'j F Y H:i')";
+    $tableSchema[] = "INSERT INTO " . PREFIX . "_rssinform VALUES (1, 'xtm', 'XTMCMS 汉化版最新动态', '0', 'http://www.xtmseo.com/rss.xml', 'informer', 3, 0, 200, 1, 'j F Y H:i')";
     $tableSchema[] = "INSERT INTO " . PREFIX . "_usergroups VALUES (1, '管理员', 'all', 1, 'all', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 50, 101, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, '{THEME}/images/icon_1.gif', 0, 1, 1, 1, 1, 1, 1, 0, 1,500,1000,1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,1,'<b><span style=\"color:red\">','</span></b>',1,1,'all', 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 'zip,rar,exe,doc,pdf,swf', 4096, 0)";
     $tableSchema[] = "INSERT INTO " . PREFIX . "_usergroups VALUES (2, '编辑', 'all', 1, 'all', 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 50, 101, 1, 1, 1, 0, 2, 1, 1, 1, 1, 1, 0, '{THEME}/images/icon_2.gif', 0, 1, 0, 1, 1, 1, 1, 0, 1,500,1000,1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,1,'','',1,1,'all', 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 'zip,rar,exe,doc,pdf,swf', 4096, 0)";
     $tableSchema[] = "INSERT INTO " . PREFIX . "_usergroups VALUES (3, '作者', 'all', 1, 'all', 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 50, 101, 1, 1, 1, 0, 3, 0, 1, 1, 1, 1, 0, '{THEME}/images/icon_3.gif', 0, 1, 0, 1, 1, 1, 1, 0, 1,500,1000,1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,1,'','',1,1,'all', 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 'zip,rar,exe,doc,pdf,swf', 4096, 0)";
     $tableSchema[] = "INSERT INTO " . PREFIX . "_usergroups VALUES (4, '会员', 'all', 1, 'all', 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 20, 101, 1, 1, 1, 0, 4, 0, 1, 1, 1, 1, 0, '{THEME}/images/icon_4.gif', 0, 1, 0, 1, 0, 1, 1, 1, 0,500,1000,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,1,'','',1,0,'all', 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 'zip,rar,exe,doc,pdf,swf', 4096, 0)";
     $tableSchema[] = "INSERT INTO " . PREFIX . "_usergroups VALUES (5, '游客', 'all', 0, 'all', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 5, 0, 1, 1, 1, 0, 1, '{THEME}/images/icon_5.gif', 0, 1, 0, 0, 0, 0, 1, 1, 0,1,1,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,'','',0,0,'all', 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, '', 0, 0)";
-    $tableSchema[] = "INSERT INTO " . PREFIX . "_rss VALUES (1, 'http://www.xtmseo.com/rss.xml', 'DataLife Engine 汉化版最新动态', 1, 1, 1, 1, 1, '<div id=\"news-id-{skip}\">{get}</div><br /><br />', 5, '', 1, '')";
+    $tableSchema[] = "INSERT INTO " . PREFIX . "_rss VALUES (1, 'http://www.xtmseo.com/rss.xml', 'XTMCMS 汉化版最新动态', 1, 1, 1, 1, 1, '<div id=\"news-id-{skip}\">{get}</div><br /><br />', 5, '', 1, '')";
     $tableSchema[] = "INSERT INTO " . PREFIX . "_email values (1, 'reg_mail', '{%username%},\r\n\r\本邮件发送于 $url\r\n\r\n您收到这封邮件是因为此邮件地址被用来注册了我们的站点。如果您没有在我们的站点进行注册，请忽略并删除本邮件。并且您不会再收到来自我们站点的邮件!\r\n\r\n------------------------------------------------\r\n您在我们站点的注册信息:\r\n------------------------------------------------\r\n\r\n用户名: {%username%}\r\n密码: {%password%}\r\n\r\n------------------------------------------------\r\n如何激活账号\r\n------------------------------------------------\r\n\r\n感谢您的注册。\r\n我们需要您的确认, 以验证您输入了真实有效的 e-mail 地址。此步骤可以维持站点正常并预防他人恶意注册和攻击，谢谢您的支持。\r\n\r\n激活您的账号，只需要单击以下的链接:\r\n\r\n{%validationlink%}\r\n\r\n如果此操作没有正常进行，您的账号将不能完成注册并从站点服务器删除。如果出现这种情况，请重新注册或联系站点的管理员来解决此问题。\r\n\r\n祝好运,\r\n\r\n站点 $url.')";
     $tableSchema[] = "INSERT INTO " . PREFIX . "_email values (2, 'feed_mail', '{%username_to%},\r\n\r\本邮件发送自 {%username_from%} 于站点 $url\r\n\r\n------------------------------------------------\r\n信息内容\r\n------------------------------------------------\r\n\r\n{%text%}\r\n\r\n发送者的IP地址: {%ip%}\r\n\r\n------------------------------------------------\r\n注意：我们的站点及管理员并不对本邮件内容负责\r\n\r\n祝好运,\r\n\r\n站点 $url')";
     $tableSchema[] = "INSERT INTO " . PREFIX . "_email values (3, 'lost_mail', '亲爱的 {%username%},\r\n\r\您刚刚申请找回站点 $url 的账户密码。不过，出于安全考虑，站点会员的密码都进过了加密处理，，所以我们也不能为您提供旧密码，请生成新的账户密码。新密码生成链接: \r\n\r\n{%lostlink%}\r\n\r\n如果您并没有申请过找回密码，请忽略并删除本邮件。您的账户信息都是经加密处理的，不会被未授权的人获取，请放心！\r\n\r\n发送者的IP地址: {%ip%}\r\n\r\n祝好运,\r\n\r\n站点 $url')";
@@ -1381,17 +1381,17 @@ HTML;
 </div><br /><br /><div align=\"center\">{ACCEPT-DECLINE}</div>', 1, 1, 'all', '', '站点站规', '站点站规', 0, '', '{$add_time}')";
     $tableSchema[] = "INSERT INTO " . PREFIX . "_users (name, password, email, reg_date, lastdate, user_group, news_num, info, signature, favorites, xfields) values ('$reg_username', '$reg_password', '$reg_email', '$add_time', '$add_time', '1', '4', '', '', '', '')";
     $tableSchema[] = "INSERT INTO " . PREFIX . "_vote (category, vote_num, date, title, body) VALUES ('all', '0', '$thistime', '您如何得知 xtmseo.com的呢?', '搜索引擎<br />朋友介绍<br />慕名而来<br />曾经用过xtm<br />其他站点推荐...')";
-    $title = "Datalife Engine 9.7";
-    $short_story = "<div align=\"center\"><img src=\"" . $url . "uploads/boxsmall.jpg\" alt=\"\" /></div>Datalife Engine is multi-user Content Management System, using the combination of AJAX technology and a cross-browser javascript library (jQuery) which has a lot of features. The engine is intended primarily for the Blogs and News Contents websites with great information content. However, it has a lot of settings that allow you to use it for virtually any purposes. The engine can be integrated into virtually any existing design and has no restrictions on the templates customizations itself. Another key feature of DataLife Engine - is a low load on system resources. Even with a very large contents and visitors website, the server loading will be minimal and you will not experience any problems with the connectivity or mapping and query the contents and information. The engine is Search Engine Optimisation (SEO) that lead or bring visitors and web surfers to your site (or higher ranked on the search results page) and and more frequently a site appears in the search results list, the more visitors it will receive from the search engine\'s users. As mentioned earlier Datalife Engine is Using AJAX advanced technology which will allow you not only to save you on server traffic and resources and traffic of visitors, but also reduces the load on the server. About all the functional features, please visit <a href=\"http://www.xtm-news.ru/\" target=\"_blank\">Datalife Engine Official Website</a>, for English documents and guides please visit our <a href=\"http://www.xtmstarter.com/\" target=\"_blank\">English Documents and User Guides</a>.<br /><br />Datalife Engine Official Support Forum: <a href=\"http://forum.xtm-news.ru/index.php\" target=\"_blank\">http://forum.xtm-news.ru/index.php</a>.";
+    $title = "XTMCMS 9.7";
+    $short_story = "<div align=\"center\"><img src=\"" . $url . "uploads/boxsmall.jpg\" alt=\"\" /></div>XTMCMS is multi-user Content Management System, using the combination of AJAX technology and a cross-browser javascript library (jQuery) which has a lot of features. The lib is intended primarily for the Blogs and News Contents websites with great information content. However, it has a lot of settings that allow you to use it for virtually any purposes. The lib can be integrated into virtually any existing design and has no restrictions on the templates customizations itself. Another key feature of XTMCMS - is a low load on system resources. Even with a very large contents and visitors website, the server loading will be minimal and you will not experience any problems with the connectivity or mapping and query the contents and information. The lib is Search Engine Optimisation (SEO) that lead or bring visitors and web surfers to your site (or higher ranked on the search results page) and and more frequently a site appears in the search results list, the more visitors it will receive from the search lib\'s users. As mentioned earlier XTMCMS is Using AJAX advanced technology which will allow you not only to save you on server traffic and resources and traffic of visitors, but also reduces the load on the server. About all the functional features, please visit <a href=\"http://www.xtm-news.ru/\" target=\"_blank\">XTMCMS Official Website</a>, for English documents and guides please visit our <a href=\"http://www.xtmstarter.com/\" target=\"_blank\">English Documents and User Guides</a>.<br /><br />XTMCMS Official Support Forum: <a href=\"http://forum.xtm-news.ru/index.php\" target=\"_blank\">http://forum.xtm-news.ru/index.php</a>.";
     $full_story = "";
     $tableSchema[] = "INSERT INTO " . PREFIX . "_post (id, date, autor, short_story, full_story, xfields, title, keywords, category, alt_name, allow_comm, approve, allow_main, tags) values ('1', '$thistime', '$reg_username', '$short_story', '$full_story', '', '$title', '', '1', 'post1', '1', '1', '1', 'xtm, xtmseo')";
     $title = "Script Purchase and Price";
-    $short_story = "Dear webmaster,before you ask any questions about script supports, make sure that you carefully read the documentation comes with the scripton the script but if could not find the answer for it, then you can ask for supports. We reserve the right to ignore the questions sending to us regarding to Trial or Demo or Not-Paid versions, which includes technical supports. You can purchase one of two types of licenses for DataLife Engine of your choice:<br /><br />- <b>Basic license.</b> The price of this license is: <span style=\"color:red\">$59</span>. When you purchase this license, you you will receive free new versions of the script which released within <b>one year</b>.<br /><br />- <b>Extended License.</b> The price of this license is: <span style=\"color:red\">$78</span>. When you purchase this license, you get everything included in the <b>basic license</b>, as well as additional script technical support is included and permission to remove the script copyright on your website front page (visible to the general site visitors).<br /><br /><b>License Valid</b> for <span style=\"color:#FF0000\">1 year</span>, which you will receive all script future versions and update free, as well as free supports for those who had purchase an extended license. When the license is expired, you can extend it, or use the version of script athe the license expired free for life. If you want to renew the license to upgrade to the new version, the cost of renew the license is <span style=\"color:red\">39$</span> and it is good for one year<br /><br /><b>To purchase script please visit</b> <a href=\"http://xtm-news.ru/price.html\" target=\"_blank\">http://xtm-news.ru/price.html</a><br /><br />Remember that the license is issued only for 1 domain and can not be used on other sites as well as prohibited to share your licenses file to third parties.<br /><br /><b>Best Regards,<br /><br />SoftNews Media Group</b>";
+    $short_story = "Dear webmaster,before you ask any questions about script supports, make sure that you carefully read the documentation comes with the scripton the script but if could not find the answer for it, then you can ask for supports. We reserve the right to ignore the questions sending to us regarding to Trial or Demo or Not-Paid versions, which includes technical supports. You can purchase one of two types of licenses for XTMCMS of your choice:<br /><br />- <b>Basic license.</b> The price of this license is: <span style=\"color:red\">$59</span>. When you purchase this license, you you will receive free new versions of the script which released within <b>one year</b>.<br /><br />- <b>Extended License.</b> The price of this license is: <span style=\"color:red\">$78</span>. When you purchase this license, you get everything included in the <b>basic license</b>, as well as additional script technical support is included and permission to remove the script copyright on your website front page (visible to the general site visitors).<br /><br /><b>License Valid</b> for <span style=\"color:#FF0000\">1 year</span>, which you will receive all script future versions and update free, as well as free supports for those who had purchase an extended license. When the license is expired, you can extend it, or use the version of script athe the license expired free for life. If you want to renew the license to upgrade to the new version, the cost of renew the license is <span style=\"color:red\">39$</span> and it is good for one year<br /><br /><b>To purchase script please visit</b> <a href=\"http://xtm-news.ru/price.html\" target=\"_blank\">http://xtm-news.ru/price.html</a><br /><br />Remember that the license is issued only for 1 domain and can not be used on other sites as well as prohibited to share your licenses file to third parties.<br /><br /><b>Best Regards,<br /><br />SoftNews Media Group</b>";
     $add_time = time()-20;
     $thistime = date ("Y-m-d H:i:s", $add_time);
     $tableSchema[] = "INSERT INTO " . PREFIX . "_post (id, date, autor, short_story, full_story, xfields, title, keywords, category, alt_name, allow_comm, approve, allow_main, tags) values ('2', '$thistime', '$reg_username', '$short_story', '$full_story', '', '$title', '', '1', 'post2', '1', '1', '1', 'xtm, xtmseo')";
-    $title = "DataLife Engine Templates";
-    $short_story = "<br /><div align=\"center\"><a href=\"http://www.xtmtemplates.com/\" target=\"_blank\"><img src=\"" . $url . "uploads/xtmlogo.gif\" alt=\"\" /></a></div><br />We and our partner <a href=\"http://www.xtmtemplates.com/\" target=\"_blank\">www.xtmtemplates.com</a> are pleased to provide you with high quality templates which will be ready to use with DataLife Engine script. All templates are created on high quality by skilled and experinced designers and programmers. All templates are fully customized and ready to use immediately after it is installed on the server. In addition, all templates have been fully tested on our site, you also get all the original raw materials that were used to create a template.<br /><br />If you are still wondering how it will look like on your site and want to use the professional services for reasonable prices, we recommend that you contact our partners <a href=\"http://www.xtmtemplates.com/\" target=\"_blank\">www.xtmtemplates.com</a>, they will create any templates or layout and customize it to use with engine in short time, also provide ready to purchase and use for your site.";
+    $title = "XTMCMS Templates";
+    $short_story = "<br /><div align=\"center\"><a href=\"http://www.xtmtemplates.com/\" target=\"_blank\"><img src=\"" . $url . "uploads/xtmlogo.gif\" alt=\"\" /></a></div><br />We and our partner <a href=\"http://www.xtmtemplates.com/\" target=\"_blank\">www.xtmtemplates.com</a> are pleased to provide you with high quality templates which will be ready to use with XTMCMS script. All templates are created on high quality by skilled and experinced designers and programmers. All templates are fully customized and ready to use immediately after it is installed on the server. In addition, all templates have been fully tested on our site, you also get all the original raw materials that were used to create a template.<br /><br />If you are still wondering how it will look like on your site and want to use the professional services for reasonable prices, we recommend that you contact our partners <a href=\"http://www.xtmtemplates.com/\" target=\"_blank\">www.xtmtemplates.com</a>, they will create any templates or layout and customize it to use with lib in short time, also provide ready to purchase and use for your site.";
     $add_time = time()-50;
     $thistime = date ("Y-m-d H:i:s", $add_time);
     $tableSchema[] = "INSERT INTO " . PREFIX . "_post (id, date, autor, short_story, full_story, xfields, title, keywords, category, alt_name, allow_comm, approve, allow_main, tags) values ('3', '$thistime', '$reg_username', '$short_story', '$full_story', '', '$title', '', '1', 'post3', '1', '1', '1', 'xtm, xtmseo')";
@@ -1412,12 +1412,12 @@ HTML;
 <div style="padding-top:5px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -1427,18 +1427,18 @@ HTML;
 <div class="unterline"></div>
 <table width="100%">
     <tr>
-        <td style="padding:2px;"><br>恭喜您，Datalife Engine CMS系统已经成功安装到了您的服务器。您现在可以查看<a href="index.php" target="_blank">站点首页</a>或者登录 <a href="admin.php">管理后台</a> 查看管理面板并修改系统设置信息。
+        <td style="padding:2px;"><br>恭喜您，XTMCMS CMS系统已经成功安装到了您的服务器。您现在可以查看<a href="index.php" target="_blank">站点首页</a>或者登录 <a href="admin.php">管理后台</a> 查看管理面板并修改系统设置信息。
 <br><br><font color="red">警告:安装文件会向服务器注入数据库结构/创建管理员信息/系统基本信息的设定。成功安装后，请马上删除 <b>install.php</b> 文件防止被别人利用来攻击系统!</font><br><br>
-享受您的站点Datalife Engine系统<br><br><a href="http://bbs.xtmseo.com"><span style="text-decoration: none">支持网站</span></a><br><br></td>
+享受您的站点XTMCMS系统<br><br><a href="http://bbs.xtmseo.com"><span style="text-decoration: none">支持网站</span></a><br><br></td>
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div>
@@ -1451,12 +1451,12 @@ HTML;
 <div style="padding-top:5px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -1466,19 +1466,19 @@ HTML;
 <div class="unterline"></div>
 <table width="100%">
     <tr>
-        <td style="padding:2px;">注意，服务器上已经安装了Datalife Engine副本。如果您想重新安装程序，您必须手工删除 <b>/engine/data/config.php</b> 文件，通过FTP客户端或其他工具。<br /><br /></td>
+        <td style="padding:2px;">注意，服务器上已经安装了XTMCMS副本。如果您想重新安装程序，您必须手工删除 <b>/lib/data/config.php</b> 文件，通过FTP客户端或其他工具。<br /><br /></td>
     </tr>
     <tr>
         <td style="padding:2px;"><input class=buttons type=submit value="&nbsp;&nbsp;刷新&nbsp;&nbsp;"></td>
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>
@@ -1493,38 +1493,38 @@ HTML;
 <div style="padding-top:5px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
-        <td bgcolor="#EFEFEF" height="29" style="padding-left:10px;"><div class="navigation">欢迎使用 DataLife Engine 系统安装向导</div></td>
+        <td bgcolor="#EFEFEF" height="29" style="padding-left:10px;"><div class="navigation">欢迎使用 XTMCMS 系统安装向导</div></td>
     </tr>
 </table>
 <div class="unterline"></div>
 <table width="100%">
     <tr>
-        <td style="padding:2px;">欢迎安装Datalife Engine内容管理系统。本向导将引导您在几分钟的时间内将程序安装到服务器上。不过，我们强烈建议您查看下面的安装提示文档，以更好的安装本系统。<br><br>
+        <td style="padding:2px;">欢迎安装XTMCMS内容管理系统。本向导将引导您在几分钟的时间内将程序安装到服务器上。不过，我们强烈建议您查看下面的安装提示文档，以更好的安装本系统。<br><br>
 安装之前，请确保将程序包内所有文件/文件夹都上传到了服务器正确位置，并为必要的文件/文件夹设置合适的读写权限。<br><br>
 如果您想开启 SEO(搜索引擎优化) 功能，您要确保您的服务器支持 <b>modrewrite</b> 模块并允许使用。如果您要关闭此功能，请删除根目录下的 <b>.htaccess</b> 文件，并在安装过程中关闭此功能。<br><br>
 <font color="red">警告:安装文件会向服务器注入数据库结构/创建管理员信息及系统基本信息的设定。成功安装后，请马上删除 <b>install.php</b> 文件防止被别人利用来攻击系统!</font><br><br>
-享受您的站点，Datalife Engine系统。<br /><br /><a href="http://bbs.xtmseo.com"><span style="text-decoration: none">支持网站</span></a></td>
+享受您的站点，XTMCMS系统。<br /><br /><a href="http://bbs.dleseo.com"><span style="text-decoration: none">支持网站</span></a></td>
     </tr>
     <tr>
         <td style="padding:2px;"><input type=hidden name=action value="eula"><input class=buttons type=submit value="&nbsp;&nbsp;开始安装&nbsp;&nbsp;"></td>
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>

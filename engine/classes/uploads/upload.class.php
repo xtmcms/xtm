@@ -348,20 +348,20 @@ class FileUploader
                     $id = $db->insert_id();
                     if (in_array($type, $this->allowed_video)) {
                         if ($type == "mp3") {
-                            $file_link = $config['http_home_url'] . "engine/skins/images/mp3_file.png";
+                            $file_link = $config['http_home_url'] . "lib/skins/images/mp3_file.png";
                             $data_url = $config['http_home_url'] . "uploads/files/" . $uploaded_filename;
                             $file_play = "audio";
                         } elseif ($type == "swf") {
-                            $file_link = $config['http_home_url'] . "engine/skins/images/file_flash.png";
+                            $file_link = $config['http_home_url'] . "lib/skins/images/file_flash.png";
                             $data_url = $config['http_home_url'] . "uploads/files/" . $uploaded_filename;
                             $file_play = "flash";
                         } else {
-                            $file_link = $config['http_home_url'] . "engine/skins/images/video_file.png";
+                            $file_link = $config['http_home_url'] . "lib/skins/images/video_file.png";
                             $data_url = $config['http_home_url'] . "uploads/files/" . $uploaded_filename;
                             $file_play = "video";
                         }
                     } else {
-                        $file_link = $config['http_home_url'] . "engine/skins/images/all_file.png";
+                        $file_link = $config['http_home_url'] . "lib/skins/images/all_file.png";
                         $data_url = "#";
                         $file_play = "";
                     }
@@ -372,20 +372,20 @@ class FileUploader
                     $id = $db->insert_id();
                     if (in_array($type, $this->allowed_video)) {
                         if ($type == "mp3") {
-                            $file_link = $config['http_home_url'] . "engine/skins/images/mp3_file.png";
+                            $file_link = $config['http_home_url'] . "lib/skins/images/mp3_file.png";
                             $data_url = $config['http_home_url'] . "uploads/files/" . $uploaded_filename;
                             $file_play = "audio";
                         } elseif ($type == "swf") {
-                            $file_link = $config['http_home_url'] . "engine/skins/images/file_flash.png";
+                            $file_link = $config['http_home_url'] . "lib/skins/images/file_flash.png";
                             $data_url = $config['http_home_url'] . "uploads/files/" . $uploaded_filename;
                             $file_play = "flash";
                         } else {
-                            $file_link = $config['http_home_url'] . "engine/skins/images/video_file.png";
+                            $file_link = $config['http_home_url'] . "lib/skins/images/video_file.png";
                             $data_url = $config['http_home_url'] . "uploads/files/" . $uploaded_filename;
                             $file_play = "video";
                         }
                     } else {
-                        $file_link = $config['http_home_url'] . "engine/skins/images/all_file.png";
+                        $file_link = $config['http_home_url'] . "lib/skins/images/all_file.png";
                         $data_url = "#";
                         $file_play = "";
                     }

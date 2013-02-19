@@ -5,10 +5,10 @@
 @ini_set('error_reporting', E_ALL ^ E_WARNING ^ E_NOTICE);
 define('XTMCMS', true);
 define('ROOT_DIR', substr(dirname(__FILE__), 0, -12));
-define('ENGINE_DIR', ROOT_DIR . '/engine');
+define('ENGINE_DIR', ROOT_DIR . '/lib');
 include ENGINE_DIR . '/data/config.php';
 if ($config['http_home_url'] == "") {
-    $config['http_home_url'] = explode("engine/ajax/addcomments.php", $_SERVER['PHP_SELF']);
+    $config['http_home_url'] = explode("lib/ajax/addcomments.php", $_SERVER['PHP_SELF']);
     $config['http_home_url'] = reset($config['http_home_url']);
     $config['http_home_url'] = "http://" . $_SERVER['HTTP_HOST'] . $config['http_home_url'];
 }
@@ -113,7 +113,7 @@ if ($CN_HALT) {
     }
 
 	if ( document.getElementById('xtm-captcha') ) {
-		document.getElementById('xtm-captcha').innerHTML = '<img src=\"' + xtm_root + 'engine/modules/antibot.php?rand=' + timeval + '\" border=0><br /><a onclick=\"reload(); return false;\" href=\"#\">{$lang['reload_code']}</a>';
+		document.getElementById('xtm-captcha').innerHTML = '<img src=\"' + xtm_root + 'lib/modules/antibot.php?rand=' + timeval + '\" border=0><br /><a onclick=\"reload(); return false;\" href=\"#\">{$lang['reload_code']}</a>';
 	}\n </script>";
 } else {
     $tpl->result['content'] = "<div id=\"blind-animation\" style=\"display:none\">" . $tpl->result['content'] . "<div>";

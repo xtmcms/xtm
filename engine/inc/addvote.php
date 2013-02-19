@@ -71,7 +71,7 @@ if ($_GET['action'] == "add") {
     $db->query("INSERT INTO " . USERPREFIX . "_admin_logs (name, date, ip, action, extras) values ('" . $db->safesql($member_id['name']) . "', '{$_TIME}', '{$_IP}', '3', '{$title}')");
     msg("info", $lang['vote_str_4'], $lang['vote_str_4'], "?mod=editvote");
 } elseif (!$stop) {
-    $js_array[] = "engine/skins/calendar.js";
+    $js_array[] = "lib/skins/calendar.js";
     echoheader("vote", $lang[addvote]);
     $canedit = false;
     $start_date = "";
@@ -109,16 +109,16 @@ if ($_GET['action'] == "add") {
     }
     echo <<<HTML
 <!-- calendar stylesheet -->
-<link rel="stylesheet" type="text/css" media="all" href="engine/skins/calendar-blue.css" title="win2k-cold-1" />
+<link rel="stylesheet" type="text/css" media="all" href="lib/skins/calendar-blue.css" title="win2k-cold-1" />
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -140,7 +140,7 @@ if ($_GET['action'] == "add") {
     </tr>
     <tr>
         <td style="padding:4px;">{$lang['vote_startdate']}</td>
-        <td><input type="text" name="start_date" id="f_date_s" size="20"  class="edit bk" value="{$start_date}" />&nbsp;<img src="engine/skins/images/img.gif"  align="absmiddle" id="f_trigger_s" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/>&nbsp;<a href="#" class="hintanchor" onMouseover="showhint('{$lang[hint_vstart]}', this, event, '250px')">[?]</a>
+        <td><input type="text" name="start_date" id="f_date_s" size="20"  class="edit bk" value="{$start_date}" />&nbsp;<img src="lib/skins/images/img.gif"  align="absmiddle" id="f_trigger_s" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/>&nbsp;<a href="#" class="hintanchor" onMouseover="showhint('{$lang[hint_vstart]}', this, event, '250px')">[?]</a>
 <script type="text/javascript">
     Calendar.setup({
         inputField     :    "f_date_s",     // id of the input field
@@ -156,7 +156,7 @@ if ($_GET['action'] == "add") {
     </tr>
     <tr>
         <td style="padding:4px;">{$lang['vote_enddate']}</td>
-        <td><input type="text" name="end_date" id="f_date_e" size="20"  class="edit bk" value="{$end_date}" />&nbsp;<img src="engine/skins/images/img.gif"  align="absmiddle" id="f_trigger_e" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/>&nbsp;<a href="#" class="hintanchor" onMouseover="showhint('{$lang[hint_vend]}', this, event, '250px')">[?]</a>
+        <td><input type="text" name="end_date" id="f_date_e" size="20"  class="edit bk" value="{$end_date}" />&nbsp;<img src="lib/skins/images/img.gif"  align="absmiddle" id="f_trigger_e" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/>&nbsp;<a href="#" class="hintanchor" onMouseover="showhint('{$lang[hint_vend]}', this, event, '250px')">[?]</a>
 <script type="text/javascript">
     Calendar.setup({
         inputField     :    "f_date_e",     // id of the input field
@@ -192,12 +192,12 @@ HTML;
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 <input type="hidden" name="user_hash" value="$xtm_login_hash" />

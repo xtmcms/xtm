@@ -6,7 +6,7 @@ if (!defined('ROOT_DIR')) {
     define('ROOT_DIR', substr(dirname(__FILE__), 0, -11));
 }
 if (!defined('ENGINE_DIR')) {
-    define('ENGINE_DIR', ROOT_DIR . '/engine');
+    define('ENGINE_DIR', ROOT_DIR . '/lib');
 }
 if (!class_exists('xtm_API')) {
     class xtm_API

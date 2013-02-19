@@ -70,7 +70,7 @@ if ($action == "dodelete" AND $id) {
         $entries .= "<td class=\"list\">" . $row['text'] . "</td>";
         $entries .= "<td class=\"list\"><input class=\"btn btn-success\" title=\"$lang[bb_t_apply]\" type=button onclick=\"ajax_save_comm_edit('{$row['id']}'); return false;\" value=\"&nbsp;&nbsp;$lang[bb_b_apply]&nbsp;&nbsp;\"></td>";
         $entries .= "<td class=\"list\"><input name=\"selected_comments[]\" value=\"{$row['id']}\" type='checkbox'></td>";
-        $entries .= "<tr><td background=\"engine/skins/images/mline.gif\" height=1 colspan=5></td></tr>";
+        $entries .= "<tr><td background=\"lib/skins/images/mline.gif\" height=1 colspan=5></td></tr>";
     }
     $db->free();
     $npp_nav = "<div class=\"news_navigation\" style=\"margin-bottom:5px; margin-top:5px;\">";
@@ -155,7 +155,7 @@ function ajax_save_comm_edit( c_id )
 
 	ShowLoading('');
 
-	$.post('engine/ajax/editcomments.php', { comm_txt: comm_txt, id: c_id, action: "save" }, function(data){
+	$.post('lib/ajax/editcomments.php', { comm_txt: comm_txt, id: c_id, action: "save" }, function(data){
 	
 		HideLoading('');
 	
@@ -215,12 +215,12 @@ function popupedit( name ){
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -259,12 +259,12 @@ function popupedit( name ){
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>

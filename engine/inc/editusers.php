@@ -7,7 +7,7 @@ if (!$user_group[$member_id['user_group']]['admin_editusers']) {
 }
 $id = intval($_REQUEST['id']);
 if ($action == "list") {
-    $js_array[] = "engine/skins/calendar.js";
+    $js_array[] = "lib/skins/calendar.js";
     echoheader("users", $lang['user_head']);
     echo <<<HTML
 <script type="text/javascript">
@@ -103,17 +103,17 @@ HTML;
     if (!$search_coms_t) $search_coms_t = "";
     echo <<<HTML
 <!-- calendar stylesheet -->
-<link rel="stylesheet" type="text/css" media="all" href="engine/skins/calendar-blue.css" title="win2k-cold-1" />
+<link rel="stylesheet" type="text/css" media="all" href="lib/skins/calendar-blue.css" title="win2k-cold-1" />
 <form method="post" action="">
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -150,12 +150,12 @@ HTML;
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>
@@ -208,12 +208,12 @@ HTML;
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -228,7 +228,7 @@ HTML;
         <td style="padding-left:5px;">{$lang['edit_regdate']}</td>
         <td style="padding-left:5px;">{$lang['edit_fdate']}</td>
         <td><input type="text" name="fromregdate" id="fromregdate" size="17" maxlength="16" class="edit bk" value="{$fromregdate}">
-<img src="engine/skins/images/img.gif"  align="absmiddle" id="f_trigger_reg" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/>
+<img src="lib/skins/images/img.gif"  align="absmiddle" id="f_trigger_reg" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/>
 <script type="text/javascript">
     Calendar.setup({
       inputField     :    "fromregdate",     // id of the input field
@@ -242,7 +242,7 @@ HTML;
 </script></td>
         <td style="padding-left:5px;">{$lang['edit_tdate']}</td>
         <td><input type="text" name="toregdate" id="toregdate" size="17" maxlength="16" class="edit bk" value="{$toregdate}">
-<img src="engine/skins/images/img.gif"  align="absmiddle" id="t_trigger_reg" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/>
+<img src="lib/skins/images/img.gif"  align="absmiddle" id="t_trigger_reg" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/>
 <script type="text/javascript">
     Calendar.setup({
       inputField     :    "toregdate",     // id of the input field
@@ -263,7 +263,7 @@ HTML;
         <td style="padding-left:5px;">{$lang['edit_entedate']}</td>
         <td style="padding-left:5px;">{$lang['edit_fdate']}</td>
         <td><input type="text" name="fromentdate" id="fromentdate" size="17" maxlength="16" class="edit bk" value="{$fromentdate}">
-<img src="engine/skins/images/img.gif"  align="absmiddle" id="f_trigger_ent" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/>
+<img src="lib/skins/images/img.gif"  align="absmiddle" id="f_trigger_ent" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/>
 <script type="text/javascript">
     Calendar.setup({
       inputField     :    "fromentdate",     // id of the input field
@@ -277,7 +277,7 @@ HTML;
 </script></td>
         <td style="padding-left:5px;">{$lang['edit_tdate']}</td>
         <td><input type="text" name="toentdate" id="toentdate" size="17" maxlength="16" class="edit bk" value="{$toentdate}">
-<img src="engine/skins/images/img.gif"  align="absmiddle" id="t_trigger_ent" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/>
+<img src="lib/skins/images/img.gif"  align="absmiddle" id="t_trigger_ent" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/>
 <script type="text/javascript">
     Calendar.setup({
       inputField     :    "toentdate",     // id of the input field
@@ -374,12 +374,12 @@ HTML;
     </tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>
@@ -487,12 +487,12 @@ function ckeck_uncheck_all() {
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
@@ -554,7 +554,7 @@ HTML;
         <td width=133 title='' class='list' nowrap='nowrap'><nobr>
         [<a class=maintitle onclick=\"javascript:popupedit('$row[user_id]'); return(false);\" href=\"#\">$lang[user_edit]</a>]&nbsp;$user_delete&nbsp;[<a class=maintitle href=\"{$config['http_home_url']}index.php?do=feedback&user=$row[user_id]\" target=\"_blank\">$lang[bb_b_mail]</a>]&nbsp;[<a class=maintitle href=\"{$config['http_home_url']}index.php?do=pm&doaction=newpm&user=$row[user_id]\" target=\"_blank\">$lang[nl_pm]</a>]
         </nobr></td><td width=\"10\"><input name=\"selected_users[]\" value=\"{$row['user_id']}\" type='checkbox'></td>
-        </tr><tr><td background=\"engine/skins/images/mline.gif\" height=1 colspan=10></td></tr>";
+        </tr><tr><td background=\"lib/skins/images/mline.gif\" height=1 colspan=10></td></tr>";
     }
     $db->free();
     $npp_nav = "<div class=\"news_navigation\" style=\"margin-bottom:5px; margin-top:5px;\">";
@@ -631,12 +631,12 @@ HTML;
 </div></th></tr>
 </table>
 </td>
-        <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div></form>
@@ -710,7 +710,7 @@ HTML;
     if ($skin) {
         $css_path = $config['http_home_url'] . "templates/" . $skin . "/frame.css";
     } else {
-        $css_path = "engine/skins/frame.css";
+        $css_path = "lib/skins/frame.css";
     }
     echo <<<HTML
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -720,12 +720,12 @@ HTML;
 <title>{$lang['user_edhead']}</title>
 <link rel="stylesheet" type="text/css" href="{$css_path}">
 <!-- calendar stylesheet -->
-<link rel="stylesheet" type="text/css" media="all" href="engine/skins/calendar-blue.css" title="win2k-cold-1" />
+<link rel="stylesheet" type="text/css" media="all" href="lib/skins/calendar-blue.css" title="win2k-cold-1" />
 
 <!-- main calendar program -->
-<script type="text/javascript" src="engine/classes/js/jquery.js"></script>
-<script type="text/javascript" src="engine/skins/calendar.js"></script>
-<script type="text/javascript" src="engine/skins/default.js"></script>
+<script type="text/javascript" src="lib/classes/js/jquery.js"></script>
+<script type="text/javascript" src="lib/skins/calendar.js"></script>
+<script type="text/javascript" src="lib/skins/default.js"></script>
 </head>
 <body>
 <script language="javascript" type="text/javascript">
@@ -750,7 +750,7 @@ HTML;
     if ($row['foto']) {
         $avatar = $config['http_home_url'] . "uploads/fotos/" . $row['foto'];
     } else {
-        $avatar = "engine/skins/images/noavatar.png";
+        $avatar = "lib/skins/images/noavatar.png";
     }
     $xfieldsaction = "admin";
     $xfieldsid = $row['xfields'];
@@ -816,7 +816,7 @@ HTML;
     </tr>
     <tr>
         <td style="padding:4px;">{$lang['user_gtlimit']}</td>
-        <td colspan="2"><input size="17" name="time_limit" id="time_limit" class="edit bk" value="{$row['time_limit']}"> <img src="engine/skins/images/img.gif"  align="absmiddle" id="t_trigger_ent" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/><a href="#" class="hintanchor" onMouseover="showhint('{$lang[hint_glhel]}', this, event, '250px')">[?]</a>
+        <td colspan="2"><input size="17" name="time_limit" id="time_limit" class="edit bk" value="{$row['time_limit']}"> <img src="lib/skins/images/img.gif"  align="absmiddle" id="t_trigger_ent" style="cursor: pointer; border: 0" title="{$lang['edit_ecal']}"/><a href="#" class="hintanchor" onMouseover="showhint('{$lang[hint_glhel]}', this, event, '250px')">[?]</a>
 <script type="text/javascript">
     Calendar.setup({
       inputField     :    "time_limit",     // id of the input field

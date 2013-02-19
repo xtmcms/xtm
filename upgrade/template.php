@@ -5,7 +5,7 @@
 $skin_header = <<<HTML
 <html>
 <head>
-<title>DataLife Engine</title>
+<title>XTMCMS</title>
 <meta content="text/html; charset={$config['charset']}" http-equiv="content-type" />
 <!-- calendar stylesheet -->
 <link rel="stylesheet" type="text/css" media="all" href="{$theme}/skins/calendar-blue.css" title="win2k-cold-1" />
@@ -345,7 +345,7 @@ $skin_footer = <<<HTML
 <div style="padding-top:5px; padding-bottom:10px;">
 <table width="100%">
     <tr>
-<td bgcolor="#EFEFEF" height="40" align="center" style="padding-right:10px;"><div class="navigation"><a href="http://xtm-news.ru/" target="_blank">DataLife Engine</a><br />Copyright 2012 &copy; <a href="http://xtm-news.ru/" target="_blank">SoftNews Media Group</a>. All rights reserved.</div></td>
+<td bgcolor="#EFEFEF" height="40" align="center" style="padding-right:10px;"><div class="navigation"><a href="http://xtm-news.ru/" target="_blank">XTMCMS</a><br />Copyright 2012 &copy; <a href="http://xtm-news.ru/" target="_blank">SoftNews Media Group</a>. All rights reserved.</div></td>
     </tr>
 </table></div>		
 		</td>
@@ -419,7 +419,7 @@ $login_panel = <<<HTML
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>DataLife Engine</title>
+<title>XTMCMS</title>
 <meta content="text/html; charset={$config['charset']}" http-equiv="content-type" />
 <style type="text/css">
 html,body{
@@ -535,10 +535,10 @@ if (!$is_logged) {
     exit();
 } 
 if (!is_writable(ENGINE_DIR . '/data/config.php')) {
-    msgbox("info", "Information", "Set file permission to writable CHMOD 666 in file 'engine/data/config.php'");
+    msgbox("info", "Information", "Set file permission to writable CHMOD 666 in file 'lib/data/config.php'");
 } 
 if (!is_writable(ENGINE_DIR . '/data/dbconfig.php')) {
-    msgbox("info", "Information", "Set file permission to writable CHMOD 666 in file 'engine/data/dbconfig.php'");
+    msgbox("info", "Information", "Set file permission to writable CHMOD 666 in file 'lib/data/dbconfig.php'");
 } 
 if (!$_SESSION['xtm_update']) {
     echoheader("", "");
@@ -556,7 +556,7 @@ if (!$_SESSION['xtm_update']) {
         <td style="padding:5px;" bgcolor="#FFFFFF">
 <table width="100%">
     <tr>
-        <td bgcolor="#EFEFEF" height="29" style="padding-left:10px;"><div class="navigation">Datalife Engine Upgrade</div></td>
+        <td bgcolor="#EFEFEF" height="29" style="padding-left:10px;"><div class="navigation">XTMCMS Upgrade</div></td>
     </tr>
 </table>
 <div class="unterline"></div>
@@ -564,7 +564,7 @@ if (!$_SESSION['xtm_update']) {
     <tr>
         <td style="padding:2px;"><font color="red"><b>Attention:</b></font> Before you proceed to upgrade the script and database, make sure that you have created and saved in a full backup script files and databases. The upgrade procedure makes permanent changes to the database structure, the the future revert back to the previos version can't be done, it will be possible only by restoring backups of the database. Also during the upgrade script runs heavy queries against the database, the implementation may require a long time, so upgradee is recommended during the minimum load on the server. For large sites with a large number of news and article, it is recommended to test the upgrade on your local computer first and upgrade in your site later.
 		<br /><br />
-		The current version Datalife Engine: <b>{$version_id}</b>, update will be upgraded to version: <b>{$xtm_version}</b>
+		The current version XTMCMS: <b>{$version_id}</b>, update will be upgraded to version: <b>{$xtm_version}</b>
 		<br /><br />
 </td>
     </tr>

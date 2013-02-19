@@ -8,7 +8,7 @@ define('ENGINE_DIR', dirname(__FILE__));
 @ini_set('error_reporting', E_ALL ^ E_WARNING ^ E_NOTICE);
 include ENGINE_DIR . '/data/config.php';
 if ($config['http_home_url'] == "") {
-    $config['http_home_url'] = explode("engine/rss.php", $_SERVER['PHP_SELF']);
+    $config['http_home_url'] = explode("lib/rss.php", $_SERVER['PHP_SELF']);
     $config['http_home_url'] = reset($config['http_home_url']);
     $config['http_home_url'] = "http://" . $_SERVER['HTTP_HOST'] . $config['http_home_url'];
 }
@@ -104,7 +104,7 @@ $rss_content = <<<XML
 <link>{$config['http_home_url']}</link>
 <language>ru</language>
 <description>{$config['home_title']}</description>
-<generator>DataLife Engine</generator>
+<generator>XTMCMS</generator>
 XML;
 if ($config['site_offline'] == "yes" or !$config['allow_rss']) {
     $rss_content .= <<<XML
@@ -114,8 +114,8 @@ if ($config['site_offline'] == "yes" or !$config['allow_rss']) {
 <link></link>
 <description>RSS in offline mode</description>
 <category>undefined</category>
-<dc:creator>DataLife Engine</dc:creator>
-<pubDate>DataLife Engine</pubDate>
+<dc:creator>XTMCMS</dc:creator>
+<pubDate>XTMCMS</pubDate>
 </item>
 XML;
 } else {
@@ -145,7 +145,7 @@ XML;
 <title>{$config['home_title']}</title>
 <link>{$config['http_home_url']}</link>
 </image>
-<generator>DataLife Engine</generator>
+<generator>XTMCMS</generator>
 XML;
         $tpl->template = <<<XML
 <item>
@@ -171,7 +171,7 @@ XML;
 XML;
     }
     $tpl->copy_template = $tpl->template;
-    include_once ENGINE_DIR . '/engine.php';
+    include_once ENGINE_DIR . '/lib.php';
     $rss_content .= $tpl->result['content'];
 }
 $rss_content .= '</channel></rss>';

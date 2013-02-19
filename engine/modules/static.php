@@ -71,7 +71,7 @@ if ($static_result['id']) {
                 }
             }
             if ($config['allow_alt_url'] == "yes") $print_link = $config['http_home_url'] . "print:" . $static_result['name'] . ".html";
-            else $print_link = $config['http_home_url'] . "engine/print.php?do=static&amp;page=" . $static_result['name'];
+            else $print_link = $config['http_home_url'] . "lib/print.php?do=static&amp;page=" . $static_result['name'];
             if (@date("Ymd", $static_result['date']) == date("Ymd", $_TIME)) {
                 $tpl->set('{date}', $lang['time_heute'] . langdate(", H:i", $static_result['date']));
             } elseif (@date("Ymd", $static_result['date']) == date("Ymd", ($_TIME - 86400))) {

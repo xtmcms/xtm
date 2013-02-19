@@ -47,7 +47,7 @@ function ajax_save_for_edit(a, b) {
     c.field = b;
     c.action = "save";
     ShowLoading("");
-    $.post(xtm_root + "engine/ajax/editnews.php", c, function (a) {
+    $.post(xtm_root + "lib/ajax/editnews.php", c, function (a) {
         HideLoading("");
         "ok" != a ? xtmalert(a, xtm_info) : ($("#xtmpopup-news-edit").dialog("close"), xtmconfirm(xtm_save_ok, xtm_confirm, function () {
             location.reload(!0)
@@ -58,7 +58,7 @@ function ajax_save_for_edit(a, b) {
 function ajax_prep_for_edit(a, b) {
     for (var c = 0, d = c_cache.length; c < d; c++)c in c_cache && (c_cache[c] || "" != c_cache[c]) && ajax_cancel_comm_edit(c);
     ShowLoading("");
-    $.get(xtm_root + "engine/ajax/editnews.php", {id:a, field:b, action:"edit"}, function (c) {
+    $.get(xtm_root + "lib/ajax/editnews.php", {id:a, field:b, action:"edit"}, function (c) {
         HideLoading("");
         var d = "none";
         $("#modal-overlay").remove();
@@ -95,7 +95,7 @@ function ajax_comm_edit(a, b) {
     for (var c = 0, d = c_cache.length; c < d; c++)c in c_cache && "" != c_cache[c] && ajax_cancel_comm_edit(c);
     if (!c_cache[a] || "" == c_cache[a])c_cache[a] = $("#comm-id-" + a).html();
     ShowLoading("");
-    $.get(xtm_root + "engine/ajax/editcomments.php", {id:a, area:b, action:"edit"}, function (c) {
+    $.get(xtm_root + "lib/ajax/editcomments.php", {id:a, area:b, action:"edit"}, function (c) {
         HideLoading("");
         RunAjaxJS("comm-id-" + a, c);
         setTimeout(function () {
@@ -113,7 +113,7 @@ function ajax_save_comm_edit(a, b) {
     "1" == xtm_wysiwyg && submit_all_data();
     var c = $("#xtmeditcomments" + a).val();
     ShowLoading("");
-    $.post(xtm_root + "engine/ajax/editcomments.php", {id:a, comm_txt:c, area:b, action:"save"}, function (c) {
+    $.post(xtm_root + "lib/ajax/editcomments.php", {id:a, comm_txt:c, area:b, action:"save"}, function (c) {
         HideLoading("");
         c_cache[a] = "";
         $("#comm-id-" + a).html(c)
@@ -123,7 +123,7 @@ function ajax_save_comm_edit(a, b) {
 function DeleteComments(a, b) {
     xtmconfirm(xtm_del_agree, xtm_confirm, function () {
         ShowLoading("");
-        $.get(xtm_root + "engine/ajax/deletecomments.php", {id:a, xtm_allow_hash:b}, function (a) {
+        $.get(xtm_root + "lib/ajax/deletecomments.php", {id:a, xtm_allow_hash:b}, function (a) {
             HideLoading("");
             a = parseInt(a);
             isNaN(a) || ($("html" + (!$.browser.opera ? ",body" : "")).animate({scrollTop:$("#comment-id-" + a).offset().top - 70}, 700), setTimeout(function () {
@@ -134,7 +134,7 @@ function DeleteComments(a, b) {
 }
 function doFavorites(a, b) {
     ShowLoading("");
-    $.get(xtm_root + "engine/ajax/favorites.php", {fav_id:a, action:b, skin:xtm_skin}, function (c) {
+    $.get(xtm_root + "lib/ajax/favorites.php", {fav_id:a, action:b, skin:xtm_skin}, function (c) {
         HideLoading("");
         $("#fav-id-" + a).html(c)
     });
@@ -143,7 +143,7 @@ function doFavorites(a, b) {
 function CheckLogin() {
     var a = document.getElementById("name").value;
     ShowLoading("");
-    $.post(xtm_root + "engine/ajax/registration.php", {name:a}, function (a) {
+    $.post(xtm_root + "lib/ajax/registration.php", {name:a}, function (a) {
         HideLoading("");
         $("#result-registration").html(a)
     });
@@ -151,14 +151,14 @@ function CheckLogin() {
 }
 function doCalendar(a, b, c) {
     ShowLoading("");
-    $.get(xtm_root + "engine/ajax/calendar.php", {month:a, year:b}, function (a) {
+    $.get(xtm_root + "lib/ajax/calendar.php", {month:a, year:b}, function (a) {
         HideLoading("");
         "left" == c ? $("#calendar-layer").hide("slide", {direction:"left"}, 500).html(a).show("slide", {direction:"right"}, 500) : $("#calendar-layer").hide("slide", {direction:"right"}, 500).html(a).show("slide", {direction:"left"}, 500)
     })
 }
 function doRate(a, b) {
     ShowLoading("");
-    $.get(xtm_root + "engine/ajax/rating.php", {go_rate:a, news_id:b, skin:xtm_skin}, function (a) {
+    $.get(xtm_root + "lib/ajax/rating.php", {go_rate:a, news_id:b, skin:xtm_skin}, function (a) {
         HideLoading("");
         if (a.success) {
             var d = a.rating, d = d.replace(/&lt;/g, "<"), d = d.replace(/&gt;/g, ">"), d = d.replace(/&amp;/g, "&");
@@ -179,7 +179,7 @@ function doAddComments() {
         e = "";
     var g = a.allow_subscribe ? !0 == a.allow_subscribe.checked ? "1" : "0" : "0";
     ShowLoading("");
-    $.post(xtm_root + "engine/ajax/addcomments.php", {post_id:a.post_id.value, comments:a.comments.value, name:a.name.value, mail:a.mail.value, editor_mode:b, skin:xtm_skin, sec_code:d, question_answer:c, recaptcha_response_field:e, recaptcha_challenge_field:f, allow_subscribe:g}, function (b) {
+    $.post(xtm_root + "lib/ajax/addcomments.php", {post_id:a.post_id.value, comments:a.comments.value, name:a.name.value, mail:a.mail.value, editor_mode:b, skin:xtm_skin, sec_code:d, question_answer:c, recaptcha_response_field:e, recaptcha_challenge_field:f, allow_subscribe:g}, function (b) {
         a.sec_code && (a.sec_code.value = "", reload());
         HideLoading("");
         RunAjaxJS("xtm-ajax-comments", b);
@@ -191,7 +191,7 @@ function doAddComments() {
 }
 function CommentsPage(a, b) {
     ShowLoading("");
-    $.get(xtm_root + "engine/ajax/comments.php", {cstart:a, news_id:b, skin:xtm_skin}, function (c) {
+    $.get(xtm_root + "lib/ajax/comments.php", {cstart:a, news_id:b, skin:xtm_skin}, function (c) {
         HideLoading("");
         !isNaN(a) && !isNaN(b) && ($("#xtm-comm-link").unbind("click"), $("#xtm-comm-link").bind("click", function () {
             CommentsPage(a, b);
@@ -250,7 +250,7 @@ function xtm_news_delete(a) {
                 var b = $("#xtm-promt-text").val();
                 $(this).dialog("close");
                 $("#xtmpopup").remove();
-                $.post(xtm_root + "engine/ajax/message.php", {id:a, text:b}, function (b) {
+                $.post(xtm_root + "lib/ajax/message.php", {id:a, text:b}, function (b) {
                     "ok" ==
                         b ? document.location = xtm_root + "index.php?do=deletenews&id=" + a + "&hash=" + xtm_login_hash : xtmalert("Send Error", xtm_info)
                 })
@@ -290,7 +290,7 @@ function sendNotice(a) {
             var b = $("#xtm-promt-text").val();
             $(this).dialog("close");
             $("#xtmpopup").remove();
-            $.post(xtm_root + "engine/ajax/message.php", {id:a, text:b, allowdelete:"no"}, function (a) {
+            $.post(xtm_root + "lib/ajax/message.php", {id:a, text:b, allowdelete:"no"}, function (a) {
                 "ok" == a && xtmalert(xtm_p_send_ok, xtm_info)
             })
         }
@@ -312,7 +312,7 @@ function AddComplaint(a, b) {
             var c = $("#xtm-promt-text").val();
             $(this).dialog("close");
             $("#xtmpopup").remove();
-            $.post(xtm_root + "engine/ajax/complaint.php", {id:a, text:c, action:b}, function (a) {
+            $.post(xtm_root + "lib/ajax/complaint.php", {id:a, text:c, action:b}, function (a) {
                 "ok" == a ? xtmalert(xtm_p_send_ok, xtm_info) : xtmalert(a, xtm_info)
             })
         }
@@ -418,7 +418,7 @@ function ShowProfile(a, b, c) {
     xtm_user_profile = a;
     xtm_user_profile_link = b;
     ShowLoading("");
-    $.get(xtm_root + "engine/ajax/profile.php", {name:a, skin:xtm_skin}, function (a) {
+    $.get(xtm_root + "lib/ajax/profile.php", {name:a, skin:xtm_skin}, function (a) {
         HideLoading("");
         ShowPopupProfile(a, c)
     });
@@ -440,7 +440,7 @@ function xtm_do_search(a) {
     clearInterval(xtm_search_delay);
     $("#searchsuggestions").remove();
     $("body").append("<div id='searchsuggestions' style='display:none'></div>");
-    $.post(xtm_root + "engine/ajax/search.php", {query:"" + a + ""}, function (a) {
+    $.post(xtm_root + "lib/ajax/search.php", {query:"" + a + ""}, function (a) {
         $("#searchsuggestions").html(a).fadeIn().css({position:"absolute", top:0, left:0}).position({my:"left top", at:"left bottom", of:"#story", collision:"fit flip"})
     });
     xtm_search_value = a
@@ -458,7 +458,7 @@ function ShowAllVotes() {
     if (document.getElementById("xtmvotespopup"))return $("#xtmvotespopup").dialog("open"), !1;
     $.ajaxSetup({cache:!1});
     ShowLoading("");
-    $.get(xtm_root + "engine/ajax/allvotes.php?xtm_skin=" + xtm_skin, function (a) {
+    $.get(xtm_root + "lib/ajax/allvotes.php?xtm_skin=" + xtm_skin, function (a) {
         HideLoading("");
         $("#xtmvotespopup").remove();
         $("body").append(a);
@@ -474,7 +474,7 @@ function ShowAllVotes() {
 function fast_vote(a) {
     var b = $("#vote_" + a + " input:radio[name=vote_check]:checked").val();
     ShowLoading("");
-    $.get(xtm_root + "engine/ajax/vote.php", {vote_id:a, vote_action:"vote", vote_mode:"fast_vote", vote_check:b, vote_skin:xtm_skin}, function (b) {
+    $.get(xtm_root + "lib/ajax/vote.php", {vote_id:a, vote_action:"vote", vote_mode:"fast_vote", vote_check:b, vote_skin:xtm_skin}, function (b) {
         HideLoading("");
         $("#xtm-vote_list-" + a).fadeOut(500, function () {
             $(this).html(b);
@@ -486,7 +486,7 @@ function fast_vote(a) {
 function AddIgnorePM(a, b) {
     xtmconfirm(b, xtm_confirm, function () {
         ShowLoading("");
-        $.get(xtm_root + "engine/ajax/pm.php", {id:a, action:"add_ignore", skin:xtm_skin}, function (a) {
+        $.get(xtm_root + "lib/ajax/pm.php", {id:a, action:"add_ignore", skin:xtm_skin}, function (a) {
             HideLoading("");
             xtmalert(a, xtm_info);
             return!1
@@ -496,7 +496,7 @@ function AddIgnorePM(a, b) {
 function DelIgnorePM(a, b) {
     xtmconfirm(b, xtm_confirm, function () {
         ShowLoading("");
-        $.get(xtm_root + "engine/ajax/pm.php", {id:a, action:"del_ignore", skin:xtm_skin}, function (b) {
+        $.get(xtm_root + "lib/ajax/pm.php", {id:a, action:"del_ignore", skin:xtm_skin}, function (b) {
             HideLoading("");
             $("#xtm-ignore-list-" + a).html("");
             xtmalert(b, xtm_info);
@@ -509,7 +509,7 @@ function media_upload(a, b, c, d) {
     $("#mediaupload").remove();
     $("body").append("<div id='mediaupload' title='" + text_upload + "' style='display:none'></div>");
     $("#mediaupload").dialog({autoOpen:!0, width:680, height:600, dialogClass:"modalfixed", open:function () {
-        $("#mediaupload").html("<iframe name='mediauploadframe' id='mediauploadframe' width='100%' height='550' src='" + xtm_root + "engine/ajax/upload.php?area=" + a + "&author=" + b + "&news_id=" + c + "&wysiwyg=" + d + "&skin=" + xtm_skin + "&rndval=" +
+        $("#mediaupload").html("<iframe name='mediauploadframe' id='mediauploadframe' width='100%' height='550' src='" + xtm_root + "lib/ajax/upload.php?area=" + a + "&author=" + b + "&news_id=" + c + "&wysiwyg=" + d + "&skin=" + xtm_skin + "&rndval=" +
             e + "' frameborder='0' marginwidth='0' marginheight='0' allowtransparency='true'></iframe>");
         $(".ui-dialog").draggable("option", "containment", "")
     }, dragStart:function () {
@@ -572,7 +572,7 @@ jQuery(function (a) {
                     var b = a("#xtm-promt-text").val(), c = a("#orfom").text();
                     a(this).dialog("close");
                     a("#xtmpopup").remove();
-                    a.post(xtm_root + "engine/ajax/complaint.php", {seltext:c, text:b, action:"orfo", url:window.location.href}, function (b) {
+                    a.post(xtm_root + "lib/ajax/complaint.php", {seltext:c, text:b, action:"orfo", url:window.location.href}, function (b) {
                         "ok" == b ? a.browser.mozilla ? alert(xtm_p_send_ok) : xtmalert(xtm_p_send_ok, xtm_info) : a.browser.mozilla ? alert(b) : xtmalert(b, xtm_info)
                     })
                 }

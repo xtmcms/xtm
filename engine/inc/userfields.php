@@ -51,7 +51,7 @@ if ($xf_inited !== true) {
         global $lang;
         $path = ENGINE_DIR . '/data/xprofile.txt';
         $filecontents = file($path);
-        if (!is_array($filecontents)) msg("error", $lang['xfield_error'], "$lang[xfield_err_3] \"engine/data/xprofile.txt\". $lang[xfield_err_4]");
+        if (!is_array($filecontents)) msg("error", $lang['xfield_error'], "$lang[xfield_err_3] \"lib/data/xprofile.txt\". $lang[xfield_err_4]");
         foreach ($filecontents as $name => $value) {
             $filecontents[$name] = explode("|", trim($value));
             foreach ($filecontents[$name] as $name2 => $value2) {
@@ -190,13 +190,13 @@ switch ($xfieldsaction) {
                 <div style="padding-top:5px;padding-bottom:2px;">
                     <table width="100%">
                         <tr>
-                            <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-                            <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif"
+                            <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+                            <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif"
                                                                                 width="1" height="4" border="0"></td>
-                            <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+                            <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
                         </tr>
                         <tr>
-                            <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif"
+                            <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif"
                                                                                 width="4" height="1" border="0"></td>
                             <td style="padding:5px;" bgcolor="#FFFFFF">
                                 <table width="100%">
@@ -303,14 +303,14 @@ switch ($xfieldsaction) {
                                     </tr>
                                 </table>
                             </td>
-                            <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif"
+                            <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif"
                                                                                 width="6" height="1" border="0"></td>
                         </tr>
                         <tr>
-                            <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-                            <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif"
+                            <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+                            <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif"
                                                                                 width="1" height="6" border="0"></td>
-                            <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+                            <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
                         </tr>
                     </table>
                 </div>
@@ -347,16 +347,16 @@ switch ($xfieldsaction) {
                     <div style="padding-top:5px;padding-bottom:2px;">
                         <table width="100%">
                             <tr>
-                                <td width="4"><img src="engine/skins/images/tl_lo.gif" width="4" height="4" border="0">
+                                <td width="4"><img src="lib/skins/images/tl_lo.gif" width="4" height="4" border="0">
                                 </td>
-                                <td background="engine/skins/images/tl_oo.gif"><img src="engine/skins/images/tl_oo.gif"
+                                <td background="lib/skins/images/tl_oo.gif"><img src="lib/skins/images/tl_oo.gif"
                                                                                     width="1" height="4" border="0">
                                 </td>
-                                <td width="6"><img src="engine/skins/images/tl_ro.gif" width="6" height="4" border="0">
+                                <td width="6"><img src="lib/skins/images/tl_ro.gif" width="6" height="4" border="0">
                                 </td>
                             </tr>
                             <tr>
-                                <td background="engine/skins/images/tl_lb.gif"><img src="engine/skins/images/tl_lb.gif"
+                                <td background="lib/skins/images/tl_lb.gif"><img src="lib/skins/images/tl_lb.gif"
                                                                                     width="4" height="1" border="0">
                                 </td>
                                 <td style="padding:5px;" bgcolor="#FFFFFF">
@@ -444,7 +444,7 @@ switch ($xfieldsaction) {
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td background="engine/skins/images/mline.gif" height=1
+                                                    <td background="lib/skins/images/mline.gif" height=1
                                                         colspan=7></td>
                                                 </tr>
                                                 <?php
@@ -490,16 +490,16 @@ switch ($xfieldsaction) {
                                         </tr>
                                     </table>
                                 </td>
-                                <td background="engine/skins/images/tl_rb.gif"><img src="engine/skins/images/tl_rb.gif"
+                                <td background="lib/skins/images/tl_rb.gif"><img src="lib/skins/images/tl_rb.gif"
                                                                                     width="6" height="1" border="0">
                                 </td>
                             </tr>
                             <tr>
-                                <td><img src="engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-                                <td background="engine/skins/images/tl_ub.gif"><img src="engine/skins/images/tl_ub.gif"
+                                <td><img src="lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+                                <td background="lib/skins/images/tl_ub.gif"><img src="lib/skins/images/tl_ub.gif"
                                                                                     width="1" height="6" border="0">
                                 </td>
-                                <td><img src="engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+                                <td><img src="lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
                             </tr>
                         </table>
                     </div>

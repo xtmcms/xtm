@@ -36,12 +36,12 @@ echo <<<HTML
 <div style="padding-top:5px;padding-bottom:2px;">
 <table width="100%">
     <tr>
-        <td width="4"><img src="{$config['http_home_url']}engine/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
-        <td background="{$config['http_home_url']}engine/skins/images/tl_oo.gif"><img src="{$config['http_home_url']}engine/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
-        <td width="6"><img src="{$config['http_home_url']}engine/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
+        <td width="4"><img src="{$config['http_home_url']}lib/skins/images/tl_lo.gif" width="4" height="4" border="0"></td>
+        <td background="{$config['http_home_url']}lib/skins/images/tl_oo.gif"><img src="{$config['http_home_url']}lib/skins/images/tl_oo.gif" width="1" height="4" border="0"></td>
+        <td width="6"><img src="{$config['http_home_url']}lib/skins/images/tl_ro.gif" width="6" height="4" border="0"></td>
     </tr>
     <tr>
-        <td background="{$config['http_home_url']}engine/skins/images/tl_lb.gif"><img src="{$config['http_home_url']}engine/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
+        <td background="{$config['http_home_url']}lib/skins/images/tl_lb.gif"><img src="{$config['http_home_url']}lib/skins/images/tl_lb.gif" width="4" height="1" border="0"></td>
         <td style="padding:5px;" bgcolor="#FFFFFF">
 HTML;
 echo "<table width=\"100%\">
@@ -77,7 +77,7 @@ foreach ($images_in_dir as $file) {
 	  <td align=\"right\" width=\"60\"><nobr>" . formatsize($this_size) . "</nobr></td>
 	  <td align=\"center\" width=\"10\">
           <input type=\"checkbox\" name=\"images[{$file}]\" value=\"$file\" style=\"border: 0; background: transparent;\">
-	  </tr><tr><td background=\"{$config['http_home_url']}engine/skins/images/mline.gif\" height=\"1\" colspan=\"5\"></td></tr>";
+	  </tr><tr><td background=\"{$config['http_home_url']}lib/skins/images/mline.gif\" height=\"1\" colspan=\"5\"></td></tr>";
     }
 }
 if ($i > 0) {
@@ -112,12 +112,12 @@ while ($entryname = readdir($current_dir)) {
 echo "</select></tr></table>";
 echo <<<HTML
 </td>
-        <td background="{$config['http_home_url']}engine/skins/images/tl_rb.gif"><img src="{$config['http_home_url']}engine/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
+        <td background="{$config['http_home_url']}lib/skins/images/tl_rb.gif"><img src="{$config['http_home_url']}lib/skins/images/tl_rb.gif" width="6" height="1" border="0"></td>
     </tr>
     <tr>
-        <td><img src="{$config['http_home_url']}engine/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
-        <td background="{$config['http_home_url']}engine/skins/images/tl_ub.gif"><img src="{$config['http_home_url']}engine/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
-        <td><img src="{$config['http_home_url']}engine/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
+        <td><img src="{$config['http_home_url']}lib/skins/images/tl_lu.gif" width="4" height="6" border="0"></td>
+        <td background="{$config['http_home_url']}lib/skins/images/tl_ub.gif"><img src="{$config['http_home_url']}lib/skins/images/tl_ub.gif" width="1" height="6" border="0"></td>
+        <td><img src="{$config['http_home_url']}lib/skins/images/tl_ru.gif" width="6" height="6" border="0"></td>
     </tr>
 </table>
 </div>
